@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4769532312056553121}
   - component: {fileID: 8239854587227445365}
   - component: {fileID: 7829181402843257314}
-  - component: {fileID: 846210934236647216}
+  - component: {fileID: 8821478863530513203}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Untagged
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &846210934236647216
+--- !u!114 &8821478863530513203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 260950463882604673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c6f92a36e756442874e557e7a57613, type: 3}
+  m_Script: {fileID: 11500000, guid: 291fede03f2f4eb48a70828e173e8f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1

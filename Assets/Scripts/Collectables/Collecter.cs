@@ -6,7 +6,7 @@ public class Collecter : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        ICollectable collectable = other.GetComponent<ICollectable>();
+        var collectable = other.GetComponent<CollectableItem>();
 
         if(collectable != null)
         {

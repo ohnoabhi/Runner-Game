@@ -2,30 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CollectableType
+{
+    Coin,
+    Gem
+}
 public class CollectablesManager :MonoBehaviour
 {
-    
-    int coinCount;
-    int gemCount;
-    private void OnEnable()
+    public Collectable[] collectables;
+    public static CollectablesManager instance;
+
+    private void Awake()
     {
-        Coin.OnCoinCollect += CoinCollector;
-        Gem.OnGemCollect += GemCollector;
+        instance = this;
     }
-    private void OnDisable()
+    public static void Add(CollectableType type,int amount)
     {
-        Coin.OnCoinCollect -= CoinCollector;
-        Gem.OnGemCollect -= GemCollector;
-    }
-    public void CoinCollector(int amt)
-    {
-        coinCount = coinCount + amt;
-        Debug.Log("Coin =" + coinCount);
+        foreach(var collectable in instance.collectables)
+        {
+            if(collectable.Type == type)
+            {
+                collectable.Amount += amount;
+                Debug.Log("Amount: " + collectable.Amount);
+                break;
+            }
+        }
     }
 
-    public void GemCollector(int amt)
+    public static void Remove(CollectableType type, int amount)
     {
-        gemCount = gemCount + amt;
-        Debug.Log("gem =" + gemCount);
+        foreach (var collectable in instance.collectables)
+        {
+            if (collectable.Type == type)
+            {
+                collectable.Amount -= amount;
+                Debug.Log("Amount: " + collectable.Amount);
+                break;
+            }
+        }
     }
+
+}
+
+[System.Serializable]
+public class Collectable
+{
+    public CollectableType Type;
+    public int Amount
+    {
+        get => PlayerPrefs.GetInt(Type + "Amount", 0);
+        set => PlayerPrefs.SetInt(Type + "Amount",value<0?0:value);
+
+    }
+
+    
 }
