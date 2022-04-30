@@ -50,8 +50,6 @@ public class PlayerLevelUI : MonoBehaviour
 
     private void RefreshValues()
     {
-        Debug.Log("here");
-
         levelNo.text = PlayerLevelManager.instance.GetLevel().ToString();
 
         healthMeter.value = PlayerLevelManager.instance.GetHealth();
