@@ -2,27 +2,32 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    float speed = 5;
+    [SerializeField] float speed = 5;
 
-    [SerializeField]
-    float turningSpeed = 5f;
+    [SerializeField] float turningSpeed = 5f;
 
     private Rigidbody playerRb;
     private Touch touch;
 
-    private void Start()
-    {
-        playerRb = GetComponent<Rigidbody>();
-    }
+    public float MaxX = 4;
 
-    private void FixedUpdate()
-    {
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        playerRb.MovePosition(playerRb.position + forwardMove);
-    }
+    // private void Start()
+    // {
+    //     playerRb = GetComponent<Rigidbody>();
+    // }
+
+    // private void FixedUpdate()
+    // {
+    //     Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+    //     playerRb.MovePosition(playerRb.position + forwardMove);
+    // }
+
     void Update()
     {
+        var movement = transform.position;
+#if UNITY_EDITOR
+        movement += Slide(Input.GetAxisRaw("Horizontal") * turningSpeed);
+#elif UNITY_ANDROID
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
@@ -31,14 +36,23 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (transform.position.x < 4 && transform.position.x > - 4)
                 {
-                    transform.position = new Vector3(
-                        transform.position.x + -(touch.deltaPosition.x) * turningSpeed,
-                        transform.position.y,
-                        transform.position.z
-                        );
+                   movement += Slide(-(touch.deltaPosition.x) * turningSpeed);
                 }
             }
         }
+#endif
+
+        movement += transform.forward * speed * Time.deltaTime;
+        transform.position = movement;
     }
 
+    private Vector3 Slide(float amount)
+    {
+        var position = new Vector3(
+            Mathf.Clamp(amount, -MaxX, MaxX),
+            0,
+            0
+        );
+        return position;
+    }
 }
