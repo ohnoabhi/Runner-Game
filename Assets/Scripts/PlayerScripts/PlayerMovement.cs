@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.instance.currentState != GameManager.GameStates.Playing) return;
+
         var movement = transform.position;
 #if UNITY_EDITOR
         movement += Slide(Input.GetAxisRaw("Horizontal") * turningSpeed);
@@ -54,5 +56,13 @@ public class PlayerMovement : MonoBehaviour
             0
         );
         return position;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "FinishLine")
+        {
+            UIController.OnGameEnd?.Invoke();
+        }
     }
 }
