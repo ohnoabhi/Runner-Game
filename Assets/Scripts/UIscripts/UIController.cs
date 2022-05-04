@@ -21,12 +21,14 @@ public class UIController : MonoBehaviour
     [SerializeField]
     Button playBtn, pauseBtn, stopPauseBtn, winContinueBtn, loseContinueBtn, restartBtn, exitBtn;
 
-    public static Action OnGameEnd;
+    public static Action<bool> OnGameEnd;
 
-    /*private void Awake()
+    
+
+    private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
-    }*/
+        
+    }
     private void OnEnable()
     {
         OnGameEnd += GameEnd;
@@ -61,7 +63,7 @@ public class UIController : MonoBehaviour
         restartBtn.onClick.AddListener(() => RestartGame());
     }
 
-    public void MainMenu()
+    public void MainMenu() //works same as restart function need to be fixed
     {
         RestartGame();
         menuPanel.enabled = true;
@@ -123,15 +125,27 @@ public class UIController : MonoBehaviour
         GameManager.instance.currentState = GameManager.GameStates.Lose;
     }
 
-    private void GameEnd()
+    private void GameEnd(bool win)
     {
-        Onwin();
+        if (win)
+            Onwin();
+        else
+            OnLose();
     }
 
     public void RestartGame()
     {
         GameManager.instance.Restartgame();
-        menuPanel.enabled = false;
+        DisableAllMenus();
         GameManager.instance.currentState = GameManager.GameStates.Playing;
     }
+
+    public void DisableAllMenus()
+    {
+        menuPanel.enabled = false;
+        pausepanel.enabled = false;
+        winPanel.enabled = false;
+        losePanel.enabled = false;
+    }
+
 }

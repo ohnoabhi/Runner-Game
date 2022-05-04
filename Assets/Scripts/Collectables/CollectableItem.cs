@@ -5,10 +5,11 @@ using UnityEngine;
 public class CollectableItem : MonoBehaviour
 {
     public CollectableType type;
+    public int amount = 1;
 
     public void Collect()
     {
-        CollectablesManager.Add(type, 1);
+        CollectablesManager.Add(type, amount);
         Destroy(gameObject);
     }
 

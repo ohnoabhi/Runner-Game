@@ -33,7 +33,7 @@ public class PlayerLevelUI : MonoBehaviour
         RefreshStats -= RefreshValues;
     }
 
-    private void Update()
+    /*private void Update()
     {
         if(Input.GetKeyDown(plus))
         {
@@ -43,10 +43,10 @@ public class PlayerLevelUI : MonoBehaviour
 
         if(Input.GetKeyDown(minus))
         {
-            PlayerLevelManager.instance.Minus(10);
+            PlayerLevelManager.instance.Remove(10);
             RefreshValues();
         }
-    }
+    }*/
 
     private void RefreshValues()
     {
@@ -55,7 +55,5 @@ public class PlayerLevelUI : MonoBehaviour
         healthMeter.value = PlayerLevelManager.instance.GetHealth();
 
         healthMeter.maxValue = PlayerLevelManager.instance.GetMaxHealth();
-
-       
     }
 }

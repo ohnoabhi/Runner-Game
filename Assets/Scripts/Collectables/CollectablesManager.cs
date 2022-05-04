@@ -5,7 +5,8 @@ using UnityEngine;
 public enum CollectableType
 {
     Coin,
-    Gem
+    Gem,
+    Health
 }
 public class CollectablesManager :MonoBehaviour
 {
@@ -18,14 +19,23 @@ public class CollectablesManager :MonoBehaviour
     }
     public static void Add(CollectableType type,int amount)
     {
-        foreach(var collectable in instance.collectables)
+        if (type != CollectableType.Health)
         {
-            if(collectable.Type == type)
+            foreach (var collectable in instance.collectables)
             {
-                collectable.Amount += amount;
-                Debug.Log("Amount: " + collectable.Amount);
-                break;
+                if (collectable.Type == type)
+                {
+                    collectable.Amount += amount;
+                    Debug.Log("Amount: " + collectable.Amount);
+                    break;
+                }
             }
+        }
+
+        else if(type == CollectableType.Health)
+        {
+            PlayerLevelManager.instance.Add(amount);
+            PlayerLevelUI.RefreshStats.Invoke();
         }
     }
 

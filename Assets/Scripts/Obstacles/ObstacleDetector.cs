@@ -12,5 +12,18 @@ public class ObstacleDetector : MonoBehaviour
         {
             obstacle.Collide();
         }
+
+        else if (other.tag == "FinishLine")
+        {
+            UIController.OnGameEnd?.Invoke(true);
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if(PlayerLevelManager.instance.GetHealth() <= 0)
+        {
+            UIController.OnGameEnd?.Invoke(false);    
+        }
     }
 }

@@ -58,11 +58,5 @@ public class PlayerMovement : MonoBehaviour
         return position;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "FinishLine")
-        {
-            UIController.OnGameEnd?.Invoke();
-        }
-    }
+    
 }

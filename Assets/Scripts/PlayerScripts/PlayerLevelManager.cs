@@ -11,7 +11,7 @@ public class PlayerLevelManager : MonoBehaviour
     [SerializeField]
     int[] levelUpRequirement;
 
-    private int currentHealth = 0;
+    private int currentHealth = 1;
 
     private int currentLevel = 0;
 
@@ -29,9 +29,11 @@ public class PlayerLevelManager : MonoBehaviour
             currentHealth -= levelUpRequirement[currentLevel + 1];
             currentLevel++;
         }
+
+        
     }
 
-    public void Minus(int amt)
+    public void Remove(int amt)
     {
         currentHealth -= amt;
 
