@@ -28,6 +28,8 @@ public class PlayerLevelManager : MonoBehaviour
         {
             currentHealth -= levelUpRequirement[currentLevel + 1];
             currentLevel++;
+
+            GetComponent<PlayerSkinManager>().ChangeSkin(currentLevel);
         }
 
         
@@ -46,6 +48,7 @@ public class PlayerLevelManager : MonoBehaviour
                 currentHealth = levelUpRequirement[currentLevel - 1];
                 currentHealth += value;
                 currentLevel--;
+                GetComponent<PlayerSkinManager>().ChangeSkin(currentLevel);
             }
 
             else
