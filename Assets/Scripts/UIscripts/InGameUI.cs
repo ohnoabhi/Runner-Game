@@ -33,27 +33,12 @@ public class InGameUI : MonoBehaviour
         RefreshStats -= RefreshValues;
     }
 
-    /*private void Update()
-    {
-        if(Input.GetKeyDown(plus))
-        {
-            PlayerLevelManager.instance.Add(10);
-            RefreshValues();
-        }
-
-        if(Input.GetKeyDown(minus))
-        {
-            PlayerLevelManager.instance.Remove(10);
-            RefreshValues();
-        }
-    }*/
-
     private void RefreshValues()
     {
-        levelNo.text = PlayerLevelManager.instance.GetLevel().ToString();
+        levelNo.text = Player.Instance.Health.GetHealthLevel().ToString();
 
-        healthMeter.value = PlayerLevelManager.instance.GetHealth();
+        healthMeter.value = Player.Instance.CurrentHealth;
 
-        healthMeter.maxValue = PlayerLevelManager.instance.GetMaxHealth();
+        healthMeter.maxValue = Player.Instance.Health.GetMaxLevelHealth();
     }
 }

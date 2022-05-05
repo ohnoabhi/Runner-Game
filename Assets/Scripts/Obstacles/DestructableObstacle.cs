@@ -8,8 +8,7 @@ public class DestructableObstacle : MonoBehaviour,IObstacle
     int damage;
     public void Collide()
     {
-        PlayerLevelManager.instance.Remove(damage);
-        InGameUI.RefreshStats?.Invoke();
+        Player.Instance.TakeDamage(damage);
         Destroy(gameObject);
     }
 }

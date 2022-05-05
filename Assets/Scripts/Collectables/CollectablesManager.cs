@@ -8,7 +8,8 @@ public enum CollectableType
     Gem,
     Health
 }
-public class CollectablesManager :MonoBehaviour
+
+public class CollectablesManager : MonoBehaviour
 {
     public Collectable[] collectables;
     public static CollectablesManager instance;
@@ -17,7 +18,8 @@ public class CollectablesManager :MonoBehaviour
     {
         instance = this;
     }
-    public static void Add(CollectableType type,int amount)
+
+    public static void Add(CollectableType type, int amount)
     {
         if (type != CollectableType.Health)
         {
@@ -31,11 +33,9 @@ public class CollectablesManager :MonoBehaviour
                 }
             }
         }
-
-        else if(type == CollectableType.Health)
+        else
         {
-            PlayerLevelManager.instance.Add(amount);
-            InGameUI.RefreshStats.Invoke();
+            Player.Instance.GainHealth(amount);
         }
     }
 
@@ -51,19 +51,16 @@ public class CollectablesManager :MonoBehaviour
             }
         }
     }
-
 }
 
 [System.Serializable]
 public class Collectable
 {
     public CollectableType Type;
+
     public int Amount
     {
         get => PlayerPrefs.GetInt(Type + "Amount", 0);
-        set => PlayerPrefs.SetInt(Type + "Amount",value<0?0:value);
-
+        set => PlayerPrefs.SetInt(Type + "Amount", value < 0 ? 0 : value);
     }
-
-    
 }

@@ -1,8 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed, turningSpeed, maxX;   
+    public static Player Instance;
+    public float Speed;
+    public float SlideSpeed;
+    public float XMovementClamp;
+
+    public int CurrentHealth;
+
+    public Action<int> OnChangeHealthLevel;
+
+    private PlayerHealth health;
+    public PlayerHealth Health => health;
+
+    private void Awake()
+    {
+        Instance = this;
+
+        health = GetComponent<PlayerHealth>();
+    }
+
+    public void GainHealth(int amount = 1) => Health?.GainHealth(amount);
+    public void TakeDamage(int amount = 1) => Health?.TakeDamage(amount);
+
+    public void Die()
+    {
+    }
+
 }

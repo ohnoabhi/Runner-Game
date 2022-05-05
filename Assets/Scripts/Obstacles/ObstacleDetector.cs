@@ -18,12 +18,4 @@ public class ObstacleDetector : MonoBehaviour
             UIController.OnGameEnd?.Invoke(true);
         }
     }
-
-    private void LateUpdate()
-    {
-        if(PlayerLevelManager.instance.GetHealth() <= 0)
-        {
-            UIController.OnGameEnd?.Invoke(false);    
-        }
-    }
 }

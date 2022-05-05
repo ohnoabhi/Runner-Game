@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalObstacle : MonoBehaviour,IObstacle
+public class NormalObstacle : MonoBehaviour, IObstacle
 {
-    [SerializeField]
-    int damage;
+    [SerializeField] private int damage;
+
     public void Collide()
     {
-        PlayerLevelManager.instance.Remove(damage);
-        InGameUI.RefreshStats?.Invoke();
+        Player.Instance.TakeDamage(damage);
     }
 }

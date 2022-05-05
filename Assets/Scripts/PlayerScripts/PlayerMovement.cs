@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
         var movement = transform.position;
 #if UNITY_EDITOR
-        movement += Slide(Input.GetAxisRaw("Horizontal") * playerStats.turningSpeed);
+        movement += Slide(Input.GetAxisRaw("Horizontal") * playerStats.SlideSpeed);
 #elif UNITY_ANDROID
         if (Input.touchCount > 0)
         {
@@ -50,14 +50,14 @@ public class PlayerMovement : MonoBehaviour
         }
 #endif
 
-        movement += transform.forward * playerStats.speed * Time.deltaTime;
+        movement += transform.forward * playerStats.Speed * Time.deltaTime;
         transform.position = movement;
     }
 
     private Vector3 Slide(float amount)
     {
         var position = new Vector3(
-            Mathf.Clamp(amount, -playerStats.maxX, playerStats.maxX),
+            Mathf.Clamp(amount, -playerStats.XMovementClamp, playerStats.XMovementClamp),
             0,
             0
         );

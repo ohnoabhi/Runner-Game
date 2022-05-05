@@ -2,26 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SideMoveEnemyObstacle : MonoBehaviour,IObstacle
+public class SideMoveEnemyObstacle : MonoBehaviour, IObstacle
 {
-    int limit = 4;
+    private int limit = 4;
 
-    [SerializeField]
-    int damage;
+    [SerializeField] private int damage;
 
-    bool side = true;
+    private bool side = true;
 
     public void Collide()
     {
-        PlayerLevelManager.instance.Remove(damage);
-        InGameUI.RefreshStats?.Invoke();
+        Player.Instance.TakeDamage(damage);
     }
 
     private void FixedUpdate()
     {
         if (side)
         {
-            if (transform.position.x <= 4)
+            if (transform.position.x <= limit)
             {
                 StartCoroutine(EnemyMover(0.1f));
             }
@@ -33,7 +31,7 @@ public class SideMoveEnemyObstacle : MonoBehaviour,IObstacle
 
         else
         {
-            if (transform.position.x >= -4)
+            if (transform.position.x >= -limit)
             {
                 StartCoroutine(EnemyMover(-0.1f));
             }
@@ -41,11 +39,10 @@ public class SideMoveEnemyObstacle : MonoBehaviour,IObstacle
             {
                 side = !side;
             }
-
         }
     }
 
-    IEnumerator EnemyMover(float offset)
+    private IEnumerator EnemyMover(float offset)
     {
         yield return new WaitForSeconds(0.1f);
 

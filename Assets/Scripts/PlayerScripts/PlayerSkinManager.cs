@@ -5,39 +5,33 @@ using UnityEngine;
 
 public class PlayerSkinManager : MonoBehaviour
 {
-    [SerializeField]
-    SkinItem[] skins;
+    [SerializeField] SkinItem[] skins;
 
-    [SerializeField]
-    GameObject playerSkin;
-
-    public static Action<int> MeshChange;
+    [SerializeField] GameObject playerSkin;
 
     private void OnEnable()
     {
-        MeshChange += ChangeSkin;
+        Player.Instance.OnChangeHealthLevel += ChangeSkin;
     }
 
     private void OnDisable()
     {
-        MeshChange -= ChangeSkin;
+        Player.Instance.OnChangeHealthLevel += ChangeSkin;
     }
 
-    public void ChangeSkin(int count)
+    private void ChangeSkin(int count)
     {
-        GameObject nextSkin = Instantiate(skins[count].skin, transform);
-        nextSkin.transform.position = playerSkin.transform.position;
-        nextSkin.transform.rotation = playerSkin.transform.rotation;
+        var skinInstance = Instantiate(skins[count].Skin, transform);
+        skinInstance.transform.position = playerSkin.transform.position;
+        skinInstance.transform.rotation = playerSkin.transform.rotation;
         Destroy(playerSkin.gameObject);
 
-        playerSkin = nextSkin;
+        playerSkin = skinInstance;
     }
 }
 
 [System.Serializable]
 public class SkinItem
 {
-    public int num;
-    public GameObject skin;
+    public GameObject Skin;
 }
-
