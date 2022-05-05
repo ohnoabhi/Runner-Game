@@ -14,7 +14,7 @@ public class SideMoveEnemyObstacle : MonoBehaviour,IObstacle
     public void Collide()
     {
         PlayerLevelManager.instance.Remove(damage);
-        PlayerLevelUI.RefreshStats?.Invoke();
+        InGameUI.RefreshStats?.Invoke();
     }
 
     private void FixedUpdate()

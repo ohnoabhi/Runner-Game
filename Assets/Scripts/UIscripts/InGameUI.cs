@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerLevelUI : MonoBehaviour
+public class InGameUI : MonoBehaviour
 {
     [SerializeField]
     Text levelNo;

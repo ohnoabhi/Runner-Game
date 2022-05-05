@@ -9,6 +9,6 @@ public class NormalObstacle : MonoBehaviour,IObstacle
     public void Collide()
     {
         PlayerLevelManager.instance.Remove(damage);
-        PlayerLevelUI.RefreshStats?.Invoke();
+        InGameUI.RefreshStats?.Invoke();
     }
 }

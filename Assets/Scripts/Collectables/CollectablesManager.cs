@@ -35,7 +35,7 @@ public class CollectablesManager :MonoBehaviour
         else if(type == CollectableType.Health)
         {
             PlayerLevelManager.instance.Add(amount);
-            PlayerLevelUI.RefreshStats.Invoke();
+            InGameUI.RefreshStats.Invoke();
         }
     }
 
