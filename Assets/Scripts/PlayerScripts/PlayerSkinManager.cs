@@ -9,12 +9,12 @@ public class PlayerSkinManager : MonoBehaviour
 
     [SerializeField] GameObject playerSkin;
 
-    private void OnEnable()
+    private void Start()
     {
         Player.Instance.OnChangeHealthLevel += ChangeSkin;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         Player.Instance.OnChangeHealthLevel += ChangeSkin;
     }

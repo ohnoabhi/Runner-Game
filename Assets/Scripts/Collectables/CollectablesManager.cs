@@ -46,7 +46,6 @@ public class CollectablesManager : MonoBehaviour
             if (collectable.Type == type)
             {
                 collectable.Amount -= amount;
-                Debug.Log("Amount: " + collectable.Amount);
                 break;
             }
         }

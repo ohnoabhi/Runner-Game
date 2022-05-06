@@ -2,39 +2,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //[SerializeField] float speed = 5;
-
-    //[SerializeField] float turningSpeed = 5f;
-
     private Rigidbody playerRb;
     private Touch touch;
 
-    //public float MaxX = 4;
+    Player player;
 
-    Player playerStats;
-
-    // private void Start()
-    // {
-    //     playerRb = GetComponent<Rigidbody>();
-    // }
-
-    // private void FixedUpdate()
-    // {
-    //     Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-    //     playerRb.MovePosition(playerRb.position + forwardMove);
-    // }
-
-    private void Awake()
+    private void Start()
     {
-        playerStats = GetComponent<Player>();
+        player = Player.Instance;
     }
+
     void Update()
     {
         if (GameManager.instance.currentState != GameManager.GameStates.Playing) return;
 
         var movement = transform.position;
 #if UNITY_EDITOR
-        movement += Slide(Input.GetAxisRaw("Horizontal") * playerStats.SlideSpeed);
+        movement += Slide(Input.GetAxisRaw("Horizontal") * player.SlideSpeed);
 #elif UNITY_ANDROID
         if (Input.touchCount > 0)
         {
@@ -50,19 +34,19 @@ public class PlayerMovement : MonoBehaviour
         }
 #endif
 
-        movement += transform.forward * playerStats.Speed * Time.deltaTime;
+        movement += transform.forward * player.Speed * Time.deltaTime;
+        movement.x = Mathf.Clamp(movement.x, -player.XMovementClamp, player.XMovementClamp);
         transform.position = movement;
     }
 
     private Vector3 Slide(float amount)
     {
         var position = new Vector3(
-            Mathf.Clamp(amount, -playerStats.XMovementClamp, playerStats.XMovementClamp),
+            amount,
             0,
             0
         );
+        Debug.Log(position.x);
         return position;
     }
-
-    
 }
