@@ -2429,7 +2429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8da78e9e8372643889c4b1486dfef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelUpRequirement: 0000000014000000320000006400000096000000dc00000090010000
+  levelUpRequirement: 10
 --- !u!4 &922870052
 Transform:
   m_ObjectHideFlags: 0
@@ -3300,7 +3300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8da78e9e8372643889c4b1486dfef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelUpRequirement: 0a00000014000000320000005000000064000000aa000000d2000000
+  levelUpRequirement: 10
 --- !u!114 &1253801886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3313,9 +3313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbd87e37ba40714cb67ebcc101f30bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  turningSpeed: 0.02
-  maxX: 0.02
+  Speed: 0
+  SlideSpeed: 0
+  XMovementClamp: 0
+  CurrentHealth: 0
 --- !u!4 &1253801887
 Transform:
   m_ObjectHideFlags: 0
@@ -3345,18 +3346,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skins:
-  - num: 0
-    skin: {fileID: 8163924888505550625, guid: 020c7e2f7306eaa43bd1a990b3f6826a, type: 3}
-  - num: 0
-    skin: {fileID: 68880342879653392, guid: 431f1cc46b3b6b04d89cafa929380c10, type: 3}
-  - num: 0
-    skin: {fileID: 9082254887636669838, guid: 6ae76a75821d4b04792b6bc3160fd77f, type: 3}
-  - num: 0
-    skin: {fileID: 2316359947057313254, guid: fb2ea0e05b7a6c049a312d98645b14df, type: 3}
-  - num: 0
-    skin: {fileID: 5424451779155166270, guid: 4125427bdb044aa4587a676f78dc00f4, type: 3}
-  - num: 0
-    skin: {fileID: 5424451779155166270, guid: 4125427bdb044aa4587a676f78dc00f4, type: 3}
+  - Skin: {fileID: 8163924888505550625, guid: 020c7e2f7306eaa43bd1a990b3f6826a, type: 3}
+  - Skin: {fileID: 68880342879653392, guid: 431f1cc46b3b6b04d89cafa929380c10, type: 3}
+  - Skin: {fileID: 9082254887636669838, guid: 6ae76a75821d4b04792b6bc3160fd77f, type: 3}
+  - Skin: {fileID: 2316359947057313254, guid: fb2ea0e05b7a6c049a312d98645b14df, type: 3}
+  - Skin: {fileID: 5424451779155166270, guid: 4125427bdb044aa4587a676f78dc00f4, type: 3}
+  - Skin: {fileID: 2316359947057313254, guid: fb2ea0e05b7a6c049a312d98645b14df, type: 3}
   playerSkin: {fileID: 1791923504}
 --- !u!1001 &1274580406
 PrefabInstance:

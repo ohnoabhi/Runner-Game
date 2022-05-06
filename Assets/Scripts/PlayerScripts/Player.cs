@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        UIScreenController.instance.Show("Lose", 0, Array.Empty<object>());
     }
 
 }

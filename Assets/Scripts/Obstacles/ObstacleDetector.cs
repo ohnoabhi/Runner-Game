@@ -21,10 +21,9 @@ public class ObstacleDetector : MonoBehaviour
             UIScreenController.instance.Show("Win", 0, Array.Empty<object>());
         }
     }
-<<<<<<< Updated upstream
-=======
 
-    private void LateUpdate()
+
+    /*private void LateUpdate()
     {
         if(PlayerLevelManager.instance.GetHealth() <= 0)
         {
@@ -32,6 +31,6 @@ public class ObstacleDetector : MonoBehaviour
 
             UIScreenController.instance.Show("Lose",0,Array.Empty<object>());
         }
-    }
->>>>>>> Stashed changes
+    }*/
+
 }
