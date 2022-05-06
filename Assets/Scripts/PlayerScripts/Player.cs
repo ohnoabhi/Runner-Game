@@ -30,4 +30,8 @@ public class Player : MonoBehaviour
         UIScreenController.instance.Show("Lose", 0, Array.Empty<object>());
     }
 
+    public void Win()
+    {
+        UIScreenController.instance.Show("Win", 0, Array.Empty<object>());
+    }
 }

@@ -18,7 +18,9 @@ public class ObstacleDetector : MonoBehaviour
         {
             //UIController.OnGameEnd?.Invoke(true);
 
-            UIScreenController.instance.Show("Win", 0, Array.Empty<object>());
+            //UIScreenController.instance.Show("Win", 0, Array.Empty<object>());
+
+            Player.Instance.Win();
         }
     }
 
