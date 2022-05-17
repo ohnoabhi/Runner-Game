@@ -24,6 +24,14 @@ public class ObstacleDetector : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.other.GetComponent<IObstacle>() != null)
+        {
+            collision.other.GetComponent<IObstacle>().Collide();
+        }
+    }
+
 
     /*private void LateUpdate()
     {
