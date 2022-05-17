@@ -29,7 +29,7 @@ public class ShopScreen : BaseScreen
 
     private void OnClickSet(int setNo)
     {
-        Player.Instance.OnChangeSet?.Invoke(setNo);
+        // Player.Instance.OnChangeSet?.Invoke(setNo);
     }
 
     private void OnClickCloseShop()

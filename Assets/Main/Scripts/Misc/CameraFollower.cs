@@ -5,31 +5,14 @@ using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
-    [SerializeField]
-    GameObject player;
+    private Player player;
 
     private Vector3 offset;
 
-    public static Action<GameObject> FollowerChange;
     private void Start()
     {
+        player = Player.Instance;
         offset = transform.position - player.transform.position;
-
-    }
-
-    private void OnEnable()
-    {
-        FollowerChange += changeFollower;    
-    }
-
-    private void OnDisable()
-    {
-        FollowerChange -= changeFollower;
-    }
-
-    public void changeFollower(GameObject newPlayer)
-    {
-        player = newPlayer;
     }
 
     private void LateUpdate()

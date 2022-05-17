@@ -1,11 +1,10 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody playerRb;
+    private Player player;
     private Touch touch;
-
-    Player player;
 
     private void Start()
     {
@@ -17,8 +16,9 @@ public class PlayerMovement : MonoBehaviour
         if (GameManager.instance.currentState != GameManager.GameStates.Playing) return;
 
         var movement = transform.position;
+        var slide = Vector3.zero;
 #if UNITY_EDITOR
-        movement += Slide(Input.GetAxisRaw("Horizontal") * player.SlideSpeed);
+        slide += Slide(Input.GetAxisRaw("Horizontal") * player.SlideSpeed);
 #elif UNITY_ANDROID
         if (Input.touchCount > 0)
         {
@@ -28,15 +28,22 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (transform.position.x < 4 && transform.position.x > - 4)
                 {
-                   movement += Slide(-(touch.deltaPosition.x) * playerStats.turningSpeed);
+                   slide += Slide(-(touch.deltaPosition.x) * playerStats.turningSpeed);
                 }
             }
         }
 #endif
 
-        movement += transform.forward * player.Speed * Time.deltaTime;
+        movement += Vector3.forward * player.Speed * Time.deltaTime;
+        movement += slide;
         movement.x = Mathf.Clamp(movement.x, -player.XMovementClamp, player.XMovementClamp);
+
+        if (player.Character)
+            player.Character.Animator.SetBool("Running", true);
         transform.position = movement;
+        var quaternion = Quaternion.Euler(0, slide.x != 0 ? (slide.x > 0 ? 20 : -20) : 0, 0);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation,
+            quaternion, 150 * Time.deltaTime);
     }
 
     private Vector3 Slide(float amount)
@@ -46,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
             0,
             0
         );
-        Debug.Log(position.x);
         return position;
     }
 }

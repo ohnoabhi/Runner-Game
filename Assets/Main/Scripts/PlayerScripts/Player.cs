@@ -12,10 +12,10 @@ public class Player : MonoBehaviour
 
     public Action<int> OnChangeHealthLevel;
 
-    public Action<int> OnChangeSet;
-
     private PlayerHealth health;
     public PlayerHealth Health => health;
+
+    public Character Character;
 
     private void Awake()
     {
