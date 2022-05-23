@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class ObstacleDetector : MonoBehaviour
 {
-    private Player Player;
+    private Player player;
 
     private void Awake()
     {
-        Player = GetComponent<Player>();
+        player = GetComponent<Player>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -18,12 +18,17 @@ public class ObstacleDetector : MonoBehaviour
 
         if (obstacle != null)
         {
-            obstacle.Collide(Player);
+            obstacle.Collide(player);
         }
 
         else if (other.CompareTag("FinishLine"))
         {
-            GameManager.Instance.OnFinish();
+            GameManager.Instance.OnFinish(true);
+        }
+
+        else if (other.CompareTag("Pitfall"))
+        {
+            player.GetComponent<PlayerMovement>().Fall();
         }
     }
 }

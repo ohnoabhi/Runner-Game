@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1249796571783965521}
   - component: {fileID: 3911052457437298178}
   - component: {fileID: 6279486257136888685}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,8 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 2.5, y: 0, z: 5}
   m_LocalScale: {x: 5, y: 10, z: 0.019999998}
-  m_Children: []
+  m_Children:
+  - {fileID: 8147985491407830307}
   m_Father: {fileID: 6897765845296624504}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -362,8 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb15e50fdb9419fafce3e717d546053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectType: 0
   Layout: 0
-  IsPlatform: 1
   End: {fileID: 6897765845900458417}
 --- !u!1 &6897765845900458418
 GameObject:
@@ -395,3 +396,47 @@ Transform:
   m_Father: {fileID: 6897765845296624504}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8146875114410096453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8147985491407830307}
+  - component: {fileID: 2540148305238594882}
+  m_Layer: 0
+  m_Name: Pitfall
+  m_TagString: Pitfall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8147985491407830307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8146875114410096453}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8901022478283089429}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!65 &2540148305238594882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8146875114410096453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}

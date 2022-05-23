@@ -18,7 +18,10 @@ public class Collecter : MonoBehaviour
             if (collectable.type != CollectableType.Health)
                 collectable.Collect();
             else
+            {
                 playerHealth.GainHealth(collectable.amount);
+                Destroy(collectable.gameObject);
+            }
         }
     }
 }

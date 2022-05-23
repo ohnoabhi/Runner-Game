@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.marijnzwemmer.unity-toolbar-extender": {
+      "version": "file:W:/Unity/Packages/unity-toolbar-extender-master",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "1.9.0",
       "depth": 0,

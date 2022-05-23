@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelData : ScriptableObject
 {
+    public LevelEndType EndType;
     public List<LevelItemData> LevelItems = new List<LevelItemData>();
 }
 
@@ -12,4 +13,11 @@ public struct LevelItemData
 {
     public int ReferenceID;
     public Vector3 Position;
+}
+
+public enum LevelEndType
+{
+    BossMatch,
+    WallRun,
+    TankRun
 }

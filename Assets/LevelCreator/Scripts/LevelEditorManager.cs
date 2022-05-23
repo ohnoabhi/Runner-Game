@@ -90,15 +90,12 @@ public class LevelEditorManager : MonoBehaviour
             var levelItemData = levelObject.GetData();
             levelItemData.Position = position;
 
-            var levelData =
-                LevelDatabase.Levels[Selection.SelectedLevel];
-
-            levelData.LevelItems[i] = levelItemData;
+            LevelDatabase.Levels[Selection.SelectedLevel].LevelItems[i] = levelItemData;
 
             levelObject.SetData(levelItemData);
 #if UNITY_EDITOR
             {
-                EditorUtility.SetDirty(levelData);
+                EditorUtility.SetDirty(LevelDatabase);
             }
 #endif
 

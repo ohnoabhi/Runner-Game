@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layer:
     serializedVersion: 2
-    m_Bits: 127
+    m_Bits: 128
   partsX: 8
   partsY: 8
   preCalculate: 1

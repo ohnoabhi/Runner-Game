@@ -1,200 +1,578 @@
 fileFormatVersion: 2
 guid: 929b7692659c2004c9f8046973a993b7
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: head
-    100002: jaw0
-    100004: jaw1
-    100006: jaw1_end
-    100008: left arm0
-    100010: left arm1
-    100012: left eye
-    100014: left eye_end
-    100016: left finger1
-    100018: left finger1_end
-    100020: left fingers0
-    100022: left foot
-    100024: left hand
-    100026: left hips
-    100028: left leg
-    100030: left toes0
-    100032: left toes1
-    100034: left toes1_end
-    100036: neck0
-    100038: neck1
-    100040: neck2
-    100042: neck3
-    100044: pelvis
-    100046: right arm0
-    100048: right arm1
-    100050: right eye
-    100052: right eye_end
-    100054: right fingers0
-    100056: right fingers1
-    100058: right fingers1_end
-    100060: right foot
-    100062: right hand
-    100064: right hips
-    100066: right leg
-    100068: Right toes0
-    100070: right toes1
-    100072: right toes1_end
-    100074: root
-    100076: spine0
-    100078: spine1
-    100080: spine2
-    100082: spine3
-    100084: spine4
-    100086: Steg
-    100088: //RootNode
-    100090: steg
-    100092: tail0
-    100094: tail1
-    100096: tail2
-    100098: tail3
-    100100: tail4
-    100102: tail5
-    100104: tail6
-    100106: tail7
-    100108: tail8
-    100110: tail8_end
-    100112: tongue0
-    100114: tongue1
-    100116: tongue2
-    100118: tongue2_end
-    100120: right toes0
-    100122: steg_LOD_0
-    100124: steg_LOD_1
-    100126: steg_LOD_2
-    400000: head
-    400002: jaw0
-    400004: jaw1
-    400006: jaw1_end
-    400008: left arm0
-    400010: left arm1
-    400012: left eye
-    400014: left eye_end
-    400016: left finger1
-    400018: left finger1_end
-    400020: left fingers0
-    400022: left foot
-    400024: left hand
-    400026: left hips
-    400028: left leg
-    400030: left toes0
-    400032: left toes1
-    400034: left toes1_end
-    400036: neck0
-    400038: neck1
-    400040: neck2
-    400042: neck3
-    400044: pelvis
-    400046: right arm0
-    400048: right arm1
-    400050: right eye
-    400052: right eye_end
-    400054: right fingers0
-    400056: right fingers1
-    400058: right fingers1_end
-    400060: right foot
-    400062: right hand
-    400064: right hips
-    400066: right leg
-    400068: Right toes0
-    400070: right toes1
-    400072: right toes1_end
-    400074: root
-    400076: spine0
-    400078: spine1
-    400080: spine2
-    400082: spine3
-    400084: spine4
-    400086: Steg
-    400088: //RootNode
-    400090: steg
-    400092: tail0
-    400094: tail1
-    400096: tail2
-    400098: tail3
-    400100: tail4
-    400102: tail5
-    400104: tail6
-    400106: tail7
-    400108: tail8
-    400110: tail8_end
-    400112: tongue0
-    400114: tongue1
-    400116: tongue2
-    400118: tongue2_end
-    400120: right toes0
-    400122: steg_LOD_0
-    400124: steg_LOD_1
-    400126: steg_LOD_2
-    4300000: steg
-    4300002: steg_LOD_1
-    4300004: steg_LOD_0
-    4300006: steg_LOD_2
-    7400000: Steg|Die1
-    7400002: Steg|Die2
-    7400004: Steg|EatA
-    7400006: Steg|EatB
-    7400008: Steg|EatC
-    7400010: Steg|Run
-    7400012: Steg|RunGrowl
-    7400014: Steg|SitGrowl
-    7400016: Steg|SitLoop
-    7400018: Steg|Sitting
-    7400020: Steg|SleepLoop
-    7400022: Steg|Stand1A
-    7400024: Steg|Stand1B
-    7400026: Steg|Stand2A
-    7400028: Steg|Stand2B
-    7400030: Steg|Steg
-    7400032: Steg|Step1
-    7400034: Steg|Step2
-    7400036: Steg|Strafe1
-    7400038: Steg|Strafe2
-    7400040: Steg|Walk
-    7400042: Steg|WalkGrowl
-    7400044: Steg|AttackA
-    7400046: Steg|AttackAToStand2
-    7400048: Steg|AttackLoopA
-    7400050: Steg|Stand1ToAttackA
-    7400052: Steg|Stand1ToAttackB
-    7400054: Steg|AttackLoop
-    7400056: Steg|AttackC
-    7400058: Steg|AttackToStand2
-    7400060: Steg|AttackLoopGrowl
-    7400062: Steg|Stand1C
-    7400064: Steg|Stand2C
-    7400066: Steg|Attack
-    7400068: Steg|Atk
-    7400070: Steg|AtkGrowl
-    7400072: Steg|AtkIdle
-    7400074: Steg|Idle1A
-    7400076: Steg|Idle1B
-    7400078: Steg|Idle1C
-    7400080: Steg|Idle2A
-    7400082: Steg|Idle2B
-    7400084: Steg|Idle2C
-    7400086: Steg|SitIdle
-    7400088: Steg|Sleep
-    7400090: Steg|ToAtk1
-    7400092: Steg|ToAtk2
-    7400094: Steg|ToIdle2A
-    7400096: Steg|ToSit
-    7400098: Steg|Atk0
-    7400100: Steg|Atk1
-    7400102: Steg|Atk2
-    9500000: //RootNode
-    13700000: steg
-    13700002: steg_LOD_0
-    13700004: steg_LOD_1
-    13700006: steg_LOD_2
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: head
+  - first:
+      1: 100002
+    second: jaw0
+  - first:
+      1: 100004
+    second: jaw1
+  - first:
+      1: 100006
+    second: jaw1_end
+  - first:
+      1: 100008
+    second: left arm0
+  - first:
+      1: 100010
+    second: left arm1
+  - first:
+      1: 100012
+    second: left eye
+  - first:
+      1: 100014
+    second: left eye_end
+  - first:
+      1: 100016
+    second: left finger1
+  - first:
+      1: 100018
+    second: left finger1_end
+  - first:
+      1: 100020
+    second: left fingers0
+  - first:
+      1: 100022
+    second: left foot
+  - first:
+      1: 100024
+    second: left hand
+  - first:
+      1: 100026
+    second: left hips
+  - first:
+      1: 100028
+    second: left leg
+  - first:
+      1: 100030
+    second: left toes0
+  - first:
+      1: 100032
+    second: left toes1
+  - first:
+      1: 100034
+    second: left toes1_end
+  - first:
+      1: 100036
+    second: neck0
+  - first:
+      1: 100038
+    second: neck1
+  - first:
+      1: 100040
+    second: neck2
+  - first:
+      1: 100042
+    second: neck3
+  - first:
+      1: 100044
+    second: pelvis
+  - first:
+      1: 100046
+    second: right arm0
+  - first:
+      1: 100048
+    second: right arm1
+  - first:
+      1: 100050
+    second: right eye
+  - first:
+      1: 100052
+    second: right eye_end
+  - first:
+      1: 100054
+    second: right fingers0
+  - first:
+      1: 100056
+    second: right fingers1
+  - first:
+      1: 100058
+    second: right fingers1_end
+  - first:
+      1: 100060
+    second: right foot
+  - first:
+      1: 100062
+    second: right hand
+  - first:
+      1: 100064
+    second: right hips
+  - first:
+      1: 100066
+    second: right leg
+  - first:
+      1: 100068
+    second: Right toes0
+  - first:
+      1: 100070
+    second: right toes1
+  - first:
+      1: 100072
+    second: right toes1_end
+  - first:
+      1: 100074
+    second: root
+  - first:
+      1: 100076
+    second: spine0
+  - first:
+      1: 100078
+    second: spine1
+  - first:
+      1: 100080
+    second: spine2
+  - first:
+      1: 100082
+    second: spine3
+  - first:
+      1: 100084
+    second: spine4
+  - first:
+      1: 100086
+    second: Steg
+  - first:
+      1: 100088
+    second: //RootNode
+  - first:
+      1: 100090
+    second: steg
+  - first:
+      1: 100092
+    second: tail0
+  - first:
+      1: 100094
+    second: tail1
+  - first:
+      1: 100096
+    second: tail2
+  - first:
+      1: 100098
+    second: tail3
+  - first:
+      1: 100100
+    second: tail4
+  - first:
+      1: 100102
+    second: tail5
+  - first:
+      1: 100104
+    second: tail6
+  - first:
+      1: 100106
+    second: tail7
+  - first:
+      1: 100108
+    second: tail8
+  - first:
+      1: 100110
+    second: tail8_end
+  - first:
+      1: 100112
+    second: tongue0
+  - first:
+      1: 100114
+    second: tongue1
+  - first:
+      1: 100116
+    second: tongue2
+  - first:
+      1: 100118
+    second: tongue2_end
+  - first:
+      1: 100120
+    second: right toes0
+  - first:
+      1: 100122
+    second: steg_LOD_0
+  - first:
+      1: 100124
+    second: steg_LOD_1
+  - first:
+      1: 100126
+    second: steg_LOD_2
+  - first:
+      4: 400000
+    second: head
+  - first:
+      4: 400002
+    second: jaw0
+  - first:
+      4: 400004
+    second: jaw1
+  - first:
+      4: 400006
+    second: jaw1_end
+  - first:
+      4: 400008
+    second: left arm0
+  - first:
+      4: 400010
+    second: left arm1
+  - first:
+      4: 400012
+    second: left eye
+  - first:
+      4: 400014
+    second: left eye_end
+  - first:
+      4: 400016
+    second: left finger1
+  - first:
+      4: 400018
+    second: left finger1_end
+  - first:
+      4: 400020
+    second: left fingers0
+  - first:
+      4: 400022
+    second: left foot
+  - first:
+      4: 400024
+    second: left hand
+  - first:
+      4: 400026
+    second: left hips
+  - first:
+      4: 400028
+    second: left leg
+  - first:
+      4: 400030
+    second: left toes0
+  - first:
+      4: 400032
+    second: left toes1
+  - first:
+      4: 400034
+    second: left toes1_end
+  - first:
+      4: 400036
+    second: neck0
+  - first:
+      4: 400038
+    second: neck1
+  - first:
+      4: 400040
+    second: neck2
+  - first:
+      4: 400042
+    second: neck3
+  - first:
+      4: 400044
+    second: pelvis
+  - first:
+      4: 400046
+    second: right arm0
+  - first:
+      4: 400048
+    second: right arm1
+  - first:
+      4: 400050
+    second: right eye
+  - first:
+      4: 400052
+    second: right eye_end
+  - first:
+      4: 400054
+    second: right fingers0
+  - first:
+      4: 400056
+    second: right fingers1
+  - first:
+      4: 400058
+    second: right fingers1_end
+  - first:
+      4: 400060
+    second: right foot
+  - first:
+      4: 400062
+    second: right hand
+  - first:
+      4: 400064
+    second: right hips
+  - first:
+      4: 400066
+    second: right leg
+  - first:
+      4: 400068
+    second: Right toes0
+  - first:
+      4: 400070
+    second: right toes1
+  - first:
+      4: 400072
+    second: right toes1_end
+  - first:
+      4: 400074
+    second: root
+  - first:
+      4: 400076
+    second: spine0
+  - first:
+      4: 400078
+    second: spine1
+  - first:
+      4: 400080
+    second: spine2
+  - first:
+      4: 400082
+    second: spine3
+  - first:
+      4: 400084
+    second: spine4
+  - first:
+      4: 400086
+    second: Steg
+  - first:
+      4: 400088
+    second: //RootNode
+  - first:
+      4: 400090
+    second: steg
+  - first:
+      4: 400092
+    second: tail0
+  - first:
+      4: 400094
+    second: tail1
+  - first:
+      4: 400096
+    second: tail2
+  - first:
+      4: 400098
+    second: tail3
+  - first:
+      4: 400100
+    second: tail4
+  - first:
+      4: 400102
+    second: tail5
+  - first:
+      4: 400104
+    second: tail6
+  - first:
+      4: 400106
+    second: tail7
+  - first:
+      4: 400108
+    second: tail8
+  - first:
+      4: 400110
+    second: tail8_end
+  - first:
+      4: 400112
+    second: tongue0
+  - first:
+      4: 400114
+    second: tongue1
+  - first:
+      4: 400116
+    second: tongue2
+  - first:
+      4: 400118
+    second: tongue2_end
+  - first:
+      4: 400120
+    second: right toes0
+  - first:
+      4: 400122
+    second: steg_LOD_0
+  - first:
+      4: 400124
+    second: steg_LOD_1
+  - first:
+      4: 400126
+    second: steg_LOD_2
+  - first:
+      43: 4300000
+    second: steg
+  - first:
+      43: 4300002
+    second: steg_LOD_1
+  - first:
+      43: 4300004
+    second: steg_LOD_0
+  - first:
+      43: 4300006
+    second: steg_LOD_2
+  - first:
+      74: 7400000
+    second: Steg|Die1
+  - first:
+      74: 7400002
+    second: Steg|Die2
+  - first:
+      74: 7400004
+    second: Steg|EatA
+  - first:
+      74: 7400006
+    second: Steg|EatB
+  - first:
+      74: 7400008
+    second: Steg|EatC
+  - first:
+      74: 7400010
+    second: Steg|Run
+  - first:
+      74: 7400012
+    second: Steg|RunGrowl
+  - first:
+      74: 7400014
+    second: Steg|SitGrowl
+  - first:
+      74: 7400016
+    second: Steg|SitLoop
+  - first:
+      74: 7400018
+    second: Steg|Sitting
+  - first:
+      74: 7400020
+    second: Steg|SleepLoop
+  - first:
+      74: 7400022
+    second: Steg|Stand1A
+  - first:
+      74: 7400024
+    second: Steg|Stand1B
+  - first:
+      74: 7400026
+    second: Steg|Stand2A
+  - first:
+      74: 7400028
+    second: Steg|Stand2B
+  - first:
+      74: 7400030
+    second: Steg|Steg
+  - first:
+      74: 7400032
+    second: Steg|Step1
+  - first:
+      74: 7400034
+    second: Steg|Step2
+  - first:
+      74: 7400036
+    second: Steg|Strafe1
+  - first:
+      74: 7400038
+    second: Steg|Strafe2
+  - first:
+      74: 7400040
+    second: Steg|Walk
+  - first:
+      74: 7400042
+    second: Steg|WalkGrowl
+  - first:
+      74: 7400044
+    second: Steg|AttackA
+  - first:
+      74: 7400046
+    second: Steg|AttackAToStand2
+  - first:
+      74: 7400048
+    second: Steg|AttackLoopA
+  - first:
+      74: 7400050
+    second: Steg|Stand1ToAttackA
+  - first:
+      74: 7400052
+    second: Steg|Stand1ToAttackB
+  - first:
+      74: 7400054
+    second: Steg|AttackLoop
+  - first:
+      74: 7400056
+    second: Steg|AttackC
+  - first:
+      74: 7400058
+    second: Steg|AttackToStand2
+  - first:
+      74: 7400060
+    second: Steg|AttackLoopGrowl
+  - first:
+      74: 7400062
+    second: Steg|Stand1C
+  - first:
+      74: 7400064
+    second: Steg|Stand2C
+  - first:
+      74: 7400066
+    second: Steg|Attack
+  - first:
+      74: 7400068
+    second: Steg|Atk
+  - first:
+      74: 7400070
+    second: Steg|AtkGrowl
+  - first:
+      74: 7400072
+    second: Steg|AtkIdle
+  - first:
+      74: 7400074
+    second: Steg|Idle1A
+  - first:
+      74: 7400076
+    second: Steg|Idle1B
+  - first:
+      74: 7400078
+    second: Steg|Idle1C
+  - first:
+      74: 7400080
+    second: Steg|Idle2A
+  - first:
+      74: 7400082
+    second: Steg|Idle2B
+  - first:
+      74: 7400084
+    second: Steg|Idle2C
+  - first:
+      74: 7400086
+    second: Steg|SitIdle
+  - first:
+      74: 7400088
+    second: Steg|Sleep
+  - first:
+      74: 7400090
+    second: Steg|ToAtk1
+  - first:
+      74: 7400092
+    second: Steg|ToAtk2
+  - first:
+      74: 7400094
+    second: Steg|ToIdle2A
+  - first:
+      74: 7400096
+    second: Steg|ToSit
+  - first:
+      74: 7400098
+    second: Steg|Atk0
+  - first:
+      74: 7400100
+    second: Steg|Atk1
+  - first:
+      74: 7400102
+    second: Steg|Atk2
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: steg
+  - first:
+      137: 13700002
+    second: steg_LOD_0
+  - first:
+      137: 13700004
+    second: steg_LOD_1
+  - first:
+      137: 13700006
+    second: steg_LOD_2
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -223,6 +601,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Atk0
       takeName: Steg|Atk0
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -231,7 +610,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -271,7 +650,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -365,6 +745,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Atk1
       takeName: Steg|Atk1
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -413,7 +794,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -507,6 +889,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Atk2
       takeName: Steg|Atk2
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -555,7 +938,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -649,6 +1033,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|AtkGrowl
       takeName: Steg|AtkGrowl
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -697,7 +1082,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -791,6 +1177,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|AtkIdle
       takeName: Steg|AtkIdle
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -839,7 +1226,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -933,6 +1321,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Die1
       takeName: Steg|Die1
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -981,7 +1370,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -1075,6 +1465,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Die2
       takeName: Steg|Die2
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -1123,7 +1514,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -1217,6 +1609,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|EatA
       takeName: Steg|EatA
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1265,7 +1658,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -1359,6 +1753,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|EatB
       takeName: Steg|EatB
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -1407,7 +1802,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -1501,6 +1897,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|EatC
       takeName: Steg|EatC
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1549,7 +1946,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -1643,6 +2041,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Idle1A
       takeName: Steg|Idle1A
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -1691,7 +2090,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -1785,6 +2185,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Idle1B
       takeName: Steg|Idle1B
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1833,7 +2234,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -1927,6 +2329,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Idle1C
       takeName: Steg|Idle1C
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1975,7 +2378,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -2069,6 +2473,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Idle2A
       takeName: Steg|Idle2A
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -2117,7 +2522,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -2211,6 +2617,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Idle2B
       takeName: Steg|Idle2B
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2259,7 +2666,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -2353,6 +2761,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Idle2C
       takeName: Steg|Idle2C
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2401,7 +2810,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -2495,6 +2905,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Run
       takeName: Steg|Run
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -2543,7 +2954,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -2637,6 +3049,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|RunGrowl
       takeName: Steg|RunGrowl
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -2685,7 +3098,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -2779,6 +3193,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|SitGrowl
       takeName: Steg|SitGrowl
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2827,7 +3242,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -2921,6 +3337,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|SitIdle
       takeName: Steg|SitIdle
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2969,7 +3386,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -3063,6 +3481,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Sleep
       takeName: Steg|Sleep
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -3111,7 +3530,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -3205,6 +3625,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Steg
       takeName: Steg|Steg
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -3253,7 +3674,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -3347,6 +3769,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Step1
       takeName: Steg|Step1
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -3395,7 +3818,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -3489,6 +3913,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Step2
       takeName: Steg|Step2
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -3537,7 +3962,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -3631,6 +4057,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Strafe1
       takeName: Steg|Strafe1
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -3679,7 +4106,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -3773,6 +4201,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Strafe2
       takeName: Steg|Strafe2
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -3821,7 +4250,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -3915,6 +4345,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|ToSit
       takeName: Steg|ToSit
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -3963,7 +4394,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -4057,6 +4489,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|Walk
       takeName: Steg|Walk
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -4105,7 +4538,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -4199,6 +4633,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Steg|WalkGrowl
       takeName: Steg|WalkGrowl
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -4247,7 +4682,8 @@ ModelImporter:
         weight: 1
       - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0
         weight: 1
-      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right toes1
+      - path: Steg/root/pelvis/right hips/right leg/right foot/right toes0/right
+          toes1
         weight: 1
       - path: Steg/root/pelvis/tail0
         weight: 1
@@ -4345,25 +4781,32 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 0
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 180
     normalImportMode: 1
@@ -4372,10 +4815,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -4385,13 +4828,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -13,7 +13,7 @@ public class LoseScreen : BaseScreen
         loseContinueBtn.onClick.RemoveAllListeners();
         loseContinueBtn.onClick.AddListener(() =>
         {
-            ScreenController.instance.Show("MainMenu");
+            ScreenController.instance.Show("Menu");
         });
     }
 }

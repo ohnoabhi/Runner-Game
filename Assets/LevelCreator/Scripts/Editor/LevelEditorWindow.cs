@@ -165,6 +165,14 @@ public class LevelEditorWindow : EditorWindow
     {
         GUILayout.BeginHorizontal();
         GUILayout.Label("#" + index + " [" + level.name + "]");
+
+        var temp = EditorGUILayout.EnumPopup(level.EndType);
+        if (level.EndType != (LevelEndType) temp)
+        {
+            level.EndType = (LevelEndType) temp;
+            EditorUtility.SetDirty(level);
+        }
+
         var style = new GUIStyle(GUI.skin.button);
         style.fixedWidth = 80;
         if (GUILayout.Button("Edit", style))

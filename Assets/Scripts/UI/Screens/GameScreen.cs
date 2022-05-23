@@ -1,12 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameScreen : BaseScreen
 {
-    [SerializeField] Text levelNo;
+    [SerializeField] TextMeshProUGUI levelNo;
 
     [SerializeField] Slider healthMeter;
 
@@ -27,7 +25,7 @@ public class GameScreen : BaseScreen
         levelNo.text = level.ToString();
     }
 
-    private void SetPlayerHealth(int health, int minHealth, int maxHealth)
+    private void SetPlayerHealth(float health, int minHealth, int maxHealth)
     {
         healthMeter.minValue = maxHealth;
         healthMeter.value = health;

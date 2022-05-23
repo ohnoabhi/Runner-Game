@@ -10,6 +10,6 @@ public class WinScreen : BaseScreen
     private void Awake()
     {
         winContinueBtn.onClick.RemoveAllListeners();
-        winContinueBtn.onClick.AddListener(() => { ScreenController.instance.Show("MainMenu"); });
+        winContinueBtn.onClick.AddListener(() => { ScreenController.instance.Show("Menu"); });
     }
 }

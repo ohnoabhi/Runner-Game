@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI.Screens;
 using UnityEngine;
 
 public class ScreenController : MonoBehaviour
@@ -10,6 +11,8 @@ public class ScreenController : MonoBehaviour
     [SerializeField] private ScreenItem[] screenItems;
 
     [SerializeField] private string defaultScreen = "";
+
+    [SerializeField] private GameFinisherScreen finisherScreen;
 
     private void Awake()
     {
@@ -56,6 +59,11 @@ public class ScreenController : MonoBehaviour
                 TopHudController.Enable(screenItem.topHud);
             }
         }
+    }
+
+    public GameObject SetFinisherUI(GameObject ui)
+    {
+        return finisherScreen.SetUI(ui);
     }
 }
 

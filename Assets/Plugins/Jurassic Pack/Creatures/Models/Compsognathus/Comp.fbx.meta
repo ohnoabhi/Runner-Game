@@ -1,236 +1,686 @@
 fileFormatVersion: 2
 guid: 24df20f059a511b419077a3c8bc0187f
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Comp
-    100002: //RootNode
-    100004: comp
-    100006: eye0
-    100008: head
-    100010: jaw0
-    100012: jaw1
-    100014: jaw1_end
-    100016: left arm0
-    100018: left arm1
-    100020: left eye
-    100022: left eye_end
-    100024: left finger3
-    100026: left finger4
-    100028: left finger5
-    100030: left finger5_end
-    100032: left foot0
-    100034: left foot1
-    100036: left foot2
-    100038: left hand
-    100040: left leg0
-    100042: left leg1
-    100044: left toe0
-    100046: left toe1
-    100048: left toe2
-    100050: left toe2_end
-    100052: neck0
-    100054: neck1
-    100056: neck2
-    100058: neck3
-    100060: pelvis
-    100062: right arm0
-    100064: right arm1
-    100066: right eye
-    100068: right eye_end
-    100070: right finger3
-    100072: right finger4
-    100074: right finger5
-    100076: right finger5_end
-    100078: right foot0
-    100080: right foot1
-    100082: right foot2
-    100084: right hand
-    100086: right leg0
-    100088: right leg1
-    100090: right toe0
-    100092: right toe1
-    100094: right toe2
-    100096: right toe2_end
-    100098: root
-    100100: spine0
-    100102: spine1
-    100104: spine2
-    100106: spine3
-    100108: spine4
-    100110: spine5
-    100112: tail0
-    100114: tail1
-    100116: tail2
-    100118: tail3
-    100120: tail4
-    100122: tail5
-    100124: tail6
-    100126: tail7
-    100128: tail8
-    100130: tail8_end
-    100132: tongue0
-    100134: tongue1
-    100136: tongue2
-    100138: tongue2_end
-    100140: Comp.ms3d.mo
-    100142: Left Torso
-    100144: Left Torso_end
-    100146: Right Torso
-    100148: Right Torso_end
-    100150: comp_LOD_0
-    100152: comp_LOD_1
-    100154: comp_LOD_2
-    400000: //RootNode
-    400002: Comp
-    400004: comp
-    400006: eye0
-    400008: head
-    400010: jaw0
-    400012: jaw1
-    400014: jaw1_end
-    400016: left arm0
-    400018: left arm1
-    400020: left eye
-    400022: left eye_end
-    400024: left finger3
-    400026: left finger4
-    400028: left finger5
-    400030: left finger5_end
-    400032: left foot0
-    400034: left foot1
-    400036: left foot2
-    400038: left hand
-    400040: left leg0
-    400042: left leg1
-    400044: left toe0
-    400046: left toe1
-    400048: left toe2
-    400050: left toe2_end
-    400052: neck0
-    400054: neck1
-    400056: neck2
-    400058: neck3
-    400060: pelvis
-    400062: right arm0
-    400064: right arm1
-    400066: right eye
-    400068: right eye_end
-    400070: right finger3
-    400072: right finger4
-    400074: right finger5
-    400076: right finger5_end
-    400078: right foot0
-    400080: right foot1
-    400082: right foot2
-    400084: right hand
-    400086: right leg0
-    400088: right leg1
-    400090: right toe0
-    400092: right toe1
-    400094: right toe2
-    400096: right toe2_end
-    400098: root
-    400100: spine0
-    400102: spine1
-    400104: spine2
-    400106: spine3
-    400108: spine4
-    400110: spine5
-    400112: tail0
-    400114: tail1
-    400116: tail2
-    400118: tail3
-    400120: tail4
-    400122: tail5
-    400124: tail6
-    400126: tail7
-    400128: tail8
-    400130: tail8_end
-    400132: tongue0
-    400134: tongue1
-    400136: tongue2
-    400138: tongue2_end
-    400140: Comp.ms3d.mo
-    400142: Left Torso
-    400144: Left Torso_end
-    400146: Right Torso
-    400148: Right Torso_end
-    400150: comp_LOD_0
-    400152: comp_LOD_1
-    400154: comp_LOD_2
-    4300000: comp
-    4300002: Comp.ms3d.mo
-    4300004: comp_LOD_2
-    4300006: comp_LOD_1
-    4300008: comp_LOD_0
-    7400000: Comp|AttackA
-    7400002: Comp|AttackB
-    7400004: Comp|Comp
-    7400006: Comp|Die
-    7400008: Comp|EatA
-    7400010: Comp|EatB
-    7400012: Comp|GroundAttack
-    7400014: Comp|GroundStand
-    7400016: Comp|JumpAttack
-    7400018: Comp|JumpLoop
-    7400020: Comp|JumpLoopAttack
-    7400022: Comp|Rise
-    7400024: Comp|Run
-    7400026: Comp|RunAttackA
-    7400028: Comp|RunAttackB
-    7400030: Comp|RunGrowl
-    7400032: Comp|RunJumpDown
-    7400034: Comp|RunJumpUp
-    7400036: Comp|Sleep
-    7400038: Comp|SleepLoop
-    7400040: Comp|StandA
-    7400042: Comp|StandB
-    7400044: Comp|StandC
-    7400046: Comp|StandD
-    7400048: Comp|StandE
-    7400050: Comp|StandEat
-    7400052: Comp|StandJumpDown
-    7400054: Comp|StandJumpUp
-    7400056: Comp|StandToWalk
-    7400058: Comp|Steps
-    7400060: Comp|StepsGrowl
-    7400062: Comp|StepsStand
-    7400064: Comp|Strafe
-    7400066: Comp|Walk
-    7400068: Comp|WalkGrowl
-    7400070: Comp|WalkToStand
-    7400072: Comp|StepsStrafe
-    7400074: Comp|Die-
-    7400076: Comp|EatC
-    7400078: Comp|GroundAtk
-    7400080: Comp|GroundIdle
-    7400082: Comp|IdleA
-    7400084: Comp|IdleAtk1
-    7400086: Comp|IdleAtk2
-    7400088: Comp|IdleAtk3
-    7400090: Comp|IdleB
-    7400092: Comp|IdleC
-    7400094: Comp|IdleD
-    7400096: Comp|IdleE
-    7400098: Comp|IdleJumpEnd
-    7400100: Comp|IdleJumpStart
-    7400102: Comp|JumpAtk
-    7400104: Comp|JumpIdle
-    7400106: Comp|RunAtk1
-    7400108: Comp|RunAtk2
-    7400110: Comp|RunJumpEnd
-    7400112: Comp|RunJumpStart
-    7400114: Comp|ToSleep
-    9500000: //RootNode
-    13700000: comp
-    13700002: Comp.ms3d.mo
-    13700004: comp_LOD_0
-    13700006: comp_LOD_1
-    13700008: comp_LOD_2
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Comp
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: comp
+  - first:
+      1: 100006
+    second: eye0
+  - first:
+      1: 100008
+    second: head
+  - first:
+      1: 100010
+    second: jaw0
+  - first:
+      1: 100012
+    second: jaw1
+  - first:
+      1: 100014
+    second: jaw1_end
+  - first:
+      1: 100016
+    second: left arm0
+  - first:
+      1: 100018
+    second: left arm1
+  - first:
+      1: 100020
+    second: left eye
+  - first:
+      1: 100022
+    second: left eye_end
+  - first:
+      1: 100024
+    second: left finger3
+  - first:
+      1: 100026
+    second: left finger4
+  - first:
+      1: 100028
+    second: left finger5
+  - first:
+      1: 100030
+    second: left finger5_end
+  - first:
+      1: 100032
+    second: left foot0
+  - first:
+      1: 100034
+    second: left foot1
+  - first:
+      1: 100036
+    second: left foot2
+  - first:
+      1: 100038
+    second: left hand
+  - first:
+      1: 100040
+    second: left leg0
+  - first:
+      1: 100042
+    second: left leg1
+  - first:
+      1: 100044
+    second: left toe0
+  - first:
+      1: 100046
+    second: left toe1
+  - first:
+      1: 100048
+    second: left toe2
+  - first:
+      1: 100050
+    second: left toe2_end
+  - first:
+      1: 100052
+    second: neck0
+  - first:
+      1: 100054
+    second: neck1
+  - first:
+      1: 100056
+    second: neck2
+  - first:
+      1: 100058
+    second: neck3
+  - first:
+      1: 100060
+    second: pelvis
+  - first:
+      1: 100062
+    second: right arm0
+  - first:
+      1: 100064
+    second: right arm1
+  - first:
+      1: 100066
+    second: right eye
+  - first:
+      1: 100068
+    second: right eye_end
+  - first:
+      1: 100070
+    second: right finger3
+  - first:
+      1: 100072
+    second: right finger4
+  - first:
+      1: 100074
+    second: right finger5
+  - first:
+      1: 100076
+    second: right finger5_end
+  - first:
+      1: 100078
+    second: right foot0
+  - first:
+      1: 100080
+    second: right foot1
+  - first:
+      1: 100082
+    second: right foot2
+  - first:
+      1: 100084
+    second: right hand
+  - first:
+      1: 100086
+    second: right leg0
+  - first:
+      1: 100088
+    second: right leg1
+  - first:
+      1: 100090
+    second: right toe0
+  - first:
+      1: 100092
+    second: right toe1
+  - first:
+      1: 100094
+    second: right toe2
+  - first:
+      1: 100096
+    second: right toe2_end
+  - first:
+      1: 100098
+    second: root
+  - first:
+      1: 100100
+    second: spine0
+  - first:
+      1: 100102
+    second: spine1
+  - first:
+      1: 100104
+    second: spine2
+  - first:
+      1: 100106
+    second: spine3
+  - first:
+      1: 100108
+    second: spine4
+  - first:
+      1: 100110
+    second: spine5
+  - first:
+      1: 100112
+    second: tail0
+  - first:
+      1: 100114
+    second: tail1
+  - first:
+      1: 100116
+    second: tail2
+  - first:
+      1: 100118
+    second: tail3
+  - first:
+      1: 100120
+    second: tail4
+  - first:
+      1: 100122
+    second: tail5
+  - first:
+      1: 100124
+    second: tail6
+  - first:
+      1: 100126
+    second: tail7
+  - first:
+      1: 100128
+    second: tail8
+  - first:
+      1: 100130
+    second: tail8_end
+  - first:
+      1: 100132
+    second: tongue0
+  - first:
+      1: 100134
+    second: tongue1
+  - first:
+      1: 100136
+    second: tongue2
+  - first:
+      1: 100138
+    second: tongue2_end
+  - first:
+      1: 100140
+    second: Comp.ms3d.mo
+  - first:
+      1: 100142
+    second: Left Torso
+  - first:
+      1: 100144
+    second: Left Torso_end
+  - first:
+      1: 100146
+    second: Right Torso
+  - first:
+      1: 100148
+    second: Right Torso_end
+  - first:
+      1: 100150
+    second: comp_LOD_0
+  - first:
+      1: 100152
+    second: comp_LOD_1
+  - first:
+      1: 100154
+    second: comp_LOD_2
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Comp
+  - first:
+      4: 400004
+    second: comp
+  - first:
+      4: 400006
+    second: eye0
+  - first:
+      4: 400008
+    second: head
+  - first:
+      4: 400010
+    second: jaw0
+  - first:
+      4: 400012
+    second: jaw1
+  - first:
+      4: 400014
+    second: jaw1_end
+  - first:
+      4: 400016
+    second: left arm0
+  - first:
+      4: 400018
+    second: left arm1
+  - first:
+      4: 400020
+    second: left eye
+  - first:
+      4: 400022
+    second: left eye_end
+  - first:
+      4: 400024
+    second: left finger3
+  - first:
+      4: 400026
+    second: left finger4
+  - first:
+      4: 400028
+    second: left finger5
+  - first:
+      4: 400030
+    second: left finger5_end
+  - first:
+      4: 400032
+    second: left foot0
+  - first:
+      4: 400034
+    second: left foot1
+  - first:
+      4: 400036
+    second: left foot2
+  - first:
+      4: 400038
+    second: left hand
+  - first:
+      4: 400040
+    second: left leg0
+  - first:
+      4: 400042
+    second: left leg1
+  - first:
+      4: 400044
+    second: left toe0
+  - first:
+      4: 400046
+    second: left toe1
+  - first:
+      4: 400048
+    second: left toe2
+  - first:
+      4: 400050
+    second: left toe2_end
+  - first:
+      4: 400052
+    second: neck0
+  - first:
+      4: 400054
+    second: neck1
+  - first:
+      4: 400056
+    second: neck2
+  - first:
+      4: 400058
+    second: neck3
+  - first:
+      4: 400060
+    second: pelvis
+  - first:
+      4: 400062
+    second: right arm0
+  - first:
+      4: 400064
+    second: right arm1
+  - first:
+      4: 400066
+    second: right eye
+  - first:
+      4: 400068
+    second: right eye_end
+  - first:
+      4: 400070
+    second: right finger3
+  - first:
+      4: 400072
+    second: right finger4
+  - first:
+      4: 400074
+    second: right finger5
+  - first:
+      4: 400076
+    second: right finger5_end
+  - first:
+      4: 400078
+    second: right foot0
+  - first:
+      4: 400080
+    second: right foot1
+  - first:
+      4: 400082
+    second: right foot2
+  - first:
+      4: 400084
+    second: right hand
+  - first:
+      4: 400086
+    second: right leg0
+  - first:
+      4: 400088
+    second: right leg1
+  - first:
+      4: 400090
+    second: right toe0
+  - first:
+      4: 400092
+    second: right toe1
+  - first:
+      4: 400094
+    second: right toe2
+  - first:
+      4: 400096
+    second: right toe2_end
+  - first:
+      4: 400098
+    second: root
+  - first:
+      4: 400100
+    second: spine0
+  - first:
+      4: 400102
+    second: spine1
+  - first:
+      4: 400104
+    second: spine2
+  - first:
+      4: 400106
+    second: spine3
+  - first:
+      4: 400108
+    second: spine4
+  - first:
+      4: 400110
+    second: spine5
+  - first:
+      4: 400112
+    second: tail0
+  - first:
+      4: 400114
+    second: tail1
+  - first:
+      4: 400116
+    second: tail2
+  - first:
+      4: 400118
+    second: tail3
+  - first:
+      4: 400120
+    second: tail4
+  - first:
+      4: 400122
+    second: tail5
+  - first:
+      4: 400124
+    second: tail6
+  - first:
+      4: 400126
+    second: tail7
+  - first:
+      4: 400128
+    second: tail8
+  - first:
+      4: 400130
+    second: tail8_end
+  - first:
+      4: 400132
+    second: tongue0
+  - first:
+      4: 400134
+    second: tongue1
+  - first:
+      4: 400136
+    second: tongue2
+  - first:
+      4: 400138
+    second: tongue2_end
+  - first:
+      4: 400140
+    second: Comp.ms3d.mo
+  - first:
+      4: 400142
+    second: Left Torso
+  - first:
+      4: 400144
+    second: Left Torso_end
+  - first:
+      4: 400146
+    second: Right Torso
+  - first:
+      4: 400148
+    second: Right Torso_end
+  - first:
+      4: 400150
+    second: comp_LOD_0
+  - first:
+      4: 400152
+    second: comp_LOD_1
+  - first:
+      4: 400154
+    second: comp_LOD_2
+  - first:
+      43: 4300000
+    second: comp
+  - first:
+      43: 4300002
+    second: Comp.ms3d.mo
+  - first:
+      43: 4300004
+    second: comp_LOD_2
+  - first:
+      43: 4300006
+    second: comp_LOD_1
+  - first:
+      43: 4300008
+    second: comp_LOD_0
+  - first:
+      74: 7400000
+    second: Comp|AttackA
+  - first:
+      74: 7400002
+    second: Comp|AttackB
+  - first:
+      74: 7400004
+    second: Comp|Comp
+  - first:
+      74: 7400006
+    second: Comp|Die
+  - first:
+      74: 7400008
+    second: Comp|EatA
+  - first:
+      74: 7400010
+    second: Comp|EatB
+  - first:
+      74: 7400012
+    second: Comp|GroundAttack
+  - first:
+      74: 7400014
+    second: Comp|GroundStand
+  - first:
+      74: 7400016
+    second: Comp|JumpAttack
+  - first:
+      74: 7400018
+    second: Comp|JumpLoop
+  - first:
+      74: 7400020
+    second: Comp|JumpLoopAttack
+  - first:
+      74: 7400022
+    second: Comp|Rise
+  - first:
+      74: 7400024
+    second: Comp|Run
+  - first:
+      74: 7400026
+    second: Comp|RunAttackA
+  - first:
+      74: 7400028
+    second: Comp|RunAttackB
+  - first:
+      74: 7400030
+    second: Comp|RunGrowl
+  - first:
+      74: 7400032
+    second: Comp|RunJumpDown
+  - first:
+      74: 7400034
+    second: Comp|RunJumpUp
+  - first:
+      74: 7400036
+    second: Comp|Sleep
+  - first:
+      74: 7400038
+    second: Comp|SleepLoop
+  - first:
+      74: 7400040
+    second: Comp|StandA
+  - first:
+      74: 7400042
+    second: Comp|StandB
+  - first:
+      74: 7400044
+    second: Comp|StandC
+  - first:
+      74: 7400046
+    second: Comp|StandD
+  - first:
+      74: 7400048
+    second: Comp|StandE
+  - first:
+      74: 7400050
+    second: Comp|StandEat
+  - first:
+      74: 7400052
+    second: Comp|StandJumpDown
+  - first:
+      74: 7400054
+    second: Comp|StandJumpUp
+  - first:
+      74: 7400056
+    second: Comp|StandToWalk
+  - first:
+      74: 7400058
+    second: Comp|Steps
+  - first:
+      74: 7400060
+    second: Comp|StepsGrowl
+  - first:
+      74: 7400062
+    second: Comp|StepsStand
+  - first:
+      74: 7400064
+    second: Comp|Strafe
+  - first:
+      74: 7400066
+    second: Comp|Walk
+  - first:
+      74: 7400068
+    second: Comp|WalkGrowl
+  - first:
+      74: 7400070
+    second: Comp|WalkToStand
+  - first:
+      74: 7400072
+    second: Comp|StepsStrafe
+  - first:
+      74: 7400074
+    second: Comp|Die-
+  - first:
+      74: 7400076
+    second: Comp|EatC
+  - first:
+      74: 7400078
+    second: Comp|GroundAtk
+  - first:
+      74: 7400080
+    second: Comp|GroundIdle
+  - first:
+      74: 7400082
+    second: Comp|IdleA
+  - first:
+      74: 7400084
+    second: Comp|IdleAtk1
+  - first:
+      74: 7400086
+    second: Comp|IdleAtk2
+  - first:
+      74: 7400088
+    second: Comp|IdleAtk3
+  - first:
+      74: 7400090
+    second: Comp|IdleB
+  - first:
+      74: 7400092
+    second: Comp|IdleC
+  - first:
+      74: 7400094
+    second: Comp|IdleD
+  - first:
+      74: 7400096
+    second: Comp|IdleE
+  - first:
+      74: 7400098
+    second: Comp|IdleJumpEnd
+  - first:
+      74: 7400100
+    second: Comp|IdleJumpStart
+  - first:
+      74: 7400102
+    second: Comp|JumpAtk
+  - first:
+      74: 7400104
+    second: Comp|JumpIdle
+  - first:
+      74: 7400106
+    second: Comp|RunAtk1
+  - first:
+      74: 7400108
+    second: Comp|RunAtk2
+  - first:
+      74: 7400110
+    second: Comp|RunJumpEnd
+  - first:
+      74: 7400112
+    second: Comp|RunJumpStart
+  - first:
+      74: 7400114
+    second: Comp|ToSleep
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: comp
+  - first:
+      137: 13700002
+    second: Comp.ms3d.mo
+  - first:
+      137: 13700004
+    second: comp_LOD_0
+  - first:
+      137: 13700006
+    second: comp_LOD_1
+  - first:
+      137: 13700008
+    second: comp_LOD_2
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -259,6 +709,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|Comp
       takeName: Comp|Comp
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -364,19 +815,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -435,6 +887,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|Die
       takeName: Comp|Die
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -540,19 +993,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -611,6 +1065,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|Die-
       takeName: Comp|Die-
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -716,19 +1171,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -787,6 +1243,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|EatA
       takeName: Comp|EatA
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -892,19 +1349,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -963,6 +1421,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|EatB
       takeName: Comp|EatB
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1068,19 +1527,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -1139,6 +1599,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|EatC
       takeName: Comp|EatC
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1244,19 +1705,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -1315,6 +1777,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|GroundAtk
       takeName: Comp|GroundAtk
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1420,19 +1883,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -1491,6 +1955,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|GroundIdle
       takeName: Comp|GroundIdle
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1596,19 +2061,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -1667,6 +2133,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|IdleA
       takeName: Comp|IdleA
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1772,19 +2239,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -1843,6 +2311,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|IdleAtk1
       takeName: Comp|IdleAtk1
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1851,7 +2320,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -1948,19 +2417,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -2019,6 +2489,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|IdleAtk2
       takeName: Comp|IdleAtk2
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2124,19 +2595,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -2195,6 +2667,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|IdleAtk3
       takeName: Comp|IdleAtk3
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -2300,19 +2773,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -2371,6 +2845,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|IdleB
       takeName: Comp|IdleB
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2476,19 +2951,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -2547,6 +3023,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|IdleC
       takeName: Comp|IdleC
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2652,19 +3129,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -2723,6 +3201,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|IdleD
       takeName: Comp|IdleD
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2828,19 +3307,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -2899,6 +3379,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|IdleE
       takeName: Comp|IdleE
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -3004,19 +3485,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -3075,6 +3557,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|IdleJumpEnd
       takeName: Comp|IdleJumpEnd
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -3180,19 +3663,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -3251,6 +3735,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|IdleJumpStart
       takeName: Comp|IdleJumpStart
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -3356,19 +3841,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -3427,6 +3913,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|JumpAtk
       takeName: Comp|JumpAtk
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -3532,19 +4019,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -3603,6 +4091,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|JumpIdle
       takeName: Comp|JumpIdle
+      internalID: 0
       firstFrame: 0
       lastFrame: 15
       wrapMode: 0
@@ -3708,19 +4197,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -3779,6 +4269,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|Run
       takeName: Comp|Run
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -3884,19 +4375,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -3955,6 +4447,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|RunAtk1
       takeName: Comp|RunAtk1
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -4060,19 +4553,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -4131,6 +4625,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|RunAtk2
       takeName: Comp|RunAtk2
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -4236,19 +4731,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -4307,6 +4803,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|RunGrowl
       takeName: Comp|RunGrowl
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -4412,19 +4909,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -4483,6 +4981,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|RunJumpEnd
       takeName: Comp|RunJumpEnd
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -4588,19 +5087,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -4659,6 +5159,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|RunJumpStart
       takeName: Comp|RunJumpStart
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -4764,19 +5265,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -4835,6 +5337,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|Sleep
       takeName: Comp|Sleep
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -4940,19 +5443,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -5011,6 +5515,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|Strafe
       takeName: Comp|Strafe
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -5116,19 +5621,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -5187,6 +5693,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|ToSleep
       takeName: Comp|ToSleep
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -5292,19 +5799,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -5363,6 +5871,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Comp|Walk
       takeName: Comp|Walk
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -5468,19 +5977,20 @@ ModelImporter:
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4
         weight: 1
-      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left arm1/left
-          hand/left finger3/left finger4/left finger5
+      - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/left arm0/left
+          arm1/left hand/left finger3/left finger4/left finger5
         weight: 1
       - path: Comp/root/spine0/spine1/spine2/spine3/spine4/spine5/neck0
         weight: 1
@@ -5543,25 +6053,32 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 0
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 180
     normalImportMode: 1
@@ -5570,10 +6087,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -5583,13 +6100,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

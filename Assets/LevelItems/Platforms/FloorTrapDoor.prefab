@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6797041785918295529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 6.75}
+  m_LocalPosition: {x: 0, y: -0.5, z: 6.625}
   m_LocalScale: {x: 10, y: 1, z: 13.25}
   m_Children: []
   m_Father: {fileID: 6897765845296624504}
@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb15e50fdb9419fafce3e717d546053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectType: 0
   Layout: 0
-  IsPlatform: 1
   End: {fileID: 6897765845900458417}
 --- !u!1 &6897765845900458418
 GameObject:
@@ -168,7 +168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6897765845900458418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 22.75}
+  m_LocalPosition: {x: 0, y: 0, z: 22.675}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6897765845296624504}
@@ -181,6 +181,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6897765845296624504}
     m_Modifications:
+    - target: {fileID: 1126299627297625889, guid: 759a9c60986805247ab77934176e8260, type: 3}
+      propertyPath: m_Name
+      value: ButtonObstacleBridge
+      objectReference: {fileID: 0}
     - target: {fileID: 1126299627297625894, guid: 759a9c60986805247ab77934176e8260, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -195,7 +199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1126299627297625894, guid: 759a9c60986805247ab77934176e8260, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.75
+      value: 1.6599998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1126299627297625894, guid: 759a9c60986805247ab77934176e8260, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1126299627297625894, guid: 759a9c60986805247ab77934176e8260, type: 3}
       propertyPath: m_LocalRotation.x
@@ -209,20 +217,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126299627590741088, guid: 759a9c60986805247ab77934176e8260, type: 3}
-      propertyPath: m_LocalPosition.x
+    - target: {fileID: 1126299627297625894, guid: 759a9c60986805247ab77934176e8260, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126299627590741088, guid: 759a9c60986805247ab77934176e8260, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076023103048224357, guid: 759a9c60986805247ab77934176e8260, type: 3}
-      propertyPath: m_LocalPosition.x
+    - target: {fileID: 1126299627297625894, guid: 759a9c60986805247ab77934176e8260, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5076023103048224357, guid: 759a9c60986805247ab77934176e8260, type: 3}
-      propertyPath: m_LocalPosition.z
+    - target: {fileID: 1126299627297625894, guid: 759a9c60986805247ab77934176e8260, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

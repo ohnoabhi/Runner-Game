@@ -3,9 +3,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public enum PlayerState
+    {
+        Idle,
+        Running,
+        Fall,
+        Finish
+    }
+
     public float Speed;
     public float SlideSpeed;
     public float XMovementClamp;
+
+    [HideInInspector] public PlayerState State;
 
     public void Die()
     {

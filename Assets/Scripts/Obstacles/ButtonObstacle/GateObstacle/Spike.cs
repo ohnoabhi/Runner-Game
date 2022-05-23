@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Spike : MonoBehaviour
+public class Spike : MonoBehaviour, IObstacle
 {
-    public GameObject ReturnObstacleParent()
+    public void Collide(Player player)
     {
-        return transform.parent.parent.gameObject;
+        player.GetComponent<PlayerHealth>().TakeDamage(999999);
     }
 }

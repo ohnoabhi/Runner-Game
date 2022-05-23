@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1ccf25748b4bcba4168e6c360a65bc, type: 3}
   m_Name: Level Objects
   m_EditorClassIdentifier: 
+  LevelFinishers:
+  - EndType: 0
+    Finisher: {fileID: 3908799999992305013, guid: b65a47bc2bacce44293977c6c04a7e43, type: 3}
+  - EndType: 1
+    Finisher: {fileID: 1150465359508026487, guid: 00aa0be528566c34cac807100e1c0851, type: 3}
+  - EndType: 2
+    Finisher: {fileID: 2998759896698833875, guid: a56bc3b838efeaa4c8698da288791224, type: 3}
   LevelObjects:
   - {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
   - {fileID: 8044958139425952411, guid: 5015061aea6a70f44930d4721a4b877e, type: 3}
@@ -21,3 +28,12 @@ MonoBehaviour:
   - {fileID: 6753236866175292694, guid: 0b17e8f5a6c1276478759e79944939b0, type: 3}
   - {fileID: 6690846101202150222, guid: c124162bc62d1ea4a97ff901213386b9, type: 3}
   - {fileID: 2768703245319665712, guid: 52430b79b226d2c478dda4fd997453f0, type: 3}
+  - {fileID: 3713403333683543587, guid: 1a0a13470815b6e4da65cdff5e72b4b3, type: 3}
+  - {fileID: 6578826468992485831, guid: b5dbdb01986486b458bd91c20b61a61b, type: 3}
+  - {fileID: 2235799038432185909, guid: a19c21f52bdbefd4a9faca2774040916, type: 3}
+  - {fileID: 7816998031332815645, guid: 3e36cca5d139c3d41ade30b75406f730, type: 3}
+  - {fileID: 8027600541071872694, guid: 12d7c8f899e108147afecda03d3993c2, type: 3}
+  - {fileID: 6303633309992966645, guid: 9329ef50c594816449b2378c029e1002, type: 3}
+  - {fileID: 4217001124002090867, guid: e2de0ceee1f1d9f47bddb9c3488a1cd9, type: 3}
+  - {fileID: 6948116994114588769, guid: d140b817e9524e548865f5079165dcef, type: 3}
+  - {fileID: 3656030789721302672, guid: c2e771028cc4d7b4e8d55a398cb80561, type: 3}

@@ -1,346 +1,1016 @@
 fileFormatVersion: 2
 guid: 8483fcf9106f5bf4892d242f44126eb5
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: eye0
-    100002: head
-    100004: jaw0
-    100006: jaw1
-    100008: jaw1_end
-    100010: left arm0
-    100012: left arm1
-    100014: left claw0
-    100016: left claw1
-    100018: left claw1_end
-    100020: left eye
-    100022: left eye_end
-    100024: left finger0
-    100026: left finger1
-    100028: left finger2
-    100030: left finger2_end
-    100032: left finger3
-    100034: left finger4
-    100036: left finger5
-    100038: left finger5_end
-    100040: left finger6
-    100042: left finger7
-    100044: left finger8
-    100046: left finger8_end
-    100048: left foot0
-    100050: left foot1
-    100052: left foot2
-    100054: left hand
-    100056: left leg0
-    100058: left leg1
-    100060: left toe0
-    100062: left toe1
-    100064: left toe2
-    100066: left toe2_end
-    100068: left toe3
-    100070: left toe4
-    100072: left toe5
-    100074: left toe5_end
-    100076: neck0
-    100078: neck1
-    100080: neck2
-    100082: neck3
-    100084: pelvis
-    100086: rap
-    100088: //RootNode
-    100090: Raptor
-    100092: right arm0
-    100094: right arm1
-    100096: right claw0
-    100098: right claw1
-    100100: right claw1_end
-    100102: right eye
-    100104: right eye_end
-    100106: right finger0
-    100108: right finger1
-    100110: right finger2
-    100112: right finger2_end
-    100114: right finger3
-    100116: right finger4
-    100118: right finger5
-    100120: right finger5_end
-    100122: right finger6
-    100124: right finger7
-    100126: right finger8
-    100128: right finger8_end
-    100130: right foot0
-    100132: right foot1
-    100134: right foot2
-    100136: right hand
-    100138: right leg0
-    100140: right leg1
-    100142: right toe0
-    100144: right toe1
-    100146: right toe2
-    100148: right toe2_end
-    100150: right toe3
-    100152: right toe4
-    100154: right toe5
-    100156: right toe5_end
-    100158: root
-    100160: spine0
-    100162: spine1
-    100164: spine2
-    100166: spine3
-    100168: spine4
-    100170: spine5
-    100172: tail0
-    100174: tail1
-    100176: tail10
-    100178: tail11
-    100180: tail11_end
-    100182: tail2
-    100184: tail3
-    100186: tail4
-    100188: tail5
-    100190: tail6
-    100192: tail7
-    100194: tail8
-    100196: tail9
-    100198: tongue0
-    100200: tongue1
-    100202: tongue2
-    100204: tongue2_end
-    100206: facial down
-    100208: facial down_end
-    100210: facial left
-    100212: facial left_end
-    100214: facial right
-    100216: facial right_end
-    100218: Rap
-    100220: rap_LOD_0
-    100222: rap_LOD_1
-    100224: rap_LOD_2
-    400000: eye0
-    400002: head
-    400004: jaw0
-    400006: jaw1
-    400008: jaw1_end
-    400010: left arm0
-    400012: left arm1
-    400014: left claw0
-    400016: left claw1
-    400018: left claw1_end
-    400020: left eye
-    400022: left eye_end
-    400024: left finger0
-    400026: left finger1
-    400028: left finger2
-    400030: left finger2_end
-    400032: left finger3
-    400034: left finger4
-    400036: left finger5
-    400038: left finger5_end
-    400040: left finger6
-    400042: left finger7
-    400044: left finger8
-    400046: left finger8_end
-    400048: left foot0
-    400050: left foot1
-    400052: left foot2
-    400054: left hand
-    400056: left leg0
-    400058: left leg1
-    400060: left toe0
-    400062: left toe1
-    400064: left toe2
-    400066: left toe2_end
-    400068: left toe3
-    400070: left toe4
-    400072: left toe5
-    400074: left toe5_end
-    400076: neck0
-    400078: neck1
-    400080: neck2
-    400082: neck3
-    400084: pelvis
-    400086: rap
-    400088: //RootNode
-    400090: Raptor
-    400092: right arm0
-    400094: right arm1
-    400096: right claw0
-    400098: right claw1
-    400100: right claw1_end
-    400102: right eye
-    400104: right eye_end
-    400106: right finger0
-    400108: right finger1
-    400110: right finger2
-    400112: right finger2_end
-    400114: right finger3
-    400116: right finger4
-    400118: right finger5
-    400120: right finger5_end
-    400122: right finger6
-    400124: right finger7
-    400126: right finger8
-    400128: right finger8_end
-    400130: right foot0
-    400132: right foot1
-    400134: right foot2
-    400136: right hand
-    400138: right leg0
-    400140: right leg1
-    400142: right toe0
-    400144: right toe1
-    400146: right toe2
-    400148: right toe2_end
-    400150: right toe3
-    400152: right toe4
-    400154: right toe5
-    400156: right toe5_end
-    400158: root
-    400160: spine0
-    400162: spine1
-    400164: spine2
-    400166: spine3
-    400168: spine4
-    400170: spine5
-    400172: tail0
-    400174: tail1
-    400176: tail10
-    400178: tail11
-    400180: tail11_end
-    400182: tail2
-    400184: tail3
-    400186: tail4
-    400188: tail5
-    400190: tail6
-    400192: tail7
-    400194: tail8
-    400196: tail9
-    400198: tongue0
-    400200: tongue1
-    400202: tongue2
-    400204: tongue2_end
-    400206: facial down
-    400208: facial down_end
-    400210: facial left
-    400212: facial left_end
-    400214: facial right
-    400216: facial right_end
-    400218: Rap
-    400220: rap_LOD_0
-    400222: rap_LOD_1
-    400224: rap_LOD_2
-    4300000: rap
-    4300002: Raptor
-    4300004: rap_LOD_2
-    4300006: rap_LOD_0
-    4300008: rap_LOD_1
-    7400000: Raptor|GroundAttack
-    7400002: Raptor|GroundStand
-    7400004: Raptor|GroundToStand
-    7400006: Raptor|JumpAttack
-    7400008: Raptor|StandA
-    7400010: Raptor|StandToWalk
-    7400012: Raptor|Steps
-    7400014: Raptor|StepsStand
-    7400016: Raptor|Strafe
-    7400018: Raptor|Walk
-    7400020: Raptor|WalkToStand
-    7400022: Raptor|Run
-    7400024: Raptor|RunAttack
-    7400026: Raptor|StandJumpUp
-    7400028: Raptor|StandJumpDown
-    7400030: Raptor|JumpLoop
-    7400032: Raptor|RunJumpUp
-    7400034: Raptor|RunJumpDown
-    7400036: Raptor|StandB
-    7400038: Raptor|StandC
-    7400040: Raptor|StepsGrowl
-    7400042: Raptor|EatA
-    7400044: Raptor|StandEat
-    7400046: Raptor|EatB
-    7400048: Raptor|Sleep
-    7400050: Raptor|SleepLoop
-    7400052: Raptor|StandD
-    7400054: Raptor|StandE
-    7400056: Raptor|StandDie
-    7400058: Raptor|Rise
-    7400060: Raptor|Die
-    7400062: Raptor|AttackA
-    7400064: Raptor|AttackB
-    7400066: Raptor|RunGrowl
-    7400068: Raptor|WalkGrowl
-    7400070: Raptor|RunAttackB
-    7400072: Raptor|RunAttackA
-    7400074: Raptor|JumpLoopAttack
-    7400076: Rap|AttackA
-    7400078: Rap|AttackB
-    7400080: Rap|Die
-    7400082: Rap|EatA
-    7400084: Rap|EatB
-    7400086: Rap|GroundAttack
-    7400088: Rap|GroundStand
-    7400090: Rap|JumpAttack
-    7400092: Rap|JumpLoop
-    7400094: Rap|JumpLoopAttack
-    7400096: Rap|Rise
-    7400098: Rap|Run
-    7400100: Rap|RunAttackA
-    7400102: Rap|RunAttackB
-    7400104: Rap|RunGrowl
-    7400106: Rap|RunJumpDown
-    7400108: Rap|RunJumpUp
-    7400110: Rap|Sleep
-    7400112: Rap|SleepLoop
-    7400114: Rap|StandA
-    7400116: Rap|StandB
-    7400118: Rap|StandC
-    7400120: Rap|StandD
-    7400122: Rap|StandE
-    7400124: Rap|StandEat
-    7400126: Rap|StandJumpDown
-    7400128: Rap|StandJumpUp
-    7400130: Rap|StandToWalk
-    7400132: Rap|Steps
-    7400134: Rap|StepsGrowl
-    7400136: Rap|StepsStand
-    7400138: Rap|Strafe
-    7400140: Rap|Walk
-    7400142: Rap|WalkGrowl
-    7400144: Rap|WalkToStand
-    7400146: Rap|CrouchIdle
-    7400148: Rap|CrouchWalk
-    7400150: Rap|CrouchWalkGrowl
-    7400152: Rap|Die-
-    7400154: Rap|EatC
-    7400156: Rap|GroundAtk
-    7400158: Rap|GroundIdle
-    7400160: Rap|IdleA
-    7400162: Rap|IdleAtk1
-    7400164: Rap|IdleAtk2
-    7400166: Rap|IdleAtk3
-    7400168: Rap|IdleB
-    7400170: Rap|IdleC
-    7400172: Rap|IdleD
-    7400174: Rap|IdleE
-    7400176: Rap|IdleJumpEnd
-    7400178: Rap|IdleJumpStart
-    7400180: Rap|JumpAtk
-    7400182: Rap|JumpIdle
-    7400184: Rap|Rap
-    7400186: Rap|RunAtk1
-    7400188: Rap|RunAtk2
-    7400190: Rap|RunJumpEnd
-    7400192: Rap|RunJumpStart
-    7400194: Rap|ToSleep
-    9500000: //RootNode
-    13700000: rap
-    13700002: Raptor
-    13700004: rap_LOD_0
-    13700006: rap_LOD_1
-    13700008: rap_LOD_2
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: eye0
+  - first:
+      1: 100002
+    second: head
+  - first:
+      1: 100004
+    second: jaw0
+  - first:
+      1: 100006
+    second: jaw1
+  - first:
+      1: 100008
+    second: jaw1_end
+  - first:
+      1: 100010
+    second: left arm0
+  - first:
+      1: 100012
+    second: left arm1
+  - first:
+      1: 100014
+    second: left claw0
+  - first:
+      1: 100016
+    second: left claw1
+  - first:
+      1: 100018
+    second: left claw1_end
+  - first:
+      1: 100020
+    second: left eye
+  - first:
+      1: 100022
+    second: left eye_end
+  - first:
+      1: 100024
+    second: left finger0
+  - first:
+      1: 100026
+    second: left finger1
+  - first:
+      1: 100028
+    second: left finger2
+  - first:
+      1: 100030
+    second: left finger2_end
+  - first:
+      1: 100032
+    second: left finger3
+  - first:
+      1: 100034
+    second: left finger4
+  - first:
+      1: 100036
+    second: left finger5
+  - first:
+      1: 100038
+    second: left finger5_end
+  - first:
+      1: 100040
+    second: left finger6
+  - first:
+      1: 100042
+    second: left finger7
+  - first:
+      1: 100044
+    second: left finger8
+  - first:
+      1: 100046
+    second: left finger8_end
+  - first:
+      1: 100048
+    second: left foot0
+  - first:
+      1: 100050
+    second: left foot1
+  - first:
+      1: 100052
+    second: left foot2
+  - first:
+      1: 100054
+    second: left hand
+  - first:
+      1: 100056
+    second: left leg0
+  - first:
+      1: 100058
+    second: left leg1
+  - first:
+      1: 100060
+    second: left toe0
+  - first:
+      1: 100062
+    second: left toe1
+  - first:
+      1: 100064
+    second: left toe2
+  - first:
+      1: 100066
+    second: left toe2_end
+  - first:
+      1: 100068
+    second: left toe3
+  - first:
+      1: 100070
+    second: left toe4
+  - first:
+      1: 100072
+    second: left toe5
+  - first:
+      1: 100074
+    second: left toe5_end
+  - first:
+      1: 100076
+    second: neck0
+  - first:
+      1: 100078
+    second: neck1
+  - first:
+      1: 100080
+    second: neck2
+  - first:
+      1: 100082
+    second: neck3
+  - first:
+      1: 100084
+    second: pelvis
+  - first:
+      1: 100086
+    second: rap
+  - first:
+      1: 100088
+    second: //RootNode
+  - first:
+      1: 100090
+    second: Raptor
+  - first:
+      1: 100092
+    second: right arm0
+  - first:
+      1: 100094
+    second: right arm1
+  - first:
+      1: 100096
+    second: right claw0
+  - first:
+      1: 100098
+    second: right claw1
+  - first:
+      1: 100100
+    second: right claw1_end
+  - first:
+      1: 100102
+    second: right eye
+  - first:
+      1: 100104
+    second: right eye_end
+  - first:
+      1: 100106
+    second: right finger0
+  - first:
+      1: 100108
+    second: right finger1
+  - first:
+      1: 100110
+    second: right finger2
+  - first:
+      1: 100112
+    second: right finger2_end
+  - first:
+      1: 100114
+    second: right finger3
+  - first:
+      1: 100116
+    second: right finger4
+  - first:
+      1: 100118
+    second: right finger5
+  - first:
+      1: 100120
+    second: right finger5_end
+  - first:
+      1: 100122
+    second: right finger6
+  - first:
+      1: 100124
+    second: right finger7
+  - first:
+      1: 100126
+    second: right finger8
+  - first:
+      1: 100128
+    second: right finger8_end
+  - first:
+      1: 100130
+    second: right foot0
+  - first:
+      1: 100132
+    second: right foot1
+  - first:
+      1: 100134
+    second: right foot2
+  - first:
+      1: 100136
+    second: right hand
+  - first:
+      1: 100138
+    second: right leg0
+  - first:
+      1: 100140
+    second: right leg1
+  - first:
+      1: 100142
+    second: right toe0
+  - first:
+      1: 100144
+    second: right toe1
+  - first:
+      1: 100146
+    second: right toe2
+  - first:
+      1: 100148
+    second: right toe2_end
+  - first:
+      1: 100150
+    second: right toe3
+  - first:
+      1: 100152
+    second: right toe4
+  - first:
+      1: 100154
+    second: right toe5
+  - first:
+      1: 100156
+    second: right toe5_end
+  - first:
+      1: 100158
+    second: root
+  - first:
+      1: 100160
+    second: spine0
+  - first:
+      1: 100162
+    second: spine1
+  - first:
+      1: 100164
+    second: spine2
+  - first:
+      1: 100166
+    second: spine3
+  - first:
+      1: 100168
+    second: spine4
+  - first:
+      1: 100170
+    second: spine5
+  - first:
+      1: 100172
+    second: tail0
+  - first:
+      1: 100174
+    second: tail1
+  - first:
+      1: 100176
+    second: tail10
+  - first:
+      1: 100178
+    second: tail11
+  - first:
+      1: 100180
+    second: tail11_end
+  - first:
+      1: 100182
+    second: tail2
+  - first:
+      1: 100184
+    second: tail3
+  - first:
+      1: 100186
+    second: tail4
+  - first:
+      1: 100188
+    second: tail5
+  - first:
+      1: 100190
+    second: tail6
+  - first:
+      1: 100192
+    second: tail7
+  - first:
+      1: 100194
+    second: tail8
+  - first:
+      1: 100196
+    second: tail9
+  - first:
+      1: 100198
+    second: tongue0
+  - first:
+      1: 100200
+    second: tongue1
+  - first:
+      1: 100202
+    second: tongue2
+  - first:
+      1: 100204
+    second: tongue2_end
+  - first:
+      1: 100206
+    second: facial down
+  - first:
+      1: 100208
+    second: facial down_end
+  - first:
+      1: 100210
+    second: facial left
+  - first:
+      1: 100212
+    second: facial left_end
+  - first:
+      1: 100214
+    second: facial right
+  - first:
+      1: 100216
+    second: facial right_end
+  - first:
+      1: 100218
+    second: Rap
+  - first:
+      1: 100220
+    second: rap_LOD_0
+  - first:
+      1: 100222
+    second: rap_LOD_1
+  - first:
+      1: 100224
+    second: rap_LOD_2
+  - first:
+      4: 400000
+    second: eye0
+  - first:
+      4: 400002
+    second: head
+  - first:
+      4: 400004
+    second: jaw0
+  - first:
+      4: 400006
+    second: jaw1
+  - first:
+      4: 400008
+    second: jaw1_end
+  - first:
+      4: 400010
+    second: left arm0
+  - first:
+      4: 400012
+    second: left arm1
+  - first:
+      4: 400014
+    second: left claw0
+  - first:
+      4: 400016
+    second: left claw1
+  - first:
+      4: 400018
+    second: left claw1_end
+  - first:
+      4: 400020
+    second: left eye
+  - first:
+      4: 400022
+    second: left eye_end
+  - first:
+      4: 400024
+    second: left finger0
+  - first:
+      4: 400026
+    second: left finger1
+  - first:
+      4: 400028
+    second: left finger2
+  - first:
+      4: 400030
+    second: left finger2_end
+  - first:
+      4: 400032
+    second: left finger3
+  - first:
+      4: 400034
+    second: left finger4
+  - first:
+      4: 400036
+    second: left finger5
+  - first:
+      4: 400038
+    second: left finger5_end
+  - first:
+      4: 400040
+    second: left finger6
+  - first:
+      4: 400042
+    second: left finger7
+  - first:
+      4: 400044
+    second: left finger8
+  - first:
+      4: 400046
+    second: left finger8_end
+  - first:
+      4: 400048
+    second: left foot0
+  - first:
+      4: 400050
+    second: left foot1
+  - first:
+      4: 400052
+    second: left foot2
+  - first:
+      4: 400054
+    second: left hand
+  - first:
+      4: 400056
+    second: left leg0
+  - first:
+      4: 400058
+    second: left leg1
+  - first:
+      4: 400060
+    second: left toe0
+  - first:
+      4: 400062
+    second: left toe1
+  - first:
+      4: 400064
+    second: left toe2
+  - first:
+      4: 400066
+    second: left toe2_end
+  - first:
+      4: 400068
+    second: left toe3
+  - first:
+      4: 400070
+    second: left toe4
+  - first:
+      4: 400072
+    second: left toe5
+  - first:
+      4: 400074
+    second: left toe5_end
+  - first:
+      4: 400076
+    second: neck0
+  - first:
+      4: 400078
+    second: neck1
+  - first:
+      4: 400080
+    second: neck2
+  - first:
+      4: 400082
+    second: neck3
+  - first:
+      4: 400084
+    second: pelvis
+  - first:
+      4: 400086
+    second: rap
+  - first:
+      4: 400088
+    second: //RootNode
+  - first:
+      4: 400090
+    second: Raptor
+  - first:
+      4: 400092
+    second: right arm0
+  - first:
+      4: 400094
+    second: right arm1
+  - first:
+      4: 400096
+    second: right claw0
+  - first:
+      4: 400098
+    second: right claw1
+  - first:
+      4: 400100
+    second: right claw1_end
+  - first:
+      4: 400102
+    second: right eye
+  - first:
+      4: 400104
+    second: right eye_end
+  - first:
+      4: 400106
+    second: right finger0
+  - first:
+      4: 400108
+    second: right finger1
+  - first:
+      4: 400110
+    second: right finger2
+  - first:
+      4: 400112
+    second: right finger2_end
+  - first:
+      4: 400114
+    second: right finger3
+  - first:
+      4: 400116
+    second: right finger4
+  - first:
+      4: 400118
+    second: right finger5
+  - first:
+      4: 400120
+    second: right finger5_end
+  - first:
+      4: 400122
+    second: right finger6
+  - first:
+      4: 400124
+    second: right finger7
+  - first:
+      4: 400126
+    second: right finger8
+  - first:
+      4: 400128
+    second: right finger8_end
+  - first:
+      4: 400130
+    second: right foot0
+  - first:
+      4: 400132
+    second: right foot1
+  - first:
+      4: 400134
+    second: right foot2
+  - first:
+      4: 400136
+    second: right hand
+  - first:
+      4: 400138
+    second: right leg0
+  - first:
+      4: 400140
+    second: right leg1
+  - first:
+      4: 400142
+    second: right toe0
+  - first:
+      4: 400144
+    second: right toe1
+  - first:
+      4: 400146
+    second: right toe2
+  - first:
+      4: 400148
+    second: right toe2_end
+  - first:
+      4: 400150
+    second: right toe3
+  - first:
+      4: 400152
+    second: right toe4
+  - first:
+      4: 400154
+    second: right toe5
+  - first:
+      4: 400156
+    second: right toe5_end
+  - first:
+      4: 400158
+    second: root
+  - first:
+      4: 400160
+    second: spine0
+  - first:
+      4: 400162
+    second: spine1
+  - first:
+      4: 400164
+    second: spine2
+  - first:
+      4: 400166
+    second: spine3
+  - first:
+      4: 400168
+    second: spine4
+  - first:
+      4: 400170
+    second: spine5
+  - first:
+      4: 400172
+    second: tail0
+  - first:
+      4: 400174
+    second: tail1
+  - first:
+      4: 400176
+    second: tail10
+  - first:
+      4: 400178
+    second: tail11
+  - first:
+      4: 400180
+    second: tail11_end
+  - first:
+      4: 400182
+    second: tail2
+  - first:
+      4: 400184
+    second: tail3
+  - first:
+      4: 400186
+    second: tail4
+  - first:
+      4: 400188
+    second: tail5
+  - first:
+      4: 400190
+    second: tail6
+  - first:
+      4: 400192
+    second: tail7
+  - first:
+      4: 400194
+    second: tail8
+  - first:
+      4: 400196
+    second: tail9
+  - first:
+      4: 400198
+    second: tongue0
+  - first:
+      4: 400200
+    second: tongue1
+  - first:
+      4: 400202
+    second: tongue2
+  - first:
+      4: 400204
+    second: tongue2_end
+  - first:
+      4: 400206
+    second: facial down
+  - first:
+      4: 400208
+    second: facial down_end
+  - first:
+      4: 400210
+    second: facial left
+  - first:
+      4: 400212
+    second: facial left_end
+  - first:
+      4: 400214
+    second: facial right
+  - first:
+      4: 400216
+    second: facial right_end
+  - first:
+      4: 400218
+    second: Rap
+  - first:
+      4: 400220
+    second: rap_LOD_0
+  - first:
+      4: 400222
+    second: rap_LOD_1
+  - first:
+      4: 400224
+    second: rap_LOD_2
+  - first:
+      43: 4300000
+    second: rap
+  - first:
+      43: 4300002
+    second: Raptor
+  - first:
+      43: 4300004
+    second: rap_LOD_2
+  - first:
+      43: 4300006
+    second: rap_LOD_0
+  - first:
+      43: 4300008
+    second: rap_LOD_1
+  - first:
+      74: 7400000
+    second: Raptor|GroundAttack
+  - first:
+      74: 7400002
+    second: Raptor|GroundStand
+  - first:
+      74: 7400004
+    second: Raptor|GroundToStand
+  - first:
+      74: 7400006
+    second: Raptor|JumpAttack
+  - first:
+      74: 7400008
+    second: Raptor|StandA
+  - first:
+      74: 7400010
+    second: Raptor|StandToWalk
+  - first:
+      74: 7400012
+    second: Raptor|Steps
+  - first:
+      74: 7400014
+    second: Raptor|StepsStand
+  - first:
+      74: 7400016
+    second: Raptor|Strafe
+  - first:
+      74: 7400018
+    second: Raptor|Walk
+  - first:
+      74: 7400020
+    second: Raptor|WalkToStand
+  - first:
+      74: 7400022
+    second: Raptor|Run
+  - first:
+      74: 7400024
+    second: Raptor|RunAttack
+  - first:
+      74: 7400026
+    second: Raptor|StandJumpUp
+  - first:
+      74: 7400028
+    second: Raptor|StandJumpDown
+  - first:
+      74: 7400030
+    second: Raptor|JumpLoop
+  - first:
+      74: 7400032
+    second: Raptor|RunJumpUp
+  - first:
+      74: 7400034
+    second: Raptor|RunJumpDown
+  - first:
+      74: 7400036
+    second: Raptor|StandB
+  - first:
+      74: 7400038
+    second: Raptor|StandC
+  - first:
+      74: 7400040
+    second: Raptor|StepsGrowl
+  - first:
+      74: 7400042
+    second: Raptor|EatA
+  - first:
+      74: 7400044
+    second: Raptor|StandEat
+  - first:
+      74: 7400046
+    second: Raptor|EatB
+  - first:
+      74: 7400048
+    second: Raptor|Sleep
+  - first:
+      74: 7400050
+    second: Raptor|SleepLoop
+  - first:
+      74: 7400052
+    second: Raptor|StandD
+  - first:
+      74: 7400054
+    second: Raptor|StandE
+  - first:
+      74: 7400056
+    second: Raptor|StandDie
+  - first:
+      74: 7400058
+    second: Raptor|Rise
+  - first:
+      74: 7400060
+    second: Raptor|Die
+  - first:
+      74: 7400062
+    second: Raptor|AttackA
+  - first:
+      74: 7400064
+    second: Raptor|AttackB
+  - first:
+      74: 7400066
+    second: Raptor|RunGrowl
+  - first:
+      74: 7400068
+    second: Raptor|WalkGrowl
+  - first:
+      74: 7400070
+    second: Raptor|RunAttackB
+  - first:
+      74: 7400072
+    second: Raptor|RunAttackA
+  - first:
+      74: 7400074
+    second: Raptor|JumpLoopAttack
+  - first:
+      74: 7400076
+    second: Rap|AttackA
+  - first:
+      74: 7400078
+    second: Rap|AttackB
+  - first:
+      74: 7400080
+    second: Rap|Die
+  - first:
+      74: 7400082
+    second: Rap|EatA
+  - first:
+      74: 7400084
+    second: Rap|EatB
+  - first:
+      74: 7400086
+    second: Rap|GroundAttack
+  - first:
+      74: 7400088
+    second: Rap|GroundStand
+  - first:
+      74: 7400090
+    second: Rap|JumpAttack
+  - first:
+      74: 7400092
+    second: Rap|JumpLoop
+  - first:
+      74: 7400094
+    second: Rap|JumpLoopAttack
+  - first:
+      74: 7400096
+    second: Rap|Rise
+  - first:
+      74: 7400098
+    second: Rap|Run
+  - first:
+      74: 7400100
+    second: Rap|RunAttackA
+  - first:
+      74: 7400102
+    second: Rap|RunAttackB
+  - first:
+      74: 7400104
+    second: Rap|RunGrowl
+  - first:
+      74: 7400106
+    second: Rap|RunJumpDown
+  - first:
+      74: 7400108
+    second: Rap|RunJumpUp
+  - first:
+      74: 7400110
+    second: Rap|Sleep
+  - first:
+      74: 7400112
+    second: Rap|SleepLoop
+  - first:
+      74: 7400114
+    second: Rap|StandA
+  - first:
+      74: 7400116
+    second: Rap|StandB
+  - first:
+      74: 7400118
+    second: Rap|StandC
+  - first:
+      74: 7400120
+    second: Rap|StandD
+  - first:
+      74: 7400122
+    second: Rap|StandE
+  - first:
+      74: 7400124
+    second: Rap|StandEat
+  - first:
+      74: 7400126
+    second: Rap|StandJumpDown
+  - first:
+      74: 7400128
+    second: Rap|StandJumpUp
+  - first:
+      74: 7400130
+    second: Rap|StandToWalk
+  - first:
+      74: 7400132
+    second: Rap|Steps
+  - first:
+      74: 7400134
+    second: Rap|StepsGrowl
+  - first:
+      74: 7400136
+    second: Rap|StepsStand
+  - first:
+      74: 7400138
+    second: Rap|Strafe
+  - first:
+      74: 7400140
+    second: Rap|Walk
+  - first:
+      74: 7400142
+    second: Rap|WalkGrowl
+  - first:
+      74: 7400144
+    second: Rap|WalkToStand
+  - first:
+      74: 7400146
+    second: Rap|CrouchIdle
+  - first:
+      74: 7400148
+    second: Rap|CrouchWalk
+  - first:
+      74: 7400150
+    second: Rap|CrouchWalkGrowl
+  - first:
+      74: 7400152
+    second: Rap|Die-
+  - first:
+      74: 7400154
+    second: Rap|EatC
+  - first:
+      74: 7400156
+    second: Rap|GroundAtk
+  - first:
+      74: 7400158
+    second: Rap|GroundIdle
+  - first:
+      74: 7400160
+    second: Rap|IdleA
+  - first:
+      74: 7400162
+    second: Rap|IdleAtk1
+  - first:
+      74: 7400164
+    second: Rap|IdleAtk2
+  - first:
+      74: 7400166
+    second: Rap|IdleAtk3
+  - first:
+      74: 7400168
+    second: Rap|IdleB
+  - first:
+      74: 7400170
+    second: Rap|IdleC
+  - first:
+      74: 7400172
+    second: Rap|IdleD
+  - first:
+      74: 7400174
+    second: Rap|IdleE
+  - first:
+      74: 7400176
+    second: Rap|IdleJumpEnd
+  - first:
+      74: 7400178
+    second: Rap|IdleJumpStart
+  - first:
+      74: 7400180
+    second: Rap|JumpAtk
+  - first:
+      74: 7400182
+    second: Rap|JumpIdle
+  - first:
+      74: 7400184
+    second: Rap|Rap
+  - first:
+      74: 7400186
+    second: Rap|RunAtk1
+  - first:
+      74: 7400188
+    second: Rap|RunAtk2
+  - first:
+      74: 7400190
+    second: Rap|RunJumpEnd
+  - first:
+      74: 7400192
+    second: Rap|RunJumpStart
+  - first:
+      74: 7400194
+    second: Rap|ToSleep
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: rap
+  - first:
+      137: 13700002
+    second: Raptor
+  - first:
+      137: 13700004
+    second: rap_LOD_0
+  - first:
+      137: 13700006
+    second: rap_LOD_1
+  - first:
+      137: 13700008
+    second: rap_LOD_2
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -369,6 +1039,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|CrouchIdle
       takeName: Rap|CrouchIdle
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -621,6 +1292,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|CrouchWalk
       takeName: Rap|CrouchWalk
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -873,6 +1545,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|CrouchWalkGrowl
       takeName: Rap|CrouchWalkGrowl
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -1125,6 +1798,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|Die
       takeName: Rap|Die
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1377,6 +2051,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|Die-
       takeName: Rap|Die-
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1629,6 +2304,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|EatA
       takeName: Rap|EatA
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -1881,6 +2557,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|EatB
       takeName: Rap|EatB
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2133,6 +2810,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|EatC
       takeName: Rap|EatC
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2385,6 +3063,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|GroundAtk
       takeName: Rap|GroundAtk
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2637,6 +3316,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|GroundIdle
       takeName: Rap|GroundIdle
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -2889,6 +3569,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|IdleA
       takeName: Rap|IdleA
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -3141,6 +3822,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|IdleAtk1
       takeName: Rap|IdleAtk1
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -3149,7 +3831,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -3393,6 +4075,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|IdleAtk2
       takeName: Rap|IdleAtk2
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -3645,6 +4328,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|IdleAtk3
       takeName: Rap|IdleAtk3
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -3897,6 +4581,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|IdleB
       takeName: Rap|IdleB
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -4149,6 +4834,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|IdleC
       takeName: Rap|IdleC
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -4401,6 +5087,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|IdleD
       takeName: Rap|IdleD
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -4653,6 +5340,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|IdleE
       takeName: Rap|IdleE
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -4905,6 +5593,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|IdleJumpEnd
       takeName: Rap|IdleJumpEnd
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -5157,6 +5846,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|IdleJumpStart
       takeName: Rap|IdleJumpStart
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -5409,6 +6099,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|JumpAtk
       takeName: Rap|JumpAtk
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -5661,6 +6352,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|JumpIdle
       takeName: Rap|JumpIdle
+      internalID: 0
       firstFrame: 0
       lastFrame: 15
       wrapMode: 0
@@ -5913,6 +6605,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|Rap
       takeName: Rap|Rap
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -6165,6 +6858,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|Run
       takeName: Rap|Run
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -6417,6 +7111,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|RunAtk1
       takeName: Rap|RunAtk1
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -6669,6 +7364,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|RunAtk2
       takeName: Rap|RunAtk2
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -6921,6 +7617,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|RunGrowl
       takeName: Rap|RunGrowl
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -7173,6 +7870,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|RunJumpEnd
       takeName: Rap|RunJumpEnd
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -7425,6 +8123,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|RunJumpStart
       takeName: Rap|RunJumpStart
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -7677,6 +8376,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|Sleep
       takeName: Rap|Sleep
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -7929,6 +8629,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|Strafe
       takeName: Rap|Strafe
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -8181,6 +8882,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|ToSleep
       takeName: Rap|ToSleep
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -8433,6 +9135,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|Walk
       takeName: Rap|Walk
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -8685,6 +9388,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Rap|WalkGrowl
       takeName: Rap|WalkGrowl
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -8941,25 +9645,32 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 0
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 180
     normalImportMode: 1
@@ -8968,10 +9679,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -8981,13 +9692,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

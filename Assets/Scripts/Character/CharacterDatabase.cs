@@ -44,8 +44,8 @@ namespace CharacterBase
         [CanBeNull]
         public Character GetSkin(int index)
         {
-            if (Characters != null && Characters.Count > index) return Characters[index].Character;
-            return null;
+            if (Characters == null) return null;
+            return Characters.Count > index ? Characters[index].Character : Characters[Characters.Count - 1].Character;
         }
     }
 

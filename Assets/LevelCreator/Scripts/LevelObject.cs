@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class LevelObject : MonoBehaviour
@@ -13,13 +14,14 @@ public class LevelObject : MonoBehaviour
     {
         Platform,
         Obstacle,
+        Enemy,
         Collectable
     }
 
     public LevelObjectType ObjectType;
-    public HorizontalLayout Layout;
+    [HideIf("IsPlatform")] public HorizontalLayout Layout;
     public bool IsPlatform => ObjectType == LevelObjectType.Platform;
-    public Transform End;
+    [ShowIf("IsPlatform")] public Transform End;
     private LevelItemData _levelItemData;
 
     public Vector3 GetHorizontalHandlePos()
@@ -40,7 +42,6 @@ public class LevelObject : MonoBehaviour
     public void SetData(LevelItemData levelItemData)
     {
         _levelItemData = levelItemData;
-
         LoadData();
     }
 

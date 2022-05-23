@@ -1,51 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class SideMoveEnemyObstacle : MonoBehaviour, IObstacle
 {
     private int limit = 4;
 
-    [SerializeField] private int damage;
+    [SerializeField] private Animator animator;
 
-    private bool side = true;
+    [SerializeField] private int damage;
+    [SerializeField] private float speed = 50;
+
+    private bool isMoving;
 
     public void Collide(Player player)
     {
         player.GetComponent<PlayerHealth>().TakeDamage(damage);
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
-        if (side)
-        {
-            if (transform.position.x <= limit)
-            {
-                StartCoroutine(EnemyMover(0.1f));
-            }
-            else
-            {
-                side = !side;
-            }
-        }
-
-        else
-        {
-            if (transform.position.x >= -limit)
-            {
-                StartCoroutine(EnemyMover(-0.1f));
-            }
-            else
-            {
-                side = !side;
-            }
-        }
+        animator.SetTrigger("Walk");
+        isMoving = true;
+        Move(limit);
     }
 
-    private IEnumerator EnemyMover(float offset)
+    private async void Move(float x)
     {
-        yield return new WaitForSeconds(0.1f);
+        var target = new Vector3(x, transform.position.y, transform.position.z);
 
-        transform.position = new Vector3(transform.position.x + offset, transform.position.y, transform.position.z);
+        while (transform.position != target)
+        {
+            if (!transform) isMoving = false;
+            if (!isMoving) break;
+
+            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+            transform.rotation = Quaternion.LookRotation(target - transform.position);
+            await Task.Yield();
+        }
+
+        if (isMoving)
+            Move(x * -1);
     }
 }

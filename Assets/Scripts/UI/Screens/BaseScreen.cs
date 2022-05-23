@@ -6,11 +6,11 @@ public class BaseScreen : MonoBehaviour
 {
     public void Show()
     {
-        gameObject.GetComponent<Canvas>().enabled = true;
+        gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        gameObject.GetComponent<Canvas>().enabled = false;
+        gameObject.SetActive(false);
     }
 }

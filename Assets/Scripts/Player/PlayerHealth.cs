@@ -8,14 +8,14 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int levelUpRequirement;
 
-    public int StartHealth;
+    public float StartHealth;
 
-    public int CurrentHealth;
-    public int MaxHealth = 100;
+    public float CurrentHealth;
+    public float MaxHealth = 100;
 
     private Player Player;
 
-    private int HealthLevel => CurrentHealth > 0 ? CurrentHealth / levelUpRequirement : 0;
+    private int HealthLevel => CurrentHealth > 0 ? Mathf.FloorToInt(CurrentHealth / levelUpRequirement) : 0;
 
     public int MaxLevelHealth => HealthLevel * levelUpRequirement;
     public int MinLevelHealth => HealthLevel <= 0 ? 0 : (HealthLevel - 1) * levelUpRequirement;
@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
         Player = GetComponent<Player>();
     }
 
-    public void GainHealth(int amount)
+    public void GainHealth(float amount)
     {
         var tempLevel = HealthLevel;
         CurrentHealth += amount;
@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         var tempLevel = HealthLevel;
         CurrentHealth -= amount;

@@ -2,24 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tree : MonoBehaviour
+public class Tree : MonoBehaviour, IObstacle
 {
     [SerializeField] GameObject logPrefab, trunkPrefab;
+    [SerializeField] private float damage = 5;
 
-    private void OnCollisionEnter(Collision collision)
+    public void Collide(Player player)
     {
-        if (collision.transform.GetComponent<ObstacleDetector>() == null) return;
-        var treeLogOffset = transform.up * 0.8f;
-
-        var trunkPos = transform.position;
-
-        trunkPos.y = 0.1f;
-
-        Instantiate(logPrefab, transform.position + treeLogOffset,
+        player.GetComponent<PlayerHealth>().TakeDamage(damage);
+        var transformPosition = transform.position;
+        Instantiate(logPrefab, transformPosition,
             Quaternion.Euler(Random.Range(-1.5f, 1.5f), 0, Random.Range(-1.5f, 1.5f)));
-
-        Instantiate(trunkPrefab, trunkPos, transform.rotation);
-
+        Instantiate(trunkPrefab, transformPosition, transform.rotation);
         Destroy(gameObject);
     }
 }

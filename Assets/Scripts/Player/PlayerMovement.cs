@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,9 +14,9 @@ public class PlayerMovement : MonoBehaviour
         playerCharacterManager = GetComponent<PlayerCharacterManager>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (GameManager.Instance.CurrentState != GameManager.GameStates.Playing) return;
+        if (player.State != Player.PlayerState.Running) return;
 
         var movement = transform.position;
         var slide = Vector3.zero;
@@ -46,6 +47,22 @@ public class PlayerMovement : MonoBehaviour
         var quaternion = Quaternion.Euler(0, slide.x != 0 ? (slide.x > 0 ? 20 : -20) : 0, 0);
         transform.rotation = Quaternion.RotateTowards(transform.rotation,
             quaternion, 150 * Time.deltaTime);
+    }
+
+    public async void Fall()
+    {
+        if (player.State != Player.PlayerState.Running) return;
+
+        player.State = Player.PlayerState.Fall;
+
+        var fallPos = new Vector3(transform.position.x, -15, transform.position.z);
+        while (transform.position != fallPos)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, fallPos, 5 * Time.deltaTime);
+            await Task.Yield();
+        }
+
+        GameManager.Instance.OnFinish(false);
     }
 
     private Vector3 Slide(float amount)
