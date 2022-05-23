@@ -6,8 +6,8 @@ using System;
 
 public class CreatureManager : MonoBehaviour
 {
-    [SerializeField]
-    CreatureItem[] creatureItems;
+    
+    public CreatureItem[] creatureItems;
 
     [SerializeField]
     TMP_Text unlockedCountTxt;

@@ -38,6 +38,10 @@ public class CreatureItem : MonoBehaviour
     [SerializeField]
     CageGaurds[] gaurds;
 
+    public Vector3 cameraOffset;
+
+
+
     public int isUnlocked
     {
         get => PlayerPrefs.GetInt("CreatureItem" + creatureId.ToString(),0);

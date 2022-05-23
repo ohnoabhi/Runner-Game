@@ -26713,8 +26713,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creatureItems:
-  - {fileID: 1374828004}
   - {fileID: 6939043944640478810}
+  - {fileID: 1374828004}
   - {fileID: 6939043942988035322}
   unlockedCountTxt: {fileID: 1474457614}
 --- !u!4 &702463845
@@ -26728,9 +26728,9 @@ Transform:
   m_LocalPosition: {x: -68, y: 0, z: 189}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6939043942988035323}
   - {fileID: 6939043944640478811}
   - {fileID: 1374828005}
+  - {fileID: 6939043942988035323}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37881,11 +37881,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6939043943763424658, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: m_Name
-      value: Creature 2
+      value: Creature 1
       objectReference: {fileID: 0}
     - target: {fileID: 6939043943763424660, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6939043943763424660, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37937,7 +37937,19 @@ PrefabInstance:
       objectReference: {fileID: 907330066}
     - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: creatureId
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
+      propertyPath: cameraOffset.x
+      value: -70
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
+      propertyPath: cameraOffset.y
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
+      propertyPath: cameraOffset.z
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: soliderFinalPos
@@ -49489,7 +49501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6939043943763424660, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6939043943763424660, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49542,6 +49554,18 @@ PrefabInstance:
     - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: creatureId
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
+      propertyPath: cameraOffset.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
+      propertyPath: cameraOffset.y
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
+      propertyPath: cameraOffset.z
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: soliderFinalPos
@@ -52750,7 +52774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469726763}
   m_LocalRotation: {x: 0.2164396, y: 0, z: 0, w: 0.97629607}
-  m_LocalPosition: {x: 20.1, y: 21.1, z: -2.8}
+  m_LocalPosition: {x: -70, y: 17, z: 35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52765,13 +52789,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1469726763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f07772279e6c44aa4b64e22e3a381d, type: 3}
+  m_Script: {fileID: 11500000, guid: 16bdd9d60d616ad4e8a381ac18b95ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideSpeed: 1
-  XMovementClamp: 20
-  XMovementClampNegative: 60
-  speed: 0
+  swipeDist: 0.2
+  creatureManager: {fileID: 702463844}
+  Xoffset: 0
+  Zoffset: 0
 --- !u!1001 &1470840437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79447,11 +79471,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6939043943763424658, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: m_Name
-      value: Creature 1
+      value: Creature 2
       objectReference: {fileID: 0}
     - target: {fileID: 6939043943763424660, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6939043943763424660, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79501,6 +79525,22 @@ PrefabInstance:
       propertyPath: finalPos
       value: 
       objectReference: {fileID: 488811413}
+    - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
+      propertyPath: creatureId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
+      propertyPath: cameraOffset.x
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
+      propertyPath: cameraOffset.y
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
+      propertyPath: cameraOffset.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6939043943763424661, guid: d05f15b801cecd7429078202165b635b, type: 3}
       propertyPath: soliderFinalPos
       value: 

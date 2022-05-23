@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityToolbarExtender;
+//using UnityToolbarExtender;
 
 [InitializeOnLoad()]
 public static class ToolbarExtension
@@ -26,7 +26,7 @@ public static class ToolbarExtension
             names[i] = AssetDatabase.LoadAssetAtPath<Object>(paths[i]).name;
         }
 
-        ToolbarExtender.RightToolbarGUI.Add(DrawSceneButton);
+       // ToolbarExtender.RightToolbarGUI.Add(DrawSceneButton);
     }
 
     private static int selected = 0;
