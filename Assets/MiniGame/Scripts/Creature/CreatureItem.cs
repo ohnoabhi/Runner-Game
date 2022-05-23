@@ -25,6 +25,19 @@ public class CreatureItem : MonoBehaviour
     [SerializeField]
     GameObject creature;
 
+    [SerializeField]
+    Transform finalPos;
+
+    [SerializeField]
+    float speed;
+
+    bool isRunning = false;
+
+    public Transform soliderFinalPos;
+
+    [SerializeField]
+    CageGaurds[] gaurds;
+
     public int isUnlocked
     {
         get => PlayerPrefs.GetInt("CreatureItem" + creatureId.ToString(),0);
@@ -38,11 +51,11 @@ public class CreatureItem : MonoBehaviour
         {
             GameObject creatureReturned = CreatureData.instance.ReturnCreature(creatureId);
 
-            Instantiate(creatureReturned, creature.transform.position, creature.transform.rotation, gameObject.transform);
+             var newCreature =Instantiate(creatureReturned, creature.transform.position, creature.transform.rotation, gameObject.transform);
 
             Destroy(creature.gameObject);
 
-            creature = creatureReturned;
+            creature = newCreature;
 
             //creature.transform.SetParent(this.transform);
         }
@@ -65,6 +78,13 @@ public class CreatureItem : MonoBehaviour
         buttonTxt.text = "Unlocked";
 
         cage.SetActive(false);
+
+        creature.SetActive(false);
+
+        foreach(var gaurd in gaurds)
+        {
+            gaurd.gameObject.SetActive(false);
+        }
     }
 
     private void CageLocked()
@@ -103,5 +123,32 @@ public class CreatureItem : MonoBehaviour
         cage.SetActive(false);
 
         GetComponentInParent<CreatureManager>().RefreshStats();
+
+        isRunning = true;
+
+        foreach (var gaurd in gaurds)
+        {
+            gaurd.isRunning = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (!isRunning) return;
+
+        if(creature.transform.position != finalPos.position)
+        {
+            Vector3 pos = Vector3.MoveTowards(creature.transform.position, finalPos.position,speed * Time.deltaTime);
+            creature.GetComponent<Rigidbody>().MovePosition(pos);
+            creature.GetComponent<Animator>().SetBool("Running", true);
+        }
+
+        else if(creature.transform.position == finalPos.position)
+        {
+            Destroy(creature);
+            isRunning = false;
+        }
+
+        
     }
 }

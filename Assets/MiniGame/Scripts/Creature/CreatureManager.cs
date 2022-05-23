@@ -27,6 +27,7 @@ public class CreatureManager : MonoBehaviour
 
     public void RefreshStats()
     {
+        unlockedCount = 0;
         foreach (var creature in creatureItems)
         {
             if (creature.isUnlocked == 1)
