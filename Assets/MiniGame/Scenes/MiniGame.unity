@@ -52796,6 +52796,8 @@ MonoBehaviour:
   creatureManager: {fileID: 702463844}
   Xoffset: 0
   Zoffset: 0
+  cameraSpeed: 50
+  isMoving: 0
 --- !u!1001 &1470840437
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -22,6 +22,14 @@ public class MoveCamera : MonoBehaviour
 
     Vector3 offset;
 
+    [SerializeField]
+    float cameraSpeed = 10;
+
+    [SerializeField]
+    bool isMoving = false;
+
+    Vector3 finalPos;
+
 
     private void Start()
     {
@@ -65,11 +73,23 @@ public class MoveCamera : MonoBehaviour
             }
         }
 
+        if(isMoving)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, finalPos, cameraSpeed * Time.deltaTime);
+
+            if (transform.position == finalPos)
+            {
+                isMoving = false;
+            }
+        }
+
         
     }
 
     private void MoveCam(int currentPos)
     {
+        if (isMoving) return;
+
         //Debug.Log("############");
         if (currentPos < 0)
         {
@@ -86,7 +106,15 @@ public class MoveCamera : MonoBehaviour
 
         Debug.Log(currentPos);
 
-        transform.position = creatureManager.creatureItems[currentPos].cameraOffset;
-       // Debug.Log("%%%%%%%%%%%%");
+        //transform.position = creatureManager.creatureItems[currentPos].cameraOffset;
+
+        finalPos = creatureManager.creatureItems[currentPos].cameraOffset;
+        isMoving = true;
+
+        //transform.position = Vector3.MoveTowards(transform.position, creatureManager.creatureItems[currentPos].cameraOffset, cameraSpeed * Time.deltaTime);
+       
     }
+
+
+    
 }
