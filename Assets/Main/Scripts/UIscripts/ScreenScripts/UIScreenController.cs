@@ -35,8 +35,9 @@ public class UIScreenController : MonoBehaviour
             if (screenItem.name == name)
             {
                 screenItem.screen.Show();
+                TopHudController.Enable(screenItem.topHud);
             }
-            else
+            else 
                 screenItem.screen.Hide();
         }
     }
@@ -48,6 +49,17 @@ public class UIScreenController : MonoBehaviour
             if (screenItem.name == name)
                 screenItem.screen.Hide();
         }
+
+        foreach (var screenItem in screenItems)
+        {
+            if (screenItem.name == "MainMenu")
+            {
+                screenItem.screen.Show();
+                TopHudController.Enable(screenItem.topHud);
+            }
+        }
+
+
     }
 
 
@@ -58,4 +70,5 @@ class ScreenItem
 {
     public string name;
     public BaseScreen screen;
+    public bool topHud;
 }

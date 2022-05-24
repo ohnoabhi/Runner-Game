@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class CollectablesManager : MonoBehaviour
 {
     public Collectable[] collectables;
     public static CollectablesManager instance;
+    private static Action<Collectable> OnUpdate;
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class CollectablesManager : MonoBehaviour
                 {
                     collectable.Amount += amount;
                     Debug.Log("Amount: " + collectable.Amount);
+                    OnUpdate?.Invoke(collectable);
                     break;
                 }
             }
@@ -46,9 +49,32 @@ public class CollectablesManager : MonoBehaviour
             if (collectable.Type == type)
             {
                 collectable.Amount -= amount;
+                OnUpdate?.Invoke(collectable);
                 break;
             }
         }
+    }
+
+    public static Collectable GetCollectable(CollectableType type)
+    {
+        foreach (var collectable in instance.collectables)
+        {
+            if (collectable.Type == type)
+            {
+                return collectable;
+            }
+        }
+        return null;
+    }
+
+    public void RegisterForUpdate(Action<Collectable> action)
+    {
+        OnUpdate += action;
+    }
+
+    public void DeRegisterForUpdate(Action<Collectable> action)
+    {
+        OnUpdate -= action;
     }
 }
 
@@ -56,6 +82,8 @@ public class CollectablesManager : MonoBehaviour
 public class Collectable
 {
     public CollectableType Type;
+
+    public Sprite collectableImg;
 
     public int Amount
     {

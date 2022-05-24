@@ -35,13 +35,13 @@ public class ShopScreen : BaseScreen
     private void OnClickCloseShop()
     {
         GameManager.instance.currentState = GameManager.GameStates.MainMenu;
-        Hide();
+        UIScreenController.instance.Hide("Shop");
     }
 
     private void OnClickShop()
     {
         GameManager.instance.currentState = GameManager.GameStates.MainMenu;
-        Show();
+        UIScreenController.instance.Show("Shop");
     }
 }
 
