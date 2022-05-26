@@ -7,7 +7,8 @@ public enum CollectableType
 {
     Coin,
     Gem,
-    Health
+    Health,
+    Key
 }
 
 public class CollectablesManager : MonoBehaviour

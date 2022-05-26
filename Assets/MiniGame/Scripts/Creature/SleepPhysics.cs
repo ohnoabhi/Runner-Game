@@ -6,7 +6,9 @@ public class SleepPhysics : MonoBehaviour
 {
     private void Start()
     {
+        //GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Rigidbody>().Sleep();
+        
     }
 
     

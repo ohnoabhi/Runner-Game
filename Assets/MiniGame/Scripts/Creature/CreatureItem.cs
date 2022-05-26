@@ -44,9 +44,9 @@ public class CreatureItem : MonoBehaviour
 
     public int isUnlocked
     {
-        get => PlayerPrefs.GetInt("CreatureItem" + creatureId.ToString(),0);
+        get => PlayerPrefs.GetInt(GetComponentInParent<CreatureManager>().mapId.ToString() + "CreatureItem" + creatureId.ToString(),0);
 
-        set => PlayerPrefs.SetInt("CreatureItem" + creatureId.ToString(),value);
+        set => PlayerPrefs.SetInt(GetComponentInParent<CreatureManager>().mapId.ToString() + "CreatureItem" + creatureId.ToString(),value);
     }
 
     private void Start()
@@ -103,7 +103,9 @@ public class CreatureItem : MonoBehaviour
 
     public void OnClickUnlock()
     {
-        int keys = KeyManager.instance.GetKeys();
+        Collectable keyCollectable = CollectablesManager.GetCollectable(CollectableType.Key);
+
+        int keys = keyCollectable.Amount;
 
         if(keys >= keysRequired)
         {
@@ -130,6 +132,8 @@ public class CreatureItem : MonoBehaviour
 
         isRunning = true;
 
+        creature.transform.LookAt(finalPos.position);
+
         foreach (var gaurd in gaurds)
         {
             gaurd.isRunning = true;
@@ -145,6 +149,8 @@ public class CreatureItem : MonoBehaviour
             Vector3 pos = Vector3.MoveTowards(creature.transform.position, finalPos.position,speed * Time.deltaTime);
             creature.GetComponent<Rigidbody>().MovePosition(pos);
             creature.GetComponent<Animator>().SetBool("Running", true);
+
+            
         }
 
         else if(creature.transform.position == finalPos.position)
