@@ -35,7 +35,7 @@ public static class CollectablesManager
 {
     private static Action<int> OnUpdate;
 
-    public static int Get(CollectableType type) => PlayerPrefs.GetInt(type + "Amount", 0);
+    public static int Get(CollectableType type) => PlayerPrefs.GetInt(type + "Amount", 30);
 
     public static void Add(CollectableType type, int amount)
     {

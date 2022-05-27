@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading.Tasks;
 
 public class CreatureItem : MonoBehaviour
 {
@@ -23,8 +24,6 @@ public class CreatureItem : MonoBehaviour
 
     [SerializeField] float speed;
 
-    bool isRunning = false;
-
     public Transform soliderFinalPos;
 
     [SerializeField] CageGaurds[] gaurds;
@@ -32,13 +31,13 @@ public class CreatureItem : MonoBehaviour
     public Vector3 cameraOffset;
 
 
-    public int isUnlocked
+    public bool IsUnlocked
     {
         get => PlayerPrefs.GetInt(
-            GetComponentInParent<CreatureManager>().mapId.ToString() + "CreatureItem" + creatureId.ToString(), 0);
+            MapManager.instance.GetCurrentMap().MapId + "CreatureItem" + creatureId.ToString(), 0)== 1;
 
         set => PlayerPrefs.SetInt(
-            GetComponentInParent<CreatureManager>().mapId.ToString() + "CreatureItem" + creatureId.ToString(), value);
+            MapManager.instance.GetCurrentMap().MapId + "CreatureItem" + creatureId.ToString(), value ? 1 : 0);
     }
 
     private void Start()
@@ -57,14 +56,13 @@ public class CreatureItem : MonoBehaviour
             //creature.transform.SetParent(this.transform);
         }
 
-        if (isUnlocked == 0)
-        {
-            CageLocked();
-        }
-
-        else if (isUnlocked == 1)
+        if (IsUnlocked)
         {
             CageUnlocked();
+        }
+        else
+        {
+            CageLocked();
         }
     }
 
@@ -100,8 +98,8 @@ public class CreatureItem : MonoBehaviour
 
         if (keys >= keysRequired)
         {
-            isUnlocked = 1;
-            KeyManager.instance.Remove(keysRequired);
+            IsUnlocked = true;
+            CollectablesManager.Remove(CollectableType.Key, keysRequired);
             OpenCage();
         }
 
@@ -111,41 +109,34 @@ public class CreatureItem : MonoBehaviour
         }
     }
 
-    private void OpenCage()
+    private async void OpenCage()
     {
         Debug.Log("cage open");
 
         buttonTxt.text = "Unlocked";
 
         cage.SetActive(false);
+        creature.GetComponent<Animator>().SetBool("Running", true);
 
-        GetComponentInParent<CreatureManager>().RefreshStats();
+        InitGuards();
+        while(creature.transform.position != finalPos.position)
+        {
+            var targetPosition = Vector3.MoveTowards(creature.transform.position, finalPos.position, speed * Time.deltaTime);
+            creature.transform.rotation = Quaternion.LookRotation(targetPosition - creature.transform.position) ;
+            creature.transform.position = targetPosition;
 
-        isRunning = true;
+            await Task.Yield();
+        }
+        MapManager.instance.OnUnlock();
+        Destroy(creature.gameObject);
+    }
 
-        creature.transform.LookAt(finalPos.position);
-
+    private async void InitGuards()
+    {
+        await Task.Delay(300);
         foreach (var gaurd in gaurds)
         {
             gaurd.isRunning = true;
-        }
-    }
-
-    private void Update()
-    {
-        if (!isRunning) return;
-
-        if (creature.transform.position != finalPos.position)
-        {
-            Vector3 pos = Vector3.MoveTowards(creature.transform.position, finalPos.position, speed * Time.deltaTime);
-            creature.GetComponent<Rigidbody>().MovePosition(pos);
-            creature.GetComponent<Animator>().SetBool("Running", true);
-        }
-
-        else if (creature.transform.position == finalPos.position)
-        {
-            Destroy(creature);
-            isRunning = false;
         }
     }
 }

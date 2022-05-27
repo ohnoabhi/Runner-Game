@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
-    public static MoveCamera instance;
-
-    Vector3 startPos, endPos;
+        Vector3 startPos, endPos;
 
     [SerializeField]
     float swipeDist = 0.02f;
 
-    [SerializeField]
-    CreatureManager creatureManager;
 
     int currentPos;
 
@@ -26,17 +22,16 @@ public class MoveCamera : MonoBehaviour
 
     Vector3 finalPos;
 
+    MapManager mapManager;
+
     private void Start()
     {
-        instance = this;
-
-        getCreatureManager();
-
         currentPos = 0;
+        mapManager = MapManager.instance;
 
-        foreach(var creature in creatureManager.creatureItems)
+        foreach(var creature in mapManager.GetCurrentMap().Creatures)
         {
-            if(creature.isUnlocked == 1)
+            if(creature.IsUnlocked)
             {
                 currentPos++;
             }
@@ -45,26 +40,9 @@ public class MoveCamera : MonoBehaviour
                 break;
             }
         }
-        if (currentPos > creatureManager.creatureItems.Length)
-        {
-            MapManager.instance.OnMapComplete();
-        }
-        else
-        {
-            MoveCam(currentPos);
-        }
+           
+        MoveCam(currentPos);
 
-    }
-    
-    public void getCreatureManager()
-    {
-        creatureManager = GameObject.FindObjectOfType<CreatureManager>();
-        creatureManager.RefreshStats();
-    }
-
-    public void GetOffset()
-    {
-        offset = creatureManager.creatureItems[0].gameObject.transform.position - transform.position;
     }
 
     private void Update()
@@ -83,7 +61,7 @@ public class MoveCamera : MonoBehaviour
             {
                 if (startPos.x >= endPos.x)
                 {
-                    if (currentPos < creatureManager.creatureItems.Length - 1)
+                    if (currentPos < mapManager.GetCurrentMap().Creatures.Length - 1)
                     {
                         currentPos++;
                         MoveCam(currentPos);
@@ -128,17 +106,16 @@ public class MoveCamera : MonoBehaviour
         }
        
 
-        if (currentPos > creatureManager.creatureItems.Length - 1)
+        if (currentPos > mapManager.GetCurrentMap().Creatures.Length - 1)
         {
-            currentPos = creatureManager.creatureItems.Length - 1;
+            currentPos = mapManager.GetCurrentMap().Creatures.Length - 1;
             return;
         }
 
-        Debug.Log(currentPos);
 
         //transform.position = creatureManager.creatureItems[currentPos].cameraOffset;
 
-        finalPos = creatureManager.creatureItems[currentPos].transform.position + offset;
+        finalPos = mapManager.GetCurrentMap().Creatures[currentPos].transform.position + offset;
         isMoving = true;
 
         //transform.position = Vector3.MoveTowards(transform.position, creatureManager.creatureItems[currentPos].cameraOffset, cameraSpeed * Time.deltaTime);

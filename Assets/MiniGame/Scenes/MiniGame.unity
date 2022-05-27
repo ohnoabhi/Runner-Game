@@ -292,7 +292,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1217930305}
   - component: {fileID: 1217930304}
-  - component: {fileID: 1217930306}
   m_Layer: 0
   m_Name: MapManager
   m_TagString: Untagged
@@ -313,12 +312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maps:
-  - mapId: 0
-    mapPrefab: {fileID: 5560527279755622707, guid: 1c276bea85e27f541879f538fdfd50a8, type: 3}
-    completed: 0
-  - mapId: 1
-    mapPrefab: {fileID: 6444237018476257462, guid: ab1c4c523c743b347ae479a74a6b19fd, type: 3}
-    completed: 0
+  - {fileID: -515206562364516385, guid: 1c276bea85e27f541879f538fdfd50a8, type: 3}
+  - {fileID: 2701139900619796158, guid: ab1c4c523c743b347ae479a74a6b19fd, type: 3}
 --- !u!4 &1217930305
 Transform:
   m_ObjectHideFlags: 0
@@ -333,27 +328,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1217930306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217930303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c694ef74376cbed44941bdcd01855130, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectables:
-  - Type: 0
-    collectableImg: {fileID: 0}
-  - Type: 1
-    collectableImg: {fileID: 0}
-  - Type: 2
-    collectableImg: {fileID: 0}
-  - Type: 3
-    collectableImg: {fileID: 0}
 --- !u!1 &1469726763
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swipeDist: 0.2
-  creatureManager: {fileID: 0}
   offset: {x: 0, y: 30, z: -65}
   cameraSpeed: 50
   isMoving: 0
