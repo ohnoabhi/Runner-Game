@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CreatureData : MonoBehaviour
@@ -14,15 +15,7 @@ public class CreatureData : MonoBehaviour
 
     public GameObject ReturnCreature(int Id)
     {
-        foreach(var creature in creatureDataItems)
-        {
-            if(creature.creatureId == Id)
-            {
-                return creature.creaturePrefab;
-            }
-        }
-
-        return null;
+        return (from creature in creatureDataItems where creature.creatureId == Id select creature.creaturePrefab).FirstOrDefault();
     }
 }
 

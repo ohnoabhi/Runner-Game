@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using UnityEngine;
 
 
@@ -7,17 +9,26 @@ namespace maps
     {
         public int MapId;
         public CreatureItem[] Creatures;
+
         public bool completed
         {
-            get
+            get { return Creatures.All(creature => creature.IsUnlocked); }
+        }
+
+        public int GetCameraStartPosition()
+        {
+            var i = 0;
+            foreach (var creature in Creatures)
             {
-                foreach (var creature in Creatures)
+                if (!creature.IsUnlocked)
                 {
-                    if (!creature.IsUnlocked)
-                        return false;
+                    return i;
                 }
-                return true;
+
+                i++;
             }
+
+            return 0;
         }
     }
 }

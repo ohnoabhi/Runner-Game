@@ -1,127 +1,95 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
-        Vector3 startPos, endPos;
+    [SerializeField] float swipeDist = 0.02f;
 
-    [SerializeField]
-    float swipeDist = 0.02f;
-
-
-    int currentPos;
+    [SerializeField] float cameraSpeed = 10;
+    private int currentIndex;
 
     public Vector3 offset;
 
-    [SerializeField]
-    float cameraSpeed = 10;
 
-    [SerializeField]
-    bool isMoving = false;
+    private bool isMoving;
+    private Vector3 mouseStartPosition;
 
-    Vector3 finalPos;
-
-    MapManager mapManager;
+    private void Awake()
+    {
+        MapManager.OnMapLoaded += OnMapLoaded;
+    }
 
     private void Start()
     {
-        currentPos = 0;
-        mapManager = MapManager.instance;
+        currentIndex = 0;
+    }
 
-        foreach(var creature in mapManager.GetCurrentMap().Creatures)
-        {
-            if(creature.IsUnlocked)
-            {
-                currentPos++;
-            }
-            else
-            {
-                break;
-            }
-        }
-           
-        MoveCam(currentPos);
+    private void OnDestroy()
+    {
+        MapManager.OnMapLoaded -= OnMapLoaded;
+    }
 
+    private void OnMapLoaded(int i)
+    {
+        currentIndex = i;
+        Move();
     }
 
     private void Update()
     {
-        
         if (Input.GetMouseButtonDown(0))
         {
-            startPos = Input.mousePosition;
+            mouseStartPosition = Input.mousePosition;
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (!Input.GetMouseButtonUp(0)) return;
+        var endPos = Input.mousePosition;
+
+        if (!((mouseStartPosition - endPos).magnitude >= swipeDist)) return;
+        if (mouseStartPosition.x >= endPos.x)
         {
-            endPos = Input.mousePosition;
-
-            if ((startPos - endPos).magnitude >= swipeDist)
-            {
-                if (startPos.x >= endPos.x)
-                {
-                    if (currentPos < mapManager.GetCurrentMap().Creatures.Length - 1)
-                    {
-                        currentPos++;
-                        MoveCam(currentPos);
-                    }
-                    //Debug.Log("@@@@@@@@@@@@");
-                }
-
-                else if (startPos.x <= endPos.x)
-                {
-                    if (currentPos > 0)
-                    {
-                        currentPos--;
-                        MoveCam(currentPos);
-                        //Debug.Log("@@@@@@@@@@@@");
-                    }
-                }
-            }
+            if (currentIndex >= MapManager.instance.CurrentMap.Creatures.Length - 1) return;
+            currentIndex++;
+            Move();
         }
-
-        if(isMoving)
+        else if (mouseStartPosition.x <= endPos.x)
         {
-            transform.position = Vector3.MoveTowards(transform.position, finalPos, cameraSpeed * Time.deltaTime);
-
-            if (transform.position == finalPos)
-            {
-                isMoving = false;
-            }
+            if (currentIndex <= 0) return;
+            currentIndex--;
+            Move();
         }
-
-        
     }
 
-    private void MoveCam(int currentPos)
+    private async void Move()
     {
         if (isMoving) return;
 
-        //Debug.Log("############");
-        if (currentPos < 0)
+        if (currentIndex < 0)
         {
-            currentPos = 0;
-            return;
-        }
-       
-
-        if (currentPos > mapManager.GetCurrentMap().Creatures.Length - 1)
-        {
-            currentPos = mapManager.GetCurrentMap().Creatures.Length - 1;
+            currentIndex = 0;
             return;
         }
 
 
-        //transform.position = creatureManager.creatureItems[currentPos].cameraOffset;
+        var currentMap = MapManager.instance.CurrentMap;
+        if (currentIndex > currentMap.Creatures.Length - 1)
+        {
+            currentIndex = currentMap.Creatures.Length - 1;
+            return;
+        }
 
-        finalPos = mapManager.GetCurrentMap().Creatures[currentPos].transform.position + offset;
+
         isMoving = true;
 
-        //transform.position = Vector3.MoveTowards(transform.position, creatureManager.creatureItems[currentPos].cameraOffset, cameraSpeed * Time.deltaTime);
-       
+        var targetPosition = currentMap.Creatures[currentIndex].transform.position + offset;
+
+        while (transform.position != targetPosition)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, cameraSpeed * Time.deltaTime);
+            await Task.Yield();
+        }
+
+        isMoving = false;
     }
-
-
-    
 }

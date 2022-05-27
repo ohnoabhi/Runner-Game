@@ -54429,8 +54429,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5748143371340414035, guid: 377ae0d73920f134590208eaced8ff99, type: 3}
   cameraFollower: {fileID: 963194229}
-  cameraOffset: {x: 0, y: 6, z: -13}
-  cameraRotation: {x: 10, y: 0, z: 0}
+  cameraOffset: {x: 3, y: 6, z: -11}
+  cameraRotation: {x: 10, y: -10, z: 0}
   winBasePrice:
     Type: 0
     Amount: 10

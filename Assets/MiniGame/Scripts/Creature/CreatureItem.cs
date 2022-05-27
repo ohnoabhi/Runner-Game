@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -24,20 +21,19 @@ public class CreatureItem : MonoBehaviour
 
     [SerializeField] float speed;
 
-    public Transform soliderFinalPos;
+    [SerializeField] private Transform soliderFinalPos;
 
-    [SerializeField] CageGaurds[] gaurds;
+    [SerializeField] private CageGuard[] guards;
 
-    public Vector3 cameraOffset;
-
+    [HideInInspector] public string CreatureKey;
 
     public bool IsUnlocked
     {
         get => PlayerPrefs.GetInt(
-            MapManager.instance.GetCurrentMap().MapId + "CreatureItem" + creatureId.ToString(), 0)== 1;
+            CreatureKey, 0) == 1;
 
-        set => PlayerPrefs.SetInt(
-            MapManager.instance.GetCurrentMap().MapId + "CreatureItem" + creatureId.ToString(), value ? 1 : 0);
+        private set => PlayerPrefs.SetInt(
+            CreatureKey, value ? 1 : 0);
     }
 
     private void Start()
@@ -76,9 +72,9 @@ public class CreatureItem : MonoBehaviour
 
         creature.SetActive(false);
 
-        foreach (var gaurd in gaurds)
+        foreach (var cageGuard in guards)
         {
-            gaurd.gameObject.SetActive(false);
+            cageGuard.gameObject.SetActive(false);
         }
     }
 
@@ -119,14 +115,16 @@ public class CreatureItem : MonoBehaviour
         creature.GetComponent<Animator>().SetBool("Running", true);
 
         InitGuards();
-        while(creature.transform.position != finalPos.position)
+        while (creature.transform.position != finalPos.position)
         {
-            var targetPosition = Vector3.MoveTowards(creature.transform.position, finalPos.position, speed * Time.deltaTime);
-            creature.transform.rotation = Quaternion.LookRotation(targetPosition - creature.transform.position) ;
+            var targetPosition =
+                Vector3.MoveTowards(creature.transform.position, finalPos.position, speed * Time.deltaTime);
+            creature.transform.rotation = Quaternion.LookRotation(targetPosition - creature.transform.position);
             creature.transform.position = targetPosition;
 
             await Task.Yield();
         }
+
         MapManager.instance.OnUnlock();
         Destroy(creature.gameObject);
     }
@@ -134,9 +132,9 @@ public class CreatureItem : MonoBehaviour
     private async void InitGuards()
     {
         await Task.Delay(300);
-        foreach (var gaurd in gaurds)
+        foreach (var guard in guards)
         {
-            gaurd.isRunning = true;
+            guard.Run(soliderFinalPos.position);
         }
     }
 }

@@ -14,11 +14,11 @@ public class TankRunFinisher : GameFinisher
 
     private void Start()
     {
-        CreateWalls(StatsManager.Get(StatType.PlayerStat) <= 0 ? 0 : StatsManager.Get(StatType.PlayerStat) / unlockIntervel);
+        CreateTanks(StatsManager.Get(StatType.PlayerStat) <= 0 ? 0 : StatsManager.Get(StatType.PlayerStat) / unlockIntervel);
     }
 
     [Button]
-    private void CreateWalls(int count)
+    private void CreateTanks(int count)
     {
         var offset = 4;
         foreach (Transform child in tankParent)
