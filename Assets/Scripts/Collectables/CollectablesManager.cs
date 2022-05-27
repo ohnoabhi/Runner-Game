@@ -1,90 +1,77 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using Collectables;
 using UnityEngine;
 
 public enum CollectableType
 {
-    Coin,
+    Cash,
     Gem,
-    Health,
     Key
 }
 
-public class CollectablesManager : MonoBehaviour
+[Serializable]
+public class Price
 {
-    public Collectable[] collectables;
-    public static CollectablesManager instance;
-    private static Action<Collectable> OnUpdate;
+    public CollectableType Type;
+    public int Amount;
 
-    private void Awake()
+    public bool IsAffordable()
     {
-        instance = this;
+        return CollectablesManager.Get(Type) >= Amount;
     }
+
+    public void Pay()
+    {
+        CollectablesManager.Remove(Type, Amount);
+    }
+
+    public void Gain()
+    {
+        CollectablesManager.Add(Type, Amount);
+    }
+}
+
+public static class CollectablesManager
+{
+    private static Action<int> OnUpdate;
+
+    public static int Get(CollectableType type) => PlayerPrefs.GetInt(type + "Amount", 0);
 
     public static void Add(CollectableType type, int amount)
     {
-        if (type != CollectableType.Health)
-        {
-            foreach (var collectable in instance.collectables)
-            {
-                if (collectable.Type == type)
-                {
-                    collectable.Amount += amount;
-                    Debug.Log("Amount: " + collectable.Amount);
-                    OnUpdate?.Invoke(collectable);
-                    break;
-                }
-            }
-        }
+        var current = Get(type);
+        current += amount;
+        if (current < 0) current = 0;
+        OnUpdate?.Invoke(current);
+        PlayerPrefs.SetInt(type + "Amount", current < 0 ? 0 : current);
     }
 
     public static void Remove(CollectableType type, int amount)
     {
-        foreach (var collectable in instance.collectables)
-        {
-            if (collectable.Type == type)
-            {
-                collectable.Amount -= amount;
-                OnUpdate?.Invoke(collectable);
-                break;
-            }
-        }
+        Add(type, -amount);
     }
 
-    public static Collectable GetCollectable(CollectableType type)
-    {
-        foreach (var collectable in instance.collectables)
-        {
-            if (collectable.Type == type)
-            {
-                return collectable;
-            }
-        }
-        return null;
-    }
-
-    public void RegisterForUpdate(Action<Collectable> action)
+    public static void RegisterForUpdate(Action<int> action)
     {
         OnUpdate += action;
     }
 
-    public void DeRegisterForUpdate(Action<Collectable> action)
+    public static void DeRegisterForUpdate(Action<int> action)
     {
         OnUpdate -= action;
     }
-}
 
-[System.Serializable]
-public class Collectable
-{
-    public CollectableType Type;
-
-    public Sprite collectableImg;
-
-    public int Amount
+    public static Sprite GetIcon(CollectableType collectabletype)
     {
-        get => PlayerPrefs.GetInt(Type + "Amount", 0);
-        set => PlayerPrefs.SetInt(Type + "Amount", value < 0 ? 0 : value);
+        var database = CollectableIconDatabase.Get();
+        var items = database.Icons;
+        if (items == null) return database.Default;
+
+        foreach (var collectableIcon in items)
+        {
+            if (collectableIcon.Type == collectabletype) return collectableIcon.Icon;
+        }
+
+        return database.Default;
     }
 }

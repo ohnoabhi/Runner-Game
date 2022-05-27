@@ -7,46 +7,39 @@ using TMPro;
 
 public class TopHudItem : MonoBehaviour
 {
-    [SerializeField] 
-    private Image Icon;
+    [SerializeField] private Image Icon;
 
-    [SerializeField]
-    private TMP_Text text;
+    [SerializeField] private TMP_Text text;
 
-    [SerializeField]
-    CollectableType collectabletype;
-    
+    [SerializeField] CollectableType collectabletype;
+
     private void Start()
     {
-        if(CollectablesManager.GetCollectable(collectabletype) == null)
+        var collectable = CollectablesManager.Get(collectabletype);
+
+        if (Icon)
         {
-            gameObject.SetActive(false);
-            return;
+            Icon.sprite = CollectablesManager.GetIcon(collectabletype);
         }
 
-        var collectable = CollectablesManager.GetCollectable(collectabletype);
+        UpdateText(collectable);
 
-        if(Icon)
-        {
-            Icon.sprite = collectable.collectableImg;
-        }
-
-        UpdateText(collectable.Amount);
-
-        CollectablesManager.instance.RegisterForUpdate(OnUpdate);
+        CollectablesManager.RegisterForUpdate(OnUpdate);
     }
 
-    private void OnUpdate(Collectable collectable)
+    private void OnDestroy()
     {
-        if(collectable.Type == collectabletype)
-        {
-            UpdateText(collectable.Amount);
-        }
+        CollectablesManager.DeRegisterForUpdate(OnUpdate);
+    }
+
+    private void OnUpdate(int amount)
+    {
+        UpdateText(amount);
     }
 
     public void UpdateText(int amount)
     {
-        if(text)
+        if (text)
         {
             text.text = amount.ToString();
         }

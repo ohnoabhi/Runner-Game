@@ -1,15 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class WinScreen : BaseScreen
 {
-    [SerializeField] Button winContinueBtn;
-
-    private void Awake()
+    [SerializeField] private Image rewardIcon;
+    [SerializeField] private TextMeshProUGUI rewardAmount;
+    private Price winPrice;
+    protected override void OnShow(params object[] args)
     {
-        winContinueBtn.onClick.RemoveAllListeners();
-        winContinueBtn.onClick.AddListener(() => { ScreenController.instance.Show("Menu"); });
+        winPrice = (Price) args[0];
+
+        rewardIcon.sprite = CollectablesManager.GetIcon(winPrice.Type);
+        rewardAmount.text = winPrice.Amount.ToString();
+    }
+
+    public void OnClickContinue()
+    {
+        winPrice.Gain();
+        ScreenController.instance.Show("Menu");
     }
 }

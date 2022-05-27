@@ -13,15 +13,13 @@ public class Collecter : MonoBehaviour
     {
         var collectable = other.GetComponent<CollectableItem>();
 
-        if (collectable != null)
+        if (collectable == null) return;
+
+        if (collectable.type == CollectableItem.CollectableItemType.Health)
         {
-            if (collectable.type != CollectableType.Health)
-                collectable.Collect();
-            else
-            {
-                playerHealth.GainHealth(collectable.amount);
-                Destroy(collectable.gameObject);
-            }
+            playerHealth.GainHealth(collectable.amount);
         }
+
+        Destroy(collectable.gameObject);
     }
 }

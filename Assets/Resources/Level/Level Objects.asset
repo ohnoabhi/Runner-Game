@@ -19,6 +19,10 @@ MonoBehaviour:
     Finisher: {fileID: 1150465359508026487, guid: 00aa0be528566c34cac807100e1c0851, type: 3}
   - EndType: 2
     Finisher: {fileID: 2998759896698833875, guid: a56bc3b838efeaa4c8698da288791224, type: 3}
+  - EndType: 3
+    Finisher: {fileID: 2401423342305617998, guid: ab1a9c0ab4b311f4ebdf23ce7d3c3a28, type: 3}
+  - EndType: 4
+    Finisher: {fileID: 3192377660022135682, guid: a611965eb33621846974deef2f5eae27, type: 3}
   LevelObjects:
   - {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
   - {fileID: 8044958139425952411, guid: 5015061aea6a70f44930d4721a4b877e, type: 3}
@@ -37,3 +41,4 @@ MonoBehaviour:
   - {fileID: 4217001124002090867, guid: e2de0ceee1f1d9f47bddb9c3488a1cd9, type: 3}
   - {fileID: 6948116994114588769, guid: d140b817e9524e548865f5079165dcef, type: 3}
   - {fileID: 3656030789721302672, guid: c2e771028cc4d7b4e8d55a398cb80561, type: 3}
+  - {fileID: 1222415751959205298, guid: e62ac768a65c971468058c0ab3f2e2b5, type: 3}

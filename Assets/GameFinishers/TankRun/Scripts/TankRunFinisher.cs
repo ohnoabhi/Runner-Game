@@ -2,11 +2,43 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Sirenix.OdinInspector;
+using Stats;
 using UnityEngine;
 
 public class TankRunFinisher : GameFinisher
 {
     [SerializeField] private Transform tankParent;
+    [SerializeField] private GameObject tankPrefab;
+    [SerializeField] private int unlockIntervel = 2;
+
+    private void Start()
+    {
+        CreateWalls(StatsManager.Get(StatType.PlayerStat) <= 0 ? 0 : StatsManager.Get(StatType.PlayerStat) / unlockIntervel);
+    }
+
+    [Button]
+    private void CreateWalls(int count)
+    {
+        var offset = 4;
+        foreach (Transform child in tankParent)
+        {
+            if (Application.isPlaying)
+            {
+                Destroy(child.gameObject);
+            }
+            else
+            {
+                DestroyImmediate(child.gameObject);
+            }
+        }
+
+        for (var i = 0; i < count; i++)
+        {
+            Instantiate(tankPrefab, new Vector3(0, 0, tankParent.position.z + (i * offset)), Quaternion.identity,
+                tankParent);
+        }
+    }
 
     protected override async void Finish()
     {

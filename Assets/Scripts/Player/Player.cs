@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
         Idle,
         Running,
         Fall,
+        Dead,
         Finish
     }
 
@@ -15,15 +16,28 @@ public class Player : MonoBehaviour
     public float SlideSpeed;
     public float XMovementClamp;
 
-    [HideInInspector] public PlayerState State;
+    private PlayerState state;
+
+    public PlayerState State
+    {
+        get => state;
+        set
+        {
+            state = value;
+            OnStateChange();
+        }
+    }
+
+    private void OnStateChange()
+    {
+        UI.gameObject.SetActive(state == PlayerState.Running);
+    }
+
+    public PlayerUIController UI;
 
     public void Die()
     {
-        ScreenController.instance.Show("Lose", 0, Array.Empty<object>());
-    }
-
-    public void Win()
-    {
-        ScreenController.instance.Show("Win", 0, Array.Empty<object>());
+        state = PlayerState.Dead;
+        GameManager.Instance.OnFinish(false);
     }
 }

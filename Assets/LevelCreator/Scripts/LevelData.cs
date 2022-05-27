@@ -19,5 +19,8 @@ public enum LevelEndType
 {
     BossMatch,
     WallRun,
-    TankRun
+    TankRun,
+    StepFinisher,
+    SoldierFinisher,
+    Chest
 }

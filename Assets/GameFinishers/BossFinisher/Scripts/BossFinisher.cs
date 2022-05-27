@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using Stats;
 using UnityEngine;
 
 public class BossFinisher : GameFinisher
@@ -15,6 +13,9 @@ public class BossFinisher : GameFinisher
 
     private float playerHealth = 1;
     private float bossHealth = 1;
+
+    private float playerAttack = 1;
+    private float bossAttack = 1;
 
     private BossFinisherUIController uiController;
 
@@ -39,6 +40,14 @@ public class BossFinisher : GameFinisher
         uiController = ScreenController.instance.SetFinisherUI(ui).GetComponent<BossFinisherUIController>();
         uiController.Init();
         GameManager.Instance.ShowFinisherUI();
+
+        var currentHealthPercentage = GameManager.Instance.player.GetComponent<PlayerHealth>().CurrentHealth / 100f;
+        playerAttack = currentHealthPercentage * (2 + (2 * (StatsManager.Get(StatType.PlayerStat) / 100f)));
+
+
+        bossAttack = (boss.Damage + (boss.Damage * (StatsManager.Get(StatType.PlayerStat) / 100f)) +
+                      (boss.Damage * (GameManager.Level / 100f)));
+
         start = true;
     }
 
@@ -46,11 +55,11 @@ public class BossFinisher : GameFinisher
     {
         if (start)
         {
-            playerHealth -= boss.Damage * Time.deltaTime;
+            playerHealth -= bossAttack * Time.deltaTime;
 
             if (Input.GetMouseButtonDown(0))
             {
-                bossHealth -= 2f * Time.deltaTime;
+                bossHealth -= playerAttack * Time.deltaTime;
             }
 
             if (playerHealth < 0) playerHealth = 0;

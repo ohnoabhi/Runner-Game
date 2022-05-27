@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "com.marijnzwemmer.unity-toolbar-extender": {
-      "version": "file:W:/Unity/Packages/unity-toolbar-extender-master",
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
       "depth": 0,
-      "source": "local",
+      "source": "builtin",
       "dependencies": {}
     },
     "com.unity.collab-proxy": {

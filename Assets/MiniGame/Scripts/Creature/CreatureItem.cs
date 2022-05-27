@@ -7,55 +7,48 @@ using TMPro;
 
 public class CreatureItem : MonoBehaviour
 {
-    [SerializeField]
-    int creatureId;
+    [SerializeField] int creatureId;
 
-    [SerializeField]
-    int keysRequired = 3;
+    [SerializeField] int keysRequired = 3;
 
-    [SerializeField]
-    Button unlockBtn;
+    [SerializeField] Button unlockBtn;
 
-    [SerializeField]
-    TMP_Text buttonTxt;
+    [SerializeField] TMP_Text buttonTxt;
 
-    [SerializeField]
-    GameObject cage;
+    [SerializeField] GameObject cage;
 
-    [SerializeField]
-    GameObject creature;
+    [SerializeField] GameObject creature;
 
-    [SerializeField]
-    Transform finalPos;
+    [SerializeField] Transform finalPos;
 
-    [SerializeField]
-    float speed;
+    [SerializeField] float speed;
 
     bool isRunning = false;
 
     public Transform soliderFinalPos;
 
-    [SerializeField]
-    CageGaurds[] gaurds;
+    [SerializeField] CageGaurds[] gaurds;
 
     public Vector3 cameraOffset;
 
 
-
     public int isUnlocked
     {
-        get => PlayerPrefs.GetInt(GetComponentInParent<CreatureManager>().mapId.ToString() + "CreatureItem" + creatureId.ToString(),0);
+        get => PlayerPrefs.GetInt(
+            GetComponentInParent<CreatureManager>().mapId.ToString() + "CreatureItem" + creatureId.ToString(), 0);
 
-        set => PlayerPrefs.SetInt(GetComponentInParent<CreatureManager>().mapId.ToString() + "CreatureItem" + creatureId.ToString(),value);
+        set => PlayerPrefs.SetInt(
+            GetComponentInParent<CreatureManager>().mapId.ToString() + "CreatureItem" + creatureId.ToString(), value);
     }
 
     private void Start()
     {
-        if(CreatureData.instance.ReturnCreature(creatureId) != null)
+        if (CreatureData.instance.ReturnCreature(creatureId) != null)
         {
             GameObject creatureReturned = CreatureData.instance.ReturnCreature(creatureId);
 
-             var newCreature =Instantiate(creatureReturned, creature.transform.position, creature.transform.rotation, gameObject.transform);
+            var newCreature = Instantiate(creatureReturned, creature.transform.position, creature.transform.rotation,
+                gameObject.transform);
 
             Destroy(creature.gameObject);
 
@@ -64,12 +57,12 @@ public class CreatureItem : MonoBehaviour
             //creature.transform.SetParent(this.transform);
         }
 
-        if(isUnlocked == 0)
+        if (isUnlocked == 0)
         {
             CageLocked();
         }
 
-        else if(isUnlocked == 1)
+        else if (isUnlocked == 1)
         {
             CageUnlocked();
         }
@@ -85,7 +78,7 @@ public class CreatureItem : MonoBehaviour
 
         creature.SetActive(false);
 
-        foreach(var gaurd in gaurds)
+        foreach (var gaurd in gaurds)
         {
             gaurd.gameObject.SetActive(false);
         }
@@ -103,11 +96,9 @@ public class CreatureItem : MonoBehaviour
 
     public void OnClickUnlock()
     {
-        Collectable keyCollectable = CollectablesManager.GetCollectable(CollectableType.Key);
+        int keys = CollectablesManager.Get(CollectableType.Key);
 
-        int keys = keyCollectable.Amount;
-
-        if(keys >= keysRequired)
+        if (keys >= keysRequired)
         {
             isUnlocked = 1;
             KeyManager.instance.Remove(keysRequired);
@@ -144,21 +135,17 @@ public class CreatureItem : MonoBehaviour
     {
         if (!isRunning) return;
 
-        if(creature.transform.position != finalPos.position)
+        if (creature.transform.position != finalPos.position)
         {
-            Vector3 pos = Vector3.MoveTowards(creature.transform.position, finalPos.position,speed * Time.deltaTime);
+            Vector3 pos = Vector3.MoveTowards(creature.transform.position, finalPos.position, speed * Time.deltaTime);
             creature.GetComponent<Rigidbody>().MovePosition(pos);
             creature.GetComponent<Animator>().SetBool("Running", true);
-
-            
         }
 
-        else if(creature.transform.position == finalPos.position)
+        else if (creature.transform.position == finalPos.position)
         {
             Destroy(creature);
             isRunning = false;
         }
-
-        
     }
 }

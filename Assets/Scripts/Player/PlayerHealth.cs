@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
 
     private int HealthLevel => CurrentHealth > 0 ? Mathf.FloorToInt(CurrentHealth / levelUpRequirement) : 0;
 
-    public int MaxLevelHealth => HealthLevel * levelUpRequirement;
+    public int MaxLevelHealth => (HealthLevel + 1) * levelUpRequirement;
     public int MinLevelHealth => HealthLevel <= 0 ? 0 : (HealthLevel - 1) * levelUpRequirement;
 
     private void Awake()
@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void GainHealth(float amount)
     {
+        Debug.Log("Gain: " + amount);
         var tempLevel = HealthLevel;
         CurrentHealth += amount;
         if (CurrentHealth > MaxHealth) CurrentHealth = MaxHealth;

@@ -35,7 +35,7 @@ public class ScreenController : MonoBehaviour
         {
             if (screenItem.name == name)
             {
-                screenItem.screen.Show();
+                screenItem.screen.Show(Mathf.RoundToInt(delay * 1000), args);
                 TopHudController.Enable(screenItem.topHud);
             }
             else

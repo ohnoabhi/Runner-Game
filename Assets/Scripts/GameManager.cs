@@ -1,4 +1,5 @@
 using System;
+using Stats;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CameraFollower cameraFollower;
     [SerializeField] private Vector3 cameraOffset = new Vector3(0, 6, -10);
     [SerializeField] private Vector3 cameraRotation = new Vector3(10, 0, 0);
+    [SerializeField] private Price winBasePrice;
 
     private GameFinisher finisher;
 
@@ -97,6 +99,7 @@ public class GameManager : MonoBehaviour
         player = Instantiate(playerPrefab);
         player.name = "Player";
         player.State = Player.PlayerState.Running;
+        player.UI.SetCamera(cameraFollower.transform);
         cameraFollower.Target = player.transform;
         cameraFollower.SetOffset(cameraOffset, Quaternion.Euler(cameraRotation), false);
         CurrentState = GameStates.Playing;
@@ -111,7 +114,7 @@ public class GameManager : MonoBehaviour
             ScreenController.instance.Show("Finisher");
             if (finisher)
                 finisher.StartFinisher(player);
-            else ScreenController.instance.Show("Win");
+            else ScreenController.instance.Show("Win", 0, GetWinAmount());
         }
         else ScreenController.instance.Show("Lose");
     }
@@ -136,6 +139,17 @@ public class GameManager : MonoBehaviour
     public void GameOver(bool win)
     {
         ClearLevel();
-        ScreenController.instance.Show(win ? "Win" : "Lose");
+        ScreenController.instance.Show(win ? "Win" : "Lose", 0, GetWinAmount());
+    }
+
+    public Price GetWinAmount()
+    {
+        return new Price()
+        {
+            Type = winBasePrice.Type,
+            Amount = Mathf.RoundToInt(winBasePrice.Amount +
+                                      winBasePrice.Amount * (Level - 1) *
+                                      (StatsManager.Get(StatType.RewardMultiplier) - 1))
+        };
     }
 }
