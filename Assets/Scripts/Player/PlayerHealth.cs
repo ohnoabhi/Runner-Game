@@ -27,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void GainHealth(float amount)
     {
-        Debug.Log("Gain: " + amount);
         var tempLevel = HealthLevel;
         CurrentHealth += amount;
         if (CurrentHealth > MaxHealth) CurrentHealth = MaxHealth;

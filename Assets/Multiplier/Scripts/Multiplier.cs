@@ -26,7 +26,8 @@ public class Multiplier : MonoBehaviour, IObstacle
     }
 
     public MultiplierValuePair[] AvailableValuesPairs;
-    [SerializeField] private Renderer[] renderers;
+    [SerializeField] private ParticleSystem[] leftParticles;
+    [SerializeField] private ParticleSystem[] rightParticles;
     [SerializeField] private TextMeshPro[] texts;
     [SerializeField] private Color positiveColor;
     [SerializeField] private Color negativeColor;
@@ -36,15 +37,21 @@ public class Multiplier : MonoBehaviour, IObstacle
     {
         current = AvailableValuesPairs[Random.Range(0, AvailableValuesPairs.Length)];
 
-        var propertyBlock = new MaterialPropertyBlock();
+        foreach (var leftParticle in leftParticles)
+        {
+            var color = current.LeftValue.Type == MultiplierValueType.Add ? positiveColor : negativeColor;
+            var main = leftParticle.main;
+            color.a = 1;
+            main.startColor = color;
+        }
 
-        propertyBlock.SetColor("_Color",
-            current.LeftValue.Type == MultiplierValueType.Add ? positiveColor : negativeColor);
-        renderers[0].SetPropertyBlock(propertyBlock);
-        propertyBlock = new MaterialPropertyBlock();
-        propertyBlock.SetColor("_Color",
-            current.RightValue.Type == MultiplierValueType.Add ? positiveColor : negativeColor);
-        renderers[1].SetPropertyBlock(propertyBlock);
+        foreach (var rightParticle in rightParticles)
+        {
+            var color = current.RightValue.Type == MultiplierValueType.Add ? positiveColor : negativeColor;
+            var main = rightParticle.main;
+            color.a = 1;
+            main.startColor = color;
+        }
 
         texts[0].text = (current.LeftValue.Type == MultiplierValueType.Add ? "+" : "-") + current.LeftValue.amount;
         texts[1].text = (current.RightValue.Type == MultiplierValueType.Add ? "+" : "-") + current.RightValue.amount;

@@ -28,8 +28,6 @@ public class StepFinisher : GameFinisher
                     Vector3.MoveTowards(player.transform.position, steps[i].position, playerMoveSpeed * Time.deltaTime);
                 await Task.Yield();
             }
-
-            player.transform.position += new Vector3(0, 0.5f, 0);
         }
 
         var target = player.transform.position += new Vector3(0, 0, 2.5f);
@@ -40,7 +38,10 @@ public class StepFinisher : GameFinisher
             await Task.Yield();
         }
 
-        await Task.Delay(200);
+        player.transform.position += new Vector3(0, 0.5f, 0);
+        var character = player.GetComponent<PlayerCharacterManager>().Character;
+        character.Animator.SetTrigger("Roar");
+        await Task.Delay(1500);
 
         GameManager.Instance.GameOver(true);
     }

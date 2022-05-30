@@ -8,7 +8,7 @@ public class Boss : MonoBehaviour
     public float Damage = 0.25f;
 
 
-    public async void StartAttack(Vector3 position, Player player)
+    public async Task StartAttack(Vector3 position, Player player)
     {
         if (!animator.GetBool("Running"))
             animator.SetBool("Running", true);

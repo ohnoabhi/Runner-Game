@@ -1,26 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Stats;
+using TMPro;
 using UnityEngine;
 
 public class TankRunFinisher : GameFinisher
 {
+    [SerializeField] private int playerSpeed = 10;
     [SerializeField] private Transform tankParent;
     [SerializeField] private GameObject tankPrefab;
+    [SerializeField] private float offsetZ = 16;
     [SerializeField] private int unlockIntervel = 2;
 
     private void Start()
     {
-        CreateTanks(StatsManager.Get(StatType.PlayerStat) <= 0 ? 0 : StatsManager.Get(StatType.PlayerStat) / unlockIntervel);
+        var count = StatsManager.Get(StatType.PlayerStat) <= 0
+            ? 0
+            : StatsManager.Get(StatType.PlayerStat) / unlockIntervel;
+        count = Mathf.Max(count, 2);
+        CreateTanks(count);
     }
 
     [Button]
-    private void CreateTanks(int count)
+    private async void CreateTanks(int count)
     {
-        var offset = 4;
         foreach (Transform child in tankParent)
         {
             if (Application.isPlaying)
@@ -31,12 +34,17 @@ public class TankRunFinisher : GameFinisher
             {
                 DestroyImmediate(child.gameObject);
             }
+
+            await Task.Yield();
         }
 
         for (var i = 0; i < count; i++)
         {
-            Instantiate(tankPrefab, new Vector3(0, 0, tankParent.position.z + (i * offset)), Quaternion.identity,
+            var instance = Instantiate(tankPrefab, new Vector3(0, 0, tankParent.position.z + (i * offsetZ)),
+                Quaternion.Euler(0, 180, 0),
                 tankParent);
+            instance.GetComponentInChildren<TextMeshPro>().text = "X" + (i + 1);
+            await Task.Yield();
         }
     }
 
@@ -53,15 +61,18 @@ public class TankRunFinisher : GameFinisher
 
         var tank = tankParent.GetChild(tankIndex);
 
-        var targetPosition = tank.transform.position + new Vector3(0, 0, 2);
+        var targetPosition = tank.transform.position + new Vector3(0, 0, offsetZ * 0.5f);
         while (player.transform.position != targetPosition)
         {
             player.transform.position =
-                Vector3.MoveTowards(player.transform.position, targetPosition, 5 * Time.deltaTime);
+                Vector3.MoveTowards(player.transform.position, targetPosition, playerSpeed * Time.deltaTime);
             await Task.Yield();
         }
 
-        await Task.Delay(300);
+
+        var character = player.GetComponent<PlayerCharacterManager>().Character;
+        character.Animator.SetTrigger("Roar");
+        await Task.Delay(1500);
 
         GameManager.Instance.GameOver(true);
     }

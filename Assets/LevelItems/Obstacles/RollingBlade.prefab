@@ -54,6 +54,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4217001124002090868}
     m_Modifications:
+    - target: {fileID: 56379401960130200, guid: e8c8e714e6113374c929139d4d838628, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 484e16c436a265d41b787bb716fb076d, type: 2}
     - target: {fileID: 1189900386482552311, guid: e8c8e714e6113374c929139d4d838628, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -64,7 +68,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189900386482552311, guid: e8c8e714e6113374c929139d4d838628, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.79
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1189900386482552311, guid: e8c8e714e6113374c929139d4d838628, type: 3}
       propertyPath: m_LocalPosition.z

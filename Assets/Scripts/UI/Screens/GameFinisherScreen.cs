@@ -13,6 +13,7 @@ namespace UI.Screens
                 Destroy(child.gameObject);
             }
 
+            if (!ui) return null;
             var instance = Instantiate(ui, parent);
             return instance;
         }

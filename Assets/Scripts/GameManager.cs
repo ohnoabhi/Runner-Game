@@ -131,6 +131,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetCamera(bool isFollowCam)
+    {
+        if (isFollowCam)
+        {
+            cameraFollower.SetOffset(cameraFollower.transform.localPosition, cameraFollower.transform.rotation);
+        }
+        else
+        {
+            cameraFollower.MoveToPosition(cameraFollower.transform.position, cameraFollower.transform.rotation);
+        }
+    }
+
     public void ShowFinisherUI()
     {
         ScreenController.instance.Show("Finisher");
@@ -139,6 +151,7 @@ public class GameManager : MonoBehaviour
     public void GameOver(bool win)
     {
         ClearLevel();
+        ScreenController.instance.SetFinisherUI();
         ScreenController.instance.Show(win ? "Win" : "Lose", 0, GetWinAmount());
     }
 

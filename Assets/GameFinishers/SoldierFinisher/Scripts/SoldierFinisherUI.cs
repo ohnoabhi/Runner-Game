@@ -11,7 +11,7 @@ public class SoldierFinisherUI : MonoBehaviour
 
     public void Init()
     {
-        slider.value = 0;
+        slider.value = 0.15f;
 
         tap.DOScale(1.5f, 0.5f).SetLoops(-1);
     }

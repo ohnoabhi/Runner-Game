@@ -61,7 +61,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logPrefab: {fileID: 8845899627382980079, guid: 9d692a1de2c225d44b13ee32141945cd, type: 3}
   trunkPrefab: {fileID: 8954507651424581225, guid: 1da5397edc92ade468bf039cb29b60d1, type: 3}
-  damage: 5
+  tree: {fileID: 1408787363155070914}
+  damage: 0.05
 --- !u!1001 &1407607781772737386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,6 +125,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 65345325894267272, guid: 374aeb2cafe7a4742a5021f239b6b151, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 374aeb2cafe7a4742a5021f239b6b151, type: 3}
+--- !u!1 &1408787363155070914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1644273993348264, guid: 374aeb2cafe7a4742a5021f239b6b151, type: 3}
+  m_PrefabInstance: {fileID: 1407607781772737386}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1412362121281600520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4895077618370402, guid: 374aeb2cafe7a4742a5021f239b6b151, type: 3}

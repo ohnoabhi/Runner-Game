@@ -8,6 +8,7 @@ public class DestructableObstacle : MonoBehaviour, IObstacle
 
     public void Collide(Player player)
     {
+        VibrationManager.Vibrate(200);
         player.GetComponent<PlayerHealth>().TakeDamage(damage);
         StartCoroutine(Waiter());
     }

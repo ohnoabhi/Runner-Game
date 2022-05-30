@@ -31,7 +31,7 @@ public class LevelObject : MonoBehaviour
 
     public Vector3 GetVerticalHandlePos()
     {
-        return transform.position + Vector3.right * 0.5f;
+        return transform.position;
     }
 
     public LevelItemData GetData()
@@ -48,5 +48,14 @@ public class LevelObject : MonoBehaviour
     private void LoadData()
     {
         transform.position = _levelItemData.Position;
+    }
+
+    [Button]
+    private void RotateChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            child.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+        }
     }
 }

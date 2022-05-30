@@ -10,6 +10,8 @@ namespace Stats
         private static StatsManager instance;
         [SerializeField] private Stat[] stats;
 
+        public static Action OnUpdate;
+
         private void Awake()
         {
             instance = this;

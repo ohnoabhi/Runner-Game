@@ -43,7 +43,6 @@ public class PlayerUIController : MonoBehaviour
 
     private void SetPlayerHealth(float health, int minHealth, int maxHealth)
     {
-        Debug.Log("Health: " + health + "|Min: " + minHealth + "|Max: " + maxHealth);
         healthMeter.minValue = minHealth;
         healthMeter.value = health;
         healthMeter.maxValue = maxHealth;

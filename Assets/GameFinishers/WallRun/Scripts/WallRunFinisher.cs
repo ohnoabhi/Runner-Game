@@ -4,36 +4,43 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Stats;
+using UnityEditor;
 using UnityEngine;
 
 public class WallRunFinisher : GameFinisher
 {
+    [SerializeField] private int playerSpeed = 10;
     [SerializeField] private Transform wallParent;
     [SerializeField] private Wall wallPrefab;
+    [SerializeField] private float ofssetZ = 8;
 
     [SerializeField] private int unlockIntervel = 2;
     private int unlockedWalls;
 
     [Button]
-    private void CreateWalls(int count)
+    private async void CreateWalls(int count)
     {
-        var offset = 4;
-        foreach (Transform child in wallParent)
+        for (int i = 0; i < wallParent.childCount; i++)
         {
             if (Application.isPlaying)
             {
-                Destroy(child.gameObject);
+                Destroy(wallParent.GetChild(i).gameObject);
             }
             else
             {
-                DestroyImmediate(child.gameObject);
+                DestroyImmediate(wallParent.GetChild(i).gameObject);
             }
+
+            await Task.Yield();
         }
 
         for (var i = 0; i < count; i++)
         {
-            Instantiate(wallPrefab, new Vector3(0, 0, wallParent.position.z + (i * offset)), Quaternion.identity,
-                wallParent);
+            var instance = (Wall) PrefabUtility.InstantiatePrefab(wallPrefab);
+            instance.transform.localPosition = new Vector3(0, 0, wallParent.position.z + (i * ofssetZ));
+            instance.transform.parent = wallParent;
+            // Instantiate(wallPrefab, new Vector3(0, 0, wallParent.position.z + (i * ofssetZ)), Quaternion.identity,
+            //     wallParent);
         }
     }
 
@@ -47,7 +54,8 @@ public class WallRunFinisher : GameFinisher
 
         for (var i = 0; i < wallParent.childCount; i++)
         {
-            wallParent.GetChild(i).GetComponent<Wall>().SetLock(i >= unlockedWalls);
+            var wall = wallParent.GetChild(i).GetComponent<Wall>();
+            wall.Init(i >= unlockedWalls, i + 1);
         }
     }
 
@@ -66,15 +74,19 @@ public class WallRunFinisher : GameFinisher
 
         var wall = wallParent.GetChild(wallIndex);
 
-        var targetPosition = wall.transform.position + new Vector3(0, 0, 2);
+
+        var targetPosition = wall.transform.position + new Vector3(0, 0, ofssetZ * 0.5f);
         while (player.transform.position != targetPosition)
         {
             player.transform.position =
-                Vector3.MoveTowards(player.transform.position, targetPosition, 5 * Time.deltaTime);
+                Vector3.MoveTowards(player.transform.position, targetPosition, playerSpeed * Time.deltaTime);
             await Task.Yield();
         }
 
-        await Task.Delay(300);
+
+        var character = player.GetComponent<PlayerCharacterManager>().Character;
+        character.Animator.SetTrigger("Roar");
+        await Task.Delay(1500);
 
         GameManager.Instance.GameOver(true);
     }

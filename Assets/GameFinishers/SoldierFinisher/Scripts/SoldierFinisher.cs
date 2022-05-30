@@ -18,9 +18,7 @@ public class SoldierFinisher : GameFinisher
     protected override async void Finish()
     {
         base.Finish();
-
-
-        while (player.transform.position != playerPosition.position)
+        while (player && player.transform.position != playerPosition.position)
         {
             player.transform.position =
                 Vector3.MoveTowards(player.transform.position, playerPosition.position, 3 * Time.deltaTime);
@@ -48,25 +46,38 @@ public class SoldierFinisher : GameFinisher
         value = Mathf.Clamp(value, 0, 1);
         uiController.UpdateValue(value);
         if (value >= 1)
-            GameOver();
+            GameOver(true);
+        else if (value <= 0)
+            GameOver(false);
     }
 
-    private async void GameOver()
+    private async void GameOver(bool win)
     {
         start = false;
-        uiController.UpdateValue(1);
-        var targets = new Vector3[waypoints.Length];
-        var i = 0;
-        foreach (var waypoint in waypoints)
+        var character = player.GetComponent<PlayerCharacterManager>().Character;
+        if (win)
         {
-            targets[i] = waypoint.position;
-            i++;
+            character.Animator.SetTrigger("Idle");
+            uiController.UpdateValue(1);
+            var targets = new Vector3[waypoints.Length];
+            var i = 0;
+            foreach (var waypoint in waypoints)
+            {
+                targets[i] = waypoint.position;
+                i++;
+            }
+
+            var tasks = soldiers.Select(soldier => soldier.Run(targets)).ToList();
+
+            await Task.WhenAll(tasks);
+            GameManager.Instance.GameOver(true);
         }
-
-        var tasks = soldiers.Select(soldier => soldier.Run(targets)).ToList();
-
-        await Task.WhenAll(tasks);
-
-        GameManager.Instance.GameOver(true);
+        else
+        {
+            uiController.UpdateValue(0);
+            character.Animator.SetTrigger("Dead");
+            await Task.Delay(1500);
+            GameManager.Instance.GameOver(false);
+        }
     }
 }

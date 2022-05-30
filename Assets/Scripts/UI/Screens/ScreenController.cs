@@ -61,7 +61,7 @@ public class ScreenController : MonoBehaviour
         }
     }
 
-    public GameObject SetFinisherUI(GameObject ui)
+    public GameObject SetFinisherUI(GameObject ui = null)
     {
         return finisherScreen.SetUI(ui);
     }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BossFinisher : GameFinisher
 {
-    [SerializeField] private Boss boss;
+    [SerializeField] private Boss[] bosses;
+    [SerializeField] private Transform bossParent;
     [SerializeField] private Transform playerPosition;
     [SerializeField] private Transform bossPosition;
     [SerializeField] private GameObject ui;
@@ -25,7 +26,9 @@ public class BossFinisher : GameFinisher
         playerHealth = 1;
         bossHealth = 1;
 
-        boss.StartAttack(bossPosition.position, player);
+        var boss = Instantiate(bosses[Random.Range(0, bosses.Length)], bossParent);
+        boss.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        var bossTask = boss.StartAttack(bossPosition.position, player);
         while (player.transform.position != playerPosition.position)
         {
             player.transform.position =
@@ -34,6 +37,11 @@ public class BossFinisher : GameFinisher
         }
 
         var character = player.GetComponent<PlayerCharacterManager>().Character;
+        if (character)
+            character.Animator.SetBool("Running", false);
+
+        await Task.WhenAll(bossTask);
+
         if (character)
             character.Animator.SetBool("IsAttacking", true);
 
@@ -44,10 +52,13 @@ public class BossFinisher : GameFinisher
         var currentHealthPercentage = GameManager.Instance.player.GetComponent<PlayerHealth>().CurrentHealth / 100f;
         playerAttack = currentHealthPercentage * (2 + (2 * (StatsManager.Get(StatType.PlayerStat) / 100f)));
 
-
-        bossAttack = (boss.Damage + (boss.Damage * (StatsManager.Get(StatType.PlayerStat) / 100f)) +
-                      (boss.Damage * (GameManager.Level / 100f)));
-
+        // bossAttack = (boss.Damage + (boss.Damage * (StatsManager.Get(StatType.PlayerStat) / 100f)) +
+        //               (boss.Damage * (GameManager.Level / 100f)));
+        bossAttack = 0.15f;
+        var bossLevel = GameManager.Level * 1.5f;
+        var per = StatsManager.Get(StatType.PlayerStat) / bossLevel;
+        playerAttack = 2f * per;
+        playerAttack -= playerAttack * 0.3f * (1 - currentHealthPercentage);
         start = true;
     }
 

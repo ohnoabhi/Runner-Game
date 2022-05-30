@@ -7,6 +7,7 @@ public class CollectableItem : MonoBehaviour
 
     public enum CollectableItemType
     {
-        Health
+        Health,
+        Cash
     }
 }

@@ -15,9 +15,14 @@ public class Collecter : MonoBehaviour
 
         if (collectable == null) return;
 
-        if (collectable.type == CollectableItem.CollectableItemType.Health)
+        switch (collectable.type)
         {
-            playerHealth.GainHealth(collectable.amount);
+            case CollectableItem.CollectableItemType.Health:
+                playerHealth.GainHealth(collectable.amount);
+                break;
+            case CollectableItem.CollectableItemType.Cash:
+                CollectablesManager.Add(CollectableType.Cash, 1);
+                break;
         }
 
         Destroy(collectable.gameObject);

@@ -54,8 +54,11 @@ public class PlayerMovement : MonoBehaviour
         if (player.State != Player.PlayerState.Running) return;
 
         player.State = Player.PlayerState.Fall;
+        playerCharacterManager.Character.Animator.SetTrigger("Dead");
 
-        var fallPos = new Vector3(transform.position.x, -15, transform.position.z);
+        GameManager.Instance.SetCamera(false);
+
+        var fallPos = new Vector3(transform.position.x, -3, transform.position.z);
         while (transform.position != fallPos)
         {
             transform.position = Vector3.MoveTowards(transform.position, fallPos, 5 * Time.deltaTime);

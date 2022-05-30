@@ -155,10 +155,28 @@ namespace LevelCreator.Editor
                     ? index ==
                       _mouseInfo.SelectedIndex ? Color.blue :
                     _mouseInfo.MouseOverIndex == index ? Color.blue * 0.75f : Color.blue * 0.4f
-                    : Color.blue * 0.4f;
+                : Color.blue * 0.4f;
+
                 position = levelObject.GetVerticalHandlePos();
                 Handles.DrawSolidDisc(position, Vector3.up,
-                    0.25f);
+                0.25f);
+                // Handles.color = Color.blue;
+
+                // var temp = Handles.Slider(position, Vector3.forward);
+                // if (temp != position)
+                // {
+                //     var levelItemData = _levelEditorManager.LevelObjects[_mouseInfo.SelectedIndex].GetData();
+                //     levelItemData.Position =
+                //         new Vector3(levelItemData.Position.x, levelItemData.Position.y, temp.z);
+                //
+                //     _levelEditorManager.LevelObjects[_mouseInfo.SelectedIndex].SetData(levelItemData);
+                //
+                //     var levelData =
+                //         _levelEditorManager.LevelDatabase.Levels[_levelEditorManager.Selection.SelectedLevel];
+                //     levelData.LevelItems[_mouseInfo.SelectedIndex] = levelItemData;
+                //     EditorUtility.SetDirty(levelData);
+                // }
+
                 index++;
             }
         }

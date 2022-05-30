@@ -24,8 +24,15 @@ namespace Stats
                 if (!price.IsAffordable()) return;
                 price.Pay();
                 StatsManager.Update(type);
-                UpdateUI();
             });
+
+            StatsManager.OnUpdate += UpdateUI;
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            StatsManager.OnUpdate -= UpdateUI;
         }
 
         private void UpdateUI()

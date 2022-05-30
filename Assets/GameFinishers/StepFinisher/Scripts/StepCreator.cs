@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -37,8 +38,10 @@ public class StepCreator : MonoBehaviour
         {
             var instance = Instantiate(stepPrefab, transform);
             instance.transform.localPosition = offset;
+
+            instance.GetComponentInChildren<TextMeshPro>().text = "X" + (i + 1);
             var renderers = instance.GetComponentsInChildren<Renderer>();
-            property.SetColor("_Color", Random.ColorHSV());
+            property.SetColor("_Color", Random.ColorHSV(0.1f, 0.8f, 1f, 1f, 0.5f, 1f));
             foreach (var renderer in renderers)
             {
                 renderer.SetPropertyBlock(property);

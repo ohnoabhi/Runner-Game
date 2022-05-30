@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -35,9 +36,11 @@ public class Player : MonoBehaviour
 
     public PlayerUIController UI;
 
-    public void Die()
+    public async void Die()
     {
         state = PlayerState.Dead;
+        GetComponent<PlayerCharacterManager>().Character.Animator.SetTrigger("Dead");
+        await Task.Delay(1600);
         GameManager.Instance.OnFinish(false);
     }
 }

@@ -12,79 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9985932ef8b9427986e0d47bef1d0d00, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  EndType: 4
+  EndType: 5
   LevelItems:
   - ReferenceID: 0
     Position: {x: 0, y: 0, z: 0}
   - ReferenceID: 0
     Position: {x: 0, y: 0, z: 10}
+  - ReferenceID: 17
+    Position: {x: 0, y: 0, z: 19.959059}
   - ReferenceID: 0
     Position: {x: 0, y: 0, z: 20}
-  - ReferenceID: 1
-    Position: {x: -2.5, y: 0, z: 23.726246}
-  - ReferenceID: 1
-    Position: {x: 2.5, y: 0, z: 34.94437}
   - ReferenceID: 0
     Position: {x: 0, y: 0, z: 30}
   - ReferenceID: 0
     Position: {x: 0, y: 0, z: 40}
-  - ReferenceID: 7
-    Position: {x: 2.5, y: 0, z: 16.181858}
-  - ReferenceID: 7
-    Position: {x: 2.5, y: 0, z: 19.721277}
   - ReferenceID: 0
     Position: {x: 0, y: 0, z: 50}
   - ReferenceID: 0
     Position: {x: 0, y: 0, z: 60}
-  - ReferenceID: 4
-    Position: {x: -2.5, y: 0, z: 42.15045}
-  - ReferenceID: 5
-    Position: {x: 2.5, y: 0, z: 52.60061}
-  - ReferenceID: 2
-    Position: {x: 0, y: 0, z: 70}
-  - ReferenceID: 0
-    Position: {x: 0, y: 0, z: 80}
-  - ReferenceID: 3
-    Position: {x: 0, y: 0, z: 90}
-  - ReferenceID: 0
-    Position: {x: 0, y: 0, z: 112.75}
-  - ReferenceID: 0
-    Position: {x: 0, y: 0, z: 122.75}
-  - ReferenceID: 0
-    Position: {x: 0, y: 0, z: 132.75}
-  - ReferenceID: 6
-    Position: {x: 0, y: 0, z: 95.17497}
-  - ReferenceID: 7
-    Position: {x: -2.5, y: 0, z: 26.918848}
-  - ReferenceID: 7
-    Position: {x: -2.5, y: 0, z: 30.061876}
-  - ReferenceID: 7
-    Position: {x: -2.5, y: 0, z: 47.27439}
-  - ReferenceID: 8
-    Position: {x: 2.5, y: 0, z: 27.055523}
-  - ReferenceID: 9
-    Position: {x: -2.5, y: 0, z: 62.666348}
-  - ReferenceID: 15
-    Position: {x: 0, y: 0, z: 142.75}
-  - ReferenceID: 0
-    Position: {x: 0, y: 0, z: 162.75}
-  - ReferenceID: 0
-    Position: {x: 0, y: 0, z: 172.75}
-  - ReferenceID: 0
-    Position: {x: 0, y: 0, z: 182.75}
-  - ReferenceID: 10
-    Position: {x: 0, y: 0, z: 170.28934}
-  - ReferenceID: 10
-    Position: {x: 0, y: 0, z: 172.49442}
-  - ReferenceID: 11
-    Position: {x: 0, y: 0, z: 196.11807}
-  - ReferenceID: 12
-    Position: {x: 0, y: 0, z: 184.88785}
-  - ReferenceID: 0
-    Position: {x: 0, y: 0, z: 192.75}
-  - ReferenceID: 0
-    Position: {x: 0, y: 0, z: 202.75}
-  - ReferenceID: 16
-    Position: {x: 0, y: 0, z: 212.75}
   - ReferenceID: 17
-    Position: {x: 0, y: 0, z: 85.4352}
+    Position: {x: 0, y: 0, z: 29.595478}
+  - ReferenceID: 17
+    Position: {x: 0, y: 0, z: 39.10902}
+  - ReferenceID: 17
+    Position: {x: 0, y: 0, z: 48.49886}

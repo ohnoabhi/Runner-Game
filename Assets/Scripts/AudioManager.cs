@@ -21,8 +21,12 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        targetGameObject = Instantiate(new GameObject(), transform);
-        targetGameObject.name = "AudioSources";
+        targetGameObject = new GameObject
+        {
+            name = "AudioSources"
+        };
+
+        targetGameObject.transform.parent = transform;
     }
 
 
