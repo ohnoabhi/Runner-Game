@@ -10,7 +10,7 @@ public class MapManager : MonoBehaviour
 {
     public Map[] maps;
     public static MapManager instance;
-    public static Action<int, int> OnCreatureUnlock;
+    public static Action<int, int> OnCreatureUnlockUI;
     public static Action<int> OnMapLoaded;
 
     public Map CurrentMap { get; private set; }
@@ -41,6 +41,7 @@ public class MapManager : MonoBehaviour
     private void Start()
     {
         LoadMap();
+        OnCreatureUnlockUI?.Invoke(getMapUnlockedCount(), CurrentMap.Creatures.Length);
     }
 
     private void LoadMap()
@@ -58,7 +59,6 @@ public class MapManager : MonoBehaviour
             }
         }
 
-
         CurrentMap = Instantiate(maps[currentMapIndex]);
         OnMapLoaded?.Invoke(CurrentMap.GetCameraStartPosition());
     }
@@ -69,6 +69,7 @@ public class MapManager : MonoBehaviour
             Destroy(CurrentMap.gameObject);
         currentMapIndex++;
         LoadMap();
+        OnCreatureUnlockUI?.Invoke(getMapUnlockedCount(), CurrentMap.Creatures.Length);
     }
 
     private void OnDisable()
@@ -79,14 +80,21 @@ public class MapManager : MonoBehaviour
 
     public async void OnUnlock()
     {
+        int unlocked = getMapUnlockedCount();
         var creatures = CurrentMap.Creatures;
-        var unlocked = creatures.Count(creature => creature.IsUnlocked);
-        OnCreatureUnlock?.Invoke(creatures.Length, unlocked);
+        OnCreatureUnlockUI?.Invoke(unlocked, creatures.Length);
         if (unlocked == creatures.Length)
         {
             await Task.Delay(3000);
             OnMapComplete();
         }
+    }
+
+    public int getMapUnlockedCount()
+    {
+        var creatures = CurrentMap.Creatures;
+        var unlocked = creatures.Count(creature => creature.IsUnlocked);
+        return unlocked;
     }
 }
 

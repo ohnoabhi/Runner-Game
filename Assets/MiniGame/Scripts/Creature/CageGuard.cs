@@ -18,6 +18,14 @@ public class CageGuard : MonoBehaviour
             await Task.Yield();
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.other.name == "FinalSoliderPos")
+        {
+            Destroy(gameObject);
+        }
     }
 }

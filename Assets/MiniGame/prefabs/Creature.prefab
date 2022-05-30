@@ -406,10 +406,11 @@ MonoBehaviour:
   finalPos: {fileID: 0}
   speed: 6
   soliderFinalPos: {fileID: 0}
-  gaurds:
+  guards:
   - {fileID: 3356961755320195255}
   - {fileID: 49160154567348377}
   - {fileID: 950194101660084608}
+  CreatureKey: 
 --- !u!1 &6939043944164489072
 GameObject:
   m_ObjectHideFlags: 0

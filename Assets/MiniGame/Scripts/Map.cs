@@ -30,5 +30,19 @@ namespace maps
 
             return 0;
         }
+
+        public int getRemainingUnlocks()
+        {
+            int unlockedCount = 0;
+            foreach(var creature in Creatures)
+            {
+                if(creature.IsUnlocked == true)
+                {
+                    unlockedCount++;
+                }
+            }
+
+            return unlockedCount;
+        }
     }
 }

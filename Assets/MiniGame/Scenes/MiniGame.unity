@@ -425,6 +425,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swipeDist: 0.2
-  offset: {x: 0, y: 30, z: -65}
   cameraSpeed: 50
-  isMoving: 0
+  offset: {x: 0, y: 30, z: -65}

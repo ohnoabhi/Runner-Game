@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TopHudController : MonoBehaviour
 {
-    private static TopHudController instance;
+    public static TopHudController instance;
     [SerializeField]
     private TopHudItem[] items;
 
@@ -24,5 +24,10 @@ public class TopHudController : MonoBehaviour
     public static void Enable(bool enabled)
     {
         instance.gameObject.SetActive(enabled);
+    }
+
+    public Vector3 GetIconPos(CollectableType collectableType)
+    {
+        return items[0].gameObject.transform.position;
     }
 }

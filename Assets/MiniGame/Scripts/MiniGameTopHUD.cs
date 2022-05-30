@@ -11,14 +11,15 @@ public class MiniGameTopHUD : MonoBehaviour
     TMP_Text unlockedCountTxt;
     private void OnEnable()
     {
-        MapManager.OnCreatureUnlock += RefreshStats;
+        MapManager.OnCreatureUnlockUI += RefreshStats;
     }
     private void OnDisable()
     {
-        MapManager.OnCreatureUnlock -= RefreshStats;
+        MapManager.OnCreatureUnlockUI -= RefreshStats;
     }
-    private void RefreshStats(int creaturesCount, int unlockedCount)
+    private void RefreshStats(int unlockedCount,int creaturesCount)
     {
+        //int unlockedCount = MapManager.instance.getMapUnlockedCount();
         unlockedCountTxt.text = unlockedCount + "/" + creaturesCount;
     }
 }
