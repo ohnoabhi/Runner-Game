@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9985932ef8b9427986e0d47bef1d0d00, type: 3}
+  m_Name: Level 4
+  m_EditorClassIdentifier: 
+  EndType: 1
+  LevelItems:
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 0}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 10}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 20}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 30}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 40}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 50}
+  - ReferenceID: 1
+    Position: {x: -2.5, y: 0, z: 19.897812}
+  - ReferenceID: 4
+    Position: {x: 2.5, y: 0, z: 39.448483}
+  - ReferenceID: 5
+    Position: {x: -2.5, y: 0, z: 50.00596}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 60}
+  - ReferenceID: 11
+    Position: {x: 0, y: 0, z: 68.64704}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 70}
+  - ReferenceID: 7
+    Position: {x: -2.5, y: 0, z: 80.00714}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 80}
+  - ReferenceID: 8
+    Position: {x: 0, y: 0, z: 29.759918}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 90}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 100}
+  - ReferenceID: 17
+    Position: {x: 0, y: 0, z: 94.91706}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 110}
+  - ReferenceID: 12
+    Position: {x: 0, y: 0, z: 114.19072}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 120}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 130}
+  - ReferenceID: 13
+    Position: {x: -2.5, y: 0, z: 129.77536}
+  - ReferenceID: 2
+    Position: {x: 0, y: 0, z: 140}
+  - ReferenceID: 2
+    Position: {x: 0, y: 0, z: 150}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 160}
+  - ReferenceID: 15
+    Position: {x: 0, y: 0, z: 170}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 190}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 200}
+  - ReferenceID: 9
+    Position: {x: 0, y: 0, z: 205.67519}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 210}
+  - ReferenceID: 10
+    Position: {x: 0, y: 0, z: 217.99307}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 220}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 230}
+  - ReferenceID: 7
+    Position: {x: 0, y: 0, z: 59.796215}
+  - ReferenceID: 7
+    Position: {x: -2.5, y: 0, z: 148.8131}
+  - ReferenceID: 5
+    Position: {x: 2.5, y: 0, z: 239.96992}
+  - ReferenceID: 0
+    Position: {x: 0, y: 0, z: 240}
