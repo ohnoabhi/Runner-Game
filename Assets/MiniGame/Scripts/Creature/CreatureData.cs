@@ -1,27 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class CreatureData : MonoBehaviour
 {
-    public static CreatureData instance;
-    public CreatureDataItem[] creatureDataItems;
+    public static CreatureData Instance;
+    public GameObject[] Creatures;
+    public int RandomIndex => Random.Range(0, Creatures.Length);
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
-    public GameObject ReturnCreature(int Id)
+    public GameObject ReturnCreature(int index)
     {
-        return (from creature in creatureDataItems where creature.creatureId == Id select creature.creaturePrefab).FirstOrDefault();
+        if (index >= 0 && index < Creatures.Length) return Creatures[index];
+        return null;
     }
-}
-
-[System.Serializable]
-public class CreatureDataItem
-{
-    public int creatureId;
-    public GameObject creaturePrefab;
 }

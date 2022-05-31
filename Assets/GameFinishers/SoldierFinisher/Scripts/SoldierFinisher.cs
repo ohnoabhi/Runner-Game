@@ -30,7 +30,7 @@ public class SoldierFinisher : GameFinisher
 
         uiController = ScreenController.instance.SetFinisherUI(ui).GetComponent<SoldierFinisherUI>();
         uiController.Init();
-        value = 0;
+        value = 0.15f;
         start = true;
     }
 

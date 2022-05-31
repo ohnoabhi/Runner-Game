@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : BaseScreen
@@ -11,10 +12,11 @@ public class MainMenu : BaseScreen
     [SerializeField] private Slider levelProgress;
     [SerializeField] private Slider bossLevelProgress;
     [SerializeField] private Slider chestLevelProgress;
+    [SerializeField] private string minigameSceneName = "MiniGame";
 
-    private void Start()
+    protected override void OnShow(params object[] args)
     {
-        levelText.text = GameManager.Level.ToString();
+        levelText.text = "Level " + GameManager.Level;
 
         var count = 10;
         levelProgress.value = GameManager.Level % count;
@@ -45,5 +47,10 @@ public class MainMenu : BaseScreen
     public void OnClickPlay()
     {
         GameManager.Instance.StartGame();
+    }
+
+    public void OnClickMiniGame()
+    {
+        SceneManager.LoadScene(minigameSceneName);
     }
 }

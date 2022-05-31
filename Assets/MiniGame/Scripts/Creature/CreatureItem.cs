@@ -2,28 +2,34 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Threading.Tasks;
+using DG.Tweening;
+using Sirenix.OdinInspector;
 
 public class CreatureItem : MonoBehaviour
 {
-    [SerializeField] int creatureId;
+    [BoxGroup("Lock")] [SerializeField] int keysRequired = 3;
+    [BoxGroup("Lock")] [SerializeField] private GameObject lockedObj;
+    [BoxGroup("Lock")] [SerializeField] private GameObject unlockedObj;
+    [BoxGroup("Lock")] [SerializeField] private TextMeshProUGUI requiredText;
 
-    [SerializeField] int keysRequired = 3;
+    [FoldoutGroup("Creature")] [SerializeField]
+    Transform creatureParent;
 
-    [SerializeField] Button unlockBtn;
+    [FoldoutGroup("Creature")] [SerializeField]
+    float speed;
 
-    [SerializeField] TMP_Text buttonTxt;
+    [FoldoutGroup("Creature")] [SerializeField]
+    Transform finalPos;
 
-    [SerializeField] GameObject cage;
+    [FoldoutGroup("Creature")] [SerializeField]
+    GameObject cage;
 
-    [SerializeField] GameObject creature;
+    [FoldoutGroup("Soldier")] [SerializeField]
+    private CageGuard[] guards;
 
-    [SerializeField] Transform finalPos;
+    [FoldoutGroup("Soldier")] [SerializeField]
+    private Transform soliderFinalPos;
 
-    [SerializeField] float speed;
-
-    [SerializeField] private Transform soliderFinalPos;
-
-    [SerializeField] private CageGuard[] guards;
 
     [HideInInspector] public string CreatureKey;
 
@@ -36,20 +42,29 @@ public class CreatureItem : MonoBehaviour
             CreatureKey, value ? 1 : 0);
     }
 
+    private int CreatureIndex
+    {
+        get => PlayerPrefs.GetInt(CreatureKey + "Index", -1);
+        set => PlayerPrefs.SetInt(CreatureKey + "Index", value);
+    }
+
     private void Start()
     {
-        if (CreatureData.instance.ReturnCreature(creatureId) != null)
+        if (CreatureIndex < 0)
         {
-            GameObject creatureReturned = CreatureData.instance.ReturnCreature(creatureId);
+            CreatureIndex = CreatureData.Instance.RandomIndex;
+        }
 
-            var newCreature = Instantiate(creatureReturned, creature.transform.position, creature.transform.rotation,
-                gameObject.transform);
+        if (CreatureIndex >= 0)
+        {
+            foreach (Transform child in creatureParent)
+            {
+                Destroy(child.gameObject);
+            }
 
-            Destroy(creature.gameObject);
-
-            creature = newCreature;
-
-            //creature.transform.SetParent(this.transform);
+            var creatureInstance = Instantiate(CreatureData.Instance.ReturnCreature(CreatureIndex), creatureParent);
+            creatureInstance.transform.localPosition = Vector3.zero;
+            creatureInstance.transform.localRotation = Quaternion.identity;
         }
 
         if (IsUnlocked)
@@ -64,13 +79,12 @@ public class CreatureItem : MonoBehaviour
 
     private void CageUnlocked()
     {
-        Debug.Log("Creature outside cage");
+        lockedObj.SetActive(false);
+        unlockedObj.SetActive(true);
 
-        buttonTxt.text = "Unlocked";
-
-        cage.SetActive(false);
-
-        creature.SetActive(false);
+        cage.SetActive(true);
+        cage.transform.DOMoveY(9, 0);
+        creatureParent.gameObject.SetActive(false);
 
         foreach (var cageGuard in guards)
         {
@@ -80,17 +94,14 @@ public class CreatureItem : MonoBehaviour
 
     private void CageLocked()
     {
-        Debug.Log("Creature in cage");
-
-        unlockBtn.onClick.RemoveAllListeners();
-        unlockBtn.onClick.AddListener(() => OnClickUnlock());
-
-        buttonTxt.text = "Unlock";
+        requiredText.text = "Requires " + keysRequired;
+        lockedObj.SetActive(true);
+        unlockedObj.SetActive(false);
     }
 
     public void OnClickUnlock()
     {
-        int keys = CollectablesManager.Get(CollectableType.Key);
+        var keys = CollectablesManager.Get(CollectableType.Key);
 
         if (keys >= keysRequired)
         {
@@ -107,31 +118,33 @@ public class CreatureItem : MonoBehaviour
 
     private async void OpenCage()
     {
-        Debug.Log("cage open");
+        lockedObj.SetActive(false);
 
-        buttonTxt.text = "Unlocked";
+        cage.transform.DOMoveY(9, 1f);
 
-        cage.SetActive(false);
-        creature.GetComponent<Animator>().SetBool("Running", true);
+        creatureParent.GetComponentInChildren<Animator>().SetBool("Running", true);
 
         InitGuards();
-        while (creature.transform.position != finalPos.position)
+        while (creatureParent.transform.position != finalPos.position)
         {
             var targetPosition =
-                Vector3.MoveTowards(creature.transform.position, finalPos.position, speed * Time.deltaTime);
-            creature.transform.rotation = Quaternion.LookRotation(targetPosition - creature.transform.position);
-            creature.transform.position = targetPosition;
+                Vector3.MoveTowards(creatureParent.transform.position, finalPos.position, speed * Time.deltaTime);
+            creatureParent.transform.rotation =
+                Quaternion.LookRotation(targetPosition - creatureParent.transform.position);
+            creatureParent.transform.position = targetPosition;
 
             await Task.Yield();
         }
 
+        unlockedObj.SetActive(true);
+
         MapManager.instance.OnUnlock();
-        Destroy(creature.gameObject);
+        Destroy(creatureParent.gameObject);
     }
 
     private async void InitGuards()
     {
-        await Task.Delay(300);
+        await Task.Delay(1200);
         foreach (var guard in guards)
         {
             guard.Run(soliderFinalPos.position);

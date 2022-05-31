@@ -6,18 +6,12 @@ public class CollitionCreature : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collitiion detected");
         GetComponent<Rigidbody>().isKinematic = false;
 
-        if (collision.other.GetComponent<Rigidbody>() != null)
+        var rigidbody = collision.transform.GetComponent<Rigidbody>();
+        if (rigidbody != null)
         {
-            collision.other.GetComponent<Rigidbody>().WakeUp();
-            //collision.other.GetComponent<Rigidbody>().AddExplosionForce(50f,gameObject.transform.forward,30f);
+            rigidbody.WakeUp();
         }
-
-        
-       
-
-
     }
 }

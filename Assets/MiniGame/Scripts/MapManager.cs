@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using maps;
@@ -10,7 +8,7 @@ public class MapManager : MonoBehaviour
 {
     public Map[] maps;
     public static MapManager instance;
-    public static Action<int, int> OnCreatureUnlockUI;
+    public static Action<int, int> OnCreatureUnlock;
     public static Action<int> OnMapLoaded;
 
     public Map CurrentMap { get; private set; }
@@ -41,11 +39,13 @@ public class MapManager : MonoBehaviour
     private void Start()
     {
         LoadMap();
-        OnCreatureUnlockUI?.Invoke(getMapUnlockedCount(), CurrentMap.Creatures.Length);
+        OnCreatureUnlock?.Invoke(GetMapUnlockedCount(), CurrentMap.Creatures.Length);
     }
 
     private void LoadMap()
     {
+        if (CurrentMap)
+            Destroy(CurrentMap.gameObject);
         if (maps.Length <= currentMapIndex)
         {
             currentMapIndex = 0;
@@ -65,11 +65,9 @@ public class MapManager : MonoBehaviour
 
     private void OnMapComplete()
     {
-        if (CurrentMap)
-            Destroy(CurrentMap.gameObject);
         currentMapIndex++;
         LoadMap();
-        OnCreatureUnlockUI?.Invoke(getMapUnlockedCount(), CurrentMap.Creatures.Length);
+        OnCreatureUnlock?.Invoke(GetMapUnlockedCount(), CurrentMap.Creatures.Length);
     }
 
     private void OnDisable()
@@ -80,29 +78,18 @@ public class MapManager : MonoBehaviour
 
     public async void OnUnlock()
     {
-        int unlocked = getMapUnlockedCount();
+        var unlocked = GetMapUnlockedCount();
         var creatures = CurrentMap.Creatures;
-        OnCreatureUnlockUI?.Invoke(unlocked, creatures.Length);
-        if (unlocked == creatures.Length)
-        {
-            await Task.Delay(3000);
-            OnMapComplete();
-        }
+        OnCreatureUnlock?.Invoke(unlocked, creatures.Length);
+        if (unlocked != creatures.Length) return;
+        await Task.Delay(3000);
+        OnMapComplete();
     }
 
-    public int getMapUnlockedCount()
+    private int GetMapUnlockedCount()
     {
         var creatures = CurrentMap.Creatures;
         var unlocked = creatures.Count(creature => creature.IsUnlocked);
         return unlocked;
     }
 }
-
-//[System.Serializable]
-/*public class Map 
-{
-    
-
-
-    
-}*/

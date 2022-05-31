@@ -36,9 +36,10 @@ public class StepFinisher : GameFinisher
             player.transform.position =
                 Vector3.MoveTowards(player.transform.position, target, playerMoveSpeed * Time.deltaTime);
             await Task.Yield();
+            if (player.transform.position != target)
+                player.transform.position += new Vector3(0, 0.5f, 0);
         }
 
-        player.transform.position += new Vector3(0, 0.5f, 0);
         var character = player.GetComponent<PlayerCharacterManager>().Character;
         character.Animator.SetTrigger("Roar");
         await Task.Delay(1500);

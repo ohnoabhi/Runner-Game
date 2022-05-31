@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9985932ef8b9427986e0d47bef1d0d00, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  EndType: 4
+  EndType: 3
   LevelItems:
   - ReferenceID: 0
     Position: {x: 0, y: 0, z: 0}

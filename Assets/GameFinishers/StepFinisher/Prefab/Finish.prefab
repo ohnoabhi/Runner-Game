@@ -2233,7 +2233,7 @@ MonoBehaviour:
   cameraPosition: {fileID: 7291734892121185681}
   isFollowCam: 1
   stepCreator: {fileID: 2998999666732619411}
-  playerMoveSpeed: 3
+  playerMoveSpeed: 20
 --- !u!1 &6897765845900458418
 GameObject:
   m_ObjectHideFlags: 0

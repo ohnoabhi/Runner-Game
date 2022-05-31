@@ -7,19 +7,17 @@ using UnityEngine;
 public class MiniGameTopHUD : MonoBehaviour
 {
 
-    [SerializeField]
-    TMP_Text unlockedCountTxt;
+    [SerializeField] private TMP_Text unlockedCountTxt;
     private void OnEnable()
     {
-        MapManager.OnCreatureUnlockUI += RefreshStats;
+        MapManager.OnCreatureUnlock += RefreshStats;
     }
     private void OnDisable()
     {
-        MapManager.OnCreatureUnlockUI -= RefreshStats;
+        MapManager.OnCreatureUnlock -= RefreshStats;
     }
     private void RefreshStats(int unlockedCount,int creaturesCount)
     {
-        //int unlockedCount = MapManager.instance.getMapUnlockedCount();
         unlockedCountTxt.text = unlockedCount + "/" + creaturesCount;
     }
 }

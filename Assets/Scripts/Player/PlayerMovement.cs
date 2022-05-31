@@ -29,16 +29,13 @@ public class PlayerMovement : MonoBehaviour
 
             if (touch.phase == TouchPhase.Moved)
             {
-                if (transform.position.x < 4 && transform.position.x > - 4)
-                {
-                   slide += Slide(-(touch.deltaPosition.x) * playerStats.turningSpeed);
-                }
+                slide += Slide(touch.deltaPosition.x * player.SlideSpeed * 0.75f);
             }
         }
 #endif
 
         movement += Vector3.forward * player.Speed * Time.deltaTime;
-        movement += slide;
+        movement += slide * Time.deltaTime;
         movement.x = Mathf.Clamp(movement.x, -player.XMovementClamp, player.XMovementClamp);
 
         if (playerCharacterManager.Character)

@@ -25,7 +25,7 @@ public class LevelEditorWindow : EditorWindow
     {
         var levelObjectDatabase = LevelObjectDatabase.Get();
         if (!levelObjectDatabase) return;
-        EditorGUIUtility.PingObject(levelObjectDatabase);
+        // EditorGUIUtility.PingObject(levelObjectDatabase);
         Selection.activeObject = levelObjectDatabase;
     }
 

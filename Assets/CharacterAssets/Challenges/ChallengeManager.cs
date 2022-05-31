@@ -207,7 +207,6 @@ namespace Challenges
                     available = new List<Challenge>(AvailableChallenges);
                 if (available.Count == 0) break;
                 _currentChallenges[i] = new Challenge(available[Random.Range(0, available.Count)]);
-                Debug.Log(_currentChallenges[i].ToString());
                 for (var j = 0; j < available.Count; j++)
                 {
                     if (available[j].Type != _currentChallenges[i].Type) continue;

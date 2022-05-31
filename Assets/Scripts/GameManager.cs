@@ -1,6 +1,7 @@
 using System;
 using Stats;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
     private void LoadLevel()
     {
         ClearLevel();
-        var levelData = LevelDatabase.Get().Levels[Level - 1];
+        var levelData = LevelDatabase.Get().Levels[GetLevelIndex()];
         var objectDatabase = LevelObjectDatabase.Get();
         var lastEnd = Vector3.zero;
         foreach (var levelItemData in levelData.LevelItems)
@@ -89,6 +90,15 @@ public class GameManager : MonoBehaviour
         {
             finisher = Instantiate(gameFinisherPrefab, lastEnd, Quaternion.identity, levelParent);
         }
+    }
+
+    private int GetLevelIndex()
+    {
+        var level = Level - 1;
+        var levels = LevelDatabase.Get().Levels;
+        if (levels.Count <= 0) return -1;
+        if (level == 0 || levels.Count == 1) return 0;
+        return levels.Count > level ? level : Random.Range(Mathf.FloorToInt(levels.Count * 0.5f), levels.Count);
     }
 
     public void StartGame()
@@ -114,9 +124,9 @@ public class GameManager : MonoBehaviour
             ScreenController.instance.Show("Finisher");
             if (finisher)
                 finisher.StartFinisher(player);
-            else ScreenController.instance.Show("Win", 0, GetWinAmount());
+            else GameOver(true);
         }
-        else ScreenController.instance.Show("Lose");
+        else GameOver(false);
     }
 
     public void SetCamera(Transform cameraPosition, bool isFollowCam)
@@ -152,6 +162,7 @@ public class GameManager : MonoBehaviour
     {
         ClearLevel();
         ScreenController.instance.SetFinisherUI();
+        if (win) Level++;
         ScreenController.instance.Show(win ? "Win" : "Lose", 0, GetWinAmount());
     }
 

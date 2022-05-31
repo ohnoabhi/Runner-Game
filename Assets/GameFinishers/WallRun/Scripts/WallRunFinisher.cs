@@ -1,10 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Stats;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public class WallRunFinisher : GameFinisher
@@ -17,6 +16,7 @@ public class WallRunFinisher : GameFinisher
     [SerializeField] private int unlockIntervel = 2;
     private int unlockedWalls;
 
+#if UNITY_EDITOR
     [Button]
     private async void CreateWalls(int count)
     {
@@ -43,6 +43,7 @@ public class WallRunFinisher : GameFinisher
             //     wallParent);
         }
     }
+#endif
 
     private void Start()
     {

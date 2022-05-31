@@ -23,6 +23,7 @@ namespace CharacterBase
         {
             var database = Resources.Load<CharacterDatabase>("Character Database");
             if (database) return database;
+#if UNITY_EDITOR
             database = CreateInstance<CharacterDatabase>();
 
             var path = AssetDatabase.GenerateUniqueAssetPath("Assets/Resources/Character Database.asset");
@@ -31,6 +32,7 @@ namespace CharacterBase
 
             EditorUtility.FocusProjectWindow();
 
+#endif
             return database;
         }
     }
