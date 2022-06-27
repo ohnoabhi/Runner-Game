@@ -9,6 +9,8 @@ public class CharacterObstacle : Obstacle
 
     public void Init(int id)
     {
+        if(!Application.isPlaying) return;
+        
         foreach (Transform child in visual)
         {
             Destroy(child.gameObject);
