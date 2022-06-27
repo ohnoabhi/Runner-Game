@@ -15,7 +15,6 @@ namespace Sirenix.Serialization.Internal
     using System;
 
 #if UNITY_2018_1_OR_NEWER
-
     using UnityEditor.Build.Reporting;
 
 #endif
@@ -26,7 +25,10 @@ namespace Sirenix.Serialization.Internal
     public class PreBuildAOTAutomation : IPreprocessBuild
 #endif
     {
-        public int callbackOrder { get { return -1000; } }
+        public int callbackOrder
+        {
+            get { return -1000; }
+        }
 
         public void OnPreprocessBuild(BuildTarget target, string path)
         {
@@ -53,11 +55,15 @@ namespace Sirenix.Serialization.Internal
     public class PostBuildAOTAutomation : IPostprocessBuild
 #endif
     {
-        public int callbackOrder { get { return -1000; } }
+        public int callbackOrder
+        {
+            get { return -1000; }
+        }
 
         public void OnPostprocessBuild(BuildTarget target, string path)
         {
-            if (AOTGenerationConfig.Instance.DeleteDllAfterBuilds && AOTGenerationConfig.Instance.ShouldAutomationGeneration(target))
+            if (AOTGenerationConfig.Instance.DeleteDllAfterBuilds &&
+                AOTGenerationConfig.Instance.ShouldAutomationGeneration(target))
             {
                 Directory.Delete(AOTGenerationConfig.Instance.AOTFolderPath, true);
                 File.Delete(AOTGenerationConfig.Instance.AOTFolderPath.TrimEnd('/', '\\') + ".meta");

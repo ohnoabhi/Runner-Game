@@ -16,7 +16,7 @@
         _HorizonLineColor ("Color", Color) = (0.9044118, 0.8872592, 0.7913603, 1)
         _HorizonLineExponent ("Exponent", float) = 4
         _HorizonLineContribution ("Contribution", Range(0, 1)) = 0.25
-        
+
         [Header(Sky Gradient)]
         _SkyGradientTop ("Top", Color) = (0.172549, 0.5686274, 0.6941177, 1)
         _SkyGradientBottom ("Bottom", Color) = (0.764706, 0.8156863, 0.8509805)
@@ -38,7 +38,7 @@
             #pragma fragment frag
 
             #include "UnityCG.cginc"
-            
+
             float3 _SunDiscColor;
             float _SunDiscExponent;
             float _SunDiscMultiplier;
@@ -68,7 +68,7 @@
                 float3 worldPosition : TEXCOORD1;
             };
 
-            v2f vert (appdata v)
+            v2f vert(appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
@@ -77,7 +77,7 @@
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
                 // Masks.
                 float maskHorizon = dot(normalize(i.worldPosition), float3(0, 1, 0));
@@ -98,9 +98,11 @@
                 horizonLineColor = lerp(0, horizonLineColor, _HorizonLineContribution);
 
                 // Sky gradient.
-                float3 skyGradientColor = lerp(_SkyGradientTop, _SkyGradientBottom, pow(1 - saturate(maskHorizon), _SkyGradientExponent));
+                float3 skyGradientColor = lerp(_SkyGradientTop, _SkyGradientBottom,
+                                               pow(1 - saturate(maskHorizon), _SkyGradientExponent));
 
-                float3 finalColor = lerp(saturate(sunHaloColor + horizonLineColor + skyGradientColor), _SunDiscColor, maskSun);
+                float3 finalColor = lerp(saturate(sunHaloColor + horizonLineColor + skyGradientColor), _SunDiscColor,
+                                         maskSun);
                 return float4(finalColor, 1);
             }
             ENDCG

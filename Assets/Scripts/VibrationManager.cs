@@ -37,6 +37,7 @@ public class VibrationManager : MonoBehaviour
 #if UNITY_EDITOR
         return;
 #endif
+#pragma warning disable 162
         if (!VibrationOn) return;
         if (!isAndroid)
         {
@@ -45,6 +46,7 @@ public class VibrationManager : MonoBehaviour
         }
 
         vibrator.Call("vibrate", milliseconds);
+#pragma warning restore 162
     }
 
     public static void Cancel()

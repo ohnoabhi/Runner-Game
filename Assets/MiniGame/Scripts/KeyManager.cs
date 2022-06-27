@@ -13,7 +13,7 @@ public class KeyManager : MonoBehaviour
 
     public int keys
     {
-        get => PlayerPrefs.GetInt("keys",20);
+        get => PlayerPrefs.GetInt("keys", 20);
         set => PlayerPrefs.SetInt("keys", value < 0 ? 0 : value);
     }
 
@@ -30,7 +30,5 @@ public class KeyManager : MonoBehaviour
     public int GetKeys()
     {
         return keys;
-
     }
-    
 }

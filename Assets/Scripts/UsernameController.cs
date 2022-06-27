@@ -13,8 +13,7 @@ public class UsernameController : MonoBehaviour
 {
     private void Start()
     {
-        var isNullOrEmpty = string.IsNullOrEmpty(Username.Name);
-        if (isNullOrEmpty)
+        if (string.IsNullOrEmpty(Username.Name))
         {
             PopupController.instance.Show("Username");
         }

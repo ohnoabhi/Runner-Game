@@ -1,6 +1,10 @@
 using System;
+using System.Threading.Tasks;
+using Challenges;
+using Sirenix.OdinInspector;
 using Stats;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -16,18 +20,28 @@ public class GameManager : MonoBehaviour
     }
 
     public static GameManager Instance;
-    public static Action<float, int, int> OnPlayerHealthChange;
-    public static Action<int> OnPlayerHealthLevelChange;
+    public static Action<int> OnPlayerHealthChange;
 
-    [SerializeField] private Player playerPrefab;
+    [SerializeField] private PlayerController PlayerControllerPrefab;
     [SerializeField] private CameraFollower cameraFollower;
     [SerializeField] private Vector3 cameraOffset = new Vector3(0, 6, -10);
     [SerializeField] private Vector3 cameraRotation = new Vector3(10, 0, 0);
     [SerializeField] private Price winBasePrice;
+    [SerializeField] private float winIncrementPercentage;
+
+    [BoxGroup("Health")] [SerializeField] public int HealthRequiredForIncrement = 20;
+    [BoxGroup("Health")] [SerializeField] public float HealthIncrementPercentage = 0.2f;
+    [BoxGroup("Character Size")]
+    public float PlayerStartSize;
+
+    [BoxGroup("Character Size")]
+    public float PlayerMaxSize;
+
+    public static Action ResetObstacleEvent;
 
     private GameFinisher finisher;
 
-    public Player player { get; private set; }
+    public PlayerController PlayerController { get; private set; }
 
     public static int Level
     {
@@ -35,20 +49,23 @@ public class GameManager : MonoBehaviour
         set => PlayerPrefs.SetInt("Level", value);
     }
 
-    [HideInInspector] public GameStates CurrentState = GameStates.MainMenu;
+    public GameStates CurrentState = GameStates.MainMenu;
 
     private Transform levelParent;
 
     private void Awake()
     {
         Instance = this;
-
         levelParent = new GameObject("Level").transform;
     }
 
-    private void Start()
+    private async void Start()
     {
         CurrentState = GameStates.MainMenu;
+        if (!string.IsNullOrEmpty(Username.Name))
+            PopupController.instance.Show("Loading");
+        await PoolManager.LoadItems();
+        PopupController.instance.Hide("Loading");
     }
 
     public void RestartGame()
@@ -56,33 +73,39 @@ public class GameManager : MonoBehaviour
         ClearLevel();
     }
 
-    private void ClearLevel()
+    private async Task ClearLevel()
     {
-        if (player) Destroy(player.gameObject);
+        ResetObstacleEvent?.Invoke();
+        if (PlayerController) Destroy(PlayerController.gameObject);
+        await Task.Yield();
+        if (finisher) Destroy(finisher.gameObject);
         finisher = null;
-        foreach (Transform child in levelParent)
-        {
-            Destroy(child.gameObject);
-        }
+        await Task.Yield();
+        PoolManager.Instance.ClearLevelObjects();
     }
 
-    private void LoadLevel()
+    private async Task LoadLevel()
     {
-        ClearLevel();
+        await ClearLevel();
         var levelData = LevelDatabase.Get().Levels[GetLevelIndex()];
         var objectDatabase = LevelObjectDatabase.Get();
         var lastEnd = Vector3.zero;
         foreach (var levelItemData in levelData.LevelItems)
         {
-            var itemPrefab = objectDatabase.Get(levelItemData.ReferenceID);
+            // var instance = PoolManager.Instance.GetLevelObject(objectDatabase.Get(levelItemData.ReferenceID));
+            var instance = PoolManager.Instance.GetLevelObject(levelItemData.Item);
 
-
-            var instance = Instantiate(itemPrefab, levelItemData.Position, Quaternion.identity, levelParent);
-            instance.SetData(levelItemData);
+            var tempData = levelItemData;
+            tempData.Position += new Vector3(0, 0, -6);
+            instance.transform.position = tempData.Position;
+            instance.transform.rotation = Quaternion.identity;
+            instance.transform.SetParent(levelParent);
+            instance.SetData(tempData);
             if (instance.IsPlatform)
             {
                 lastEnd = instance.End.position;
             }
+            // await Task.Yield();
         }
 
         var gameFinisherPrefab = objectDatabase.GetFinisher(levelData.EndType);
@@ -92,38 +115,56 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private int GetLevelIndex()
+    private static int GetLevelIndex()
     {
         var level = Level - 1;
         var levels = LevelDatabase.Get().Levels;
         if (levels.Count <= 0) return -1;
         if (level == 0 || levels.Count == 1) return 0;
-        return levels.Count > level ? level : Random.Range(Mathf.FloorToInt(levels.Count * 0.5f), levels.Count);
+        return levels.Count > level ? level : Random.Range(Mathf.FloorToInt(levels.Count * 0.8f), levels.Count);
     }
 
-    public void StartGame()
+    public async void StartGame()
     {
+        TinySauce.OnGameStarted(Level.ToString());
+        PopupController.instance.Show("Loading");
         ScreenController.instance.Show("Game");
-        LoadLevel();
-        if (player) Destroy(player.gameObject);
-        player = Instantiate(playerPrefab);
-        player.name = "Player";
-        player.State = Player.PlayerState.Running;
-        player.UI.SetCamera(cameraFollower.transform);
-        cameraFollower.Target = player.transform;
+        await LoadLevel();
+        if (PlayerController) Destroy(PlayerController.gameObject);
+        PlayerController = Instantiate(PlayerControllerPrefab);
+        PlayerController.name = "Player";
+        PlayerController.Init();
+        PlayerController.State = PlayerController.PlayerState.Running;
+        // var playerCharacterManager = player.GetComponent<PlayerCharacterManager>();
+        PlayerController.UI.SetCamera(cameraFollower.transform);
+        cameraFollower.transform.position = PlayerController.transform.position + cameraOffset;
+        cameraFollower.transform.rotation = Quaternion.Euler(cameraRotation);
+        cameraFollower.Target = PlayerController.transform;
         cameraFollower.SetOffset(cameraOffset, Quaternion.Euler(cameraRotation), false);
         CurrentState = GameStates.Playing;
+        PopupController.instance.Hide();
+    }
+
+    public void UpdateCameraHeight(float percentage)
+    {
+        if (PlayerController.State != PlayerController.PlayerState.Running) return;
+        var offset = cameraOffset;
+        offset.y += offset.y * percentage * 0.2f;
+        cameraFollower.SetOffset(offset);
     }
 
     public void OnFinish(bool win)
     {
+        if (CurrentState != GameStates.Playing) return;
         if (win)
         {
-            CurrentState = GameStates.Finisher;
-            player.State = Player.PlayerState.Finish;
+            PlayerController.State = PlayerController.PlayerState.Finish;
             ScreenController.instance.Show("Finisher");
             if (finisher)
-                finisher.StartFinisher(player);
+            {
+                CurrentState = GameStates.Finisher;
+                finisher.StartFinisher(PlayerController);
+            }
             else GameOver(true);
         }
         else GameOver(false);
@@ -158,12 +199,19 @@ public class GameManager : MonoBehaviour
         ScreenController.instance.Show("Finisher");
     }
 
-    public void GameOver(bool win)
+    public void GameOver(bool win, float delay = 0, int multiplier = 1, bool isChest = false)
     {
+        TinySauce.OnGameFinished(win, 0);
         ClearLevel();
+        if (win)
+        {
+            Level++;
+            ChallengeManager.Instance.UpdateChallenge(ChallengeType.WinLevels);
+        }
+
+        CurrentState = win ? GameStates.Win : GameStates.Lose;
         ScreenController.instance.SetFinisherUI();
-        if (win) Level++;
-        ScreenController.instance.Show(win ? "Win" : "Lose", 0, GetWinAmount());
+        ScreenController.instance.Show(win ? "Win" : "Lose", delay, GetWinAmount(), multiplier, isChest);
     }
 
     public Price GetWinAmount()
@@ -171,9 +219,9 @@ public class GameManager : MonoBehaviour
         return new Price()
         {
             Type = winBasePrice.Type,
-            Amount = Mathf.RoundToInt(winBasePrice.Amount +
-                                      winBasePrice.Amount * (Level - 1) *
-                                      (StatsManager.Get(StatType.RewardMultiplier) - 1))
+            Amount = Mathf.RoundToInt(winBasePrice.Amount + (winBasePrice.Amount *
+                                                             ((StatsManager.Get(StatType.RewardMultiplier) - 1) *
+                                                              winIncrementPercentage)))
         };
     }
 }

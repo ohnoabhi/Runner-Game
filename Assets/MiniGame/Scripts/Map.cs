@@ -34,9 +34,9 @@ namespace maps
         public int getRemainingUnlocks()
         {
             int unlockedCount = 0;
-            foreach(var creature in Creatures)
+            foreach (var creature in Creatures)
             {
-                if(creature.IsUnlocked == true)
+                if (creature.IsUnlocked == true)
                 {
                     unlockedCount++;
                 }

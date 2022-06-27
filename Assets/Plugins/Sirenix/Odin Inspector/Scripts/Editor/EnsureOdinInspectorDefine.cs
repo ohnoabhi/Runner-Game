@@ -17,7 +17,7 @@ namespace Sirenix.Utilities
     /// </summary>
     internal static class EnsureOdinInspectorDefine
     {
-        private static readonly string[] DEFINES = new string[] { "ODIN_INSPECTOR", "ODIN_INSPECTOR_3" };
+        private static readonly string[] DEFINES = new string[] {"ODIN_INSPECTOR", "ODIN_INSPECTOR_3"};
 
         [InitializeOnLoadMethod]
         private static void EnsureScriptingDefineSymbol()

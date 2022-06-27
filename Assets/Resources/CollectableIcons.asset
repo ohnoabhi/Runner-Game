@@ -15,8 +15,8 @@ MonoBehaviour:
   Default: {fileID: 21300000, guid: e35fc472b6ada425894eef3b044e099f, type: 3}
   Icons:
   - Type: 0
-    Icon: {fileID: 21300000, guid: 3fb23bf6552b44aafb168ed0584e1641, type: 3}
+    Icon: {fileID: 21300000, guid: 3012e2d232a219a45998a5b7afb82e35, type: 3}
   - Type: 1
     Icon: {fileID: 21300000, guid: b7f3c32c855a846c5bb5d8c57de050fd, type: 3}
   - Type: 2
-    Icon: {fileID: 21300000, guid: 4d884a85224974b57956b27413aad943, type: 3}
+    Icon: {fileID: 21300000, guid: 9f8ec0d58522f429d938ada2e1aa5296, type: 3}

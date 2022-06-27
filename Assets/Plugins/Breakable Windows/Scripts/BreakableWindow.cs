@@ -40,12 +40,12 @@ public class BreakableWindow : MonoBehaviour
     private GameObject splinterParent;
     int[] tris;
 
-    void Start()
+    private void Start()
     {
-        if (preCalculate == true && allreadyCalculated == false)
+        if (preCalculate && !allreadyCalculated)
         {
-            bakeVertices();
-            bakeSplinters();
+            BakeVertices();
+            BakeSplinters();
             allreadyCalculated = true;
         }
 
@@ -53,7 +53,7 @@ public class BreakableWindow : MonoBehaviour
             Debug.LogWarning("Warning: Window must not be rotated around x and z!");
     }
 
-    private void bakeVertices(bool trianglesToo = false)
+    private void BakeVertices(bool trianglesToo = false)
     {
         vertices = new Vector3[(partsX + 1) * (partsY + 1)];
         normals = new Vector3[(partsX + 1) * (partsY + 1)];
@@ -74,10 +74,10 @@ public class BreakableWindow : MonoBehaviour
         if (trianglesToo == true)
         {
             tris = new int[partsX * partsY * 6];
-            int pos = 0;
-            for (int y = 0; y < partsY; y++)
+            var pos = 0;
+            for (var y = 0; y < partsY; y++)
             {
-                for (int x = 0; x < partsX; x++)
+                for (var x = 0; x < partsX; x++)
                 {
                     tris[pos + 0] = y * (partsX + 1) + x;
                     tris[pos + 1] = y * (partsX + 1) + x + 1;
@@ -95,11 +95,11 @@ public class BreakableWindow : MonoBehaviour
         }
     }
 
-    private void generateSingleSplinter(int[] tris, Transform parent)
+    private void GenerateSingleSplinter(IReadOnlyList<int> tris, Transform parent)
     {
-        Vector3[] v = new Vector3[3];
-        Vector3[] n = new Vector3[3];
-        int[] t = new int[6];
+        var v = new Vector3[3];
+        var n = new Vector3[3];
+        var t = new int[6];
 
         v[0] = Vector3.zero;
         v[1] = vertices[tris[1]] - vertices[tris[0]];
@@ -116,10 +116,12 @@ public class BreakableWindow : MonoBehaviour
         t[4] = 1;
         t[5] = 0;
 
-        Mesh m = new Mesh();
-        m.vertices = v;
-        m.normals = n;
-        m.triangles = t;
+        var m = new Mesh
+        {
+            vertices = v,
+            normals = n,
+            triangles = t
+        };
 
         GameObject obj = new GameObject();
         obj.transform.position = new Vector3(vertices[tris[0]].x * transform.localScale.x + transform.position.x,
@@ -141,15 +143,15 @@ public class BreakableWindow : MonoBehaviour
         if (hideSplintersInHierarchy) obj.hideFlags = HideFlags.HideInHierarchy;
         splinters.Add(obj);
 
-        MeshFilter mf = obj.AddComponent<MeshFilter>();
+        var mf = obj.AddComponent<MeshFilter>();
         mf.mesh = m;
 
-        MeshCollider col = obj.AddComponent<MeshCollider>();
+        var col = obj.AddComponent<MeshCollider>();
         // col.inflateMesh = true;
         col.convex = true;
         if (destroyPhysicsTime > 0 && destroyColliderWithPhysics) Destroy(col, destroyPhysicsTime);
 
-        Rigidbody rigid = obj.AddComponent<Rigidbody>();
+        var rigid = obj.AddComponent<Rigidbody>();
         rigid.centerOfMass = (v[0] + v[1] + v[2]) / 3f;
         if (addTorques && preCalculate == false)
             rigid.AddTorque(new Vector3(Random.value > 0.5f ? Random.value * 50 : -Random.value * 50,
@@ -157,11 +159,11 @@ public class BreakableWindow : MonoBehaviour
                 Random.value > 0.5f ? Random.value * 50 : -Random.value * 50));
         if (destroyPhysicsTime > 0) Destroy(rigid, destroyPhysicsTime);
 
-        MeshRenderer mr = obj.AddComponent<MeshRenderer>();
+        var mr = obj.AddComponent<MeshRenderer>();
         mr.materials = GetComponent<Renderer>().materials;
     }
 
-    private void bakeSplinters()
+    private void BakeSplinters()
     {
         int[] t = new int[3];
         splinters = new List<GameObject>();
@@ -178,13 +180,13 @@ public class BreakableWindow : MonoBehaviour
                 t[1] = y * (partsX + 1) + x + 1;
                 t[2] = (y + 1) * (partsX + 1) + x;
 
-                generateSingleSplinter(t, splinterParent.transform);
+                GenerateSingleSplinter(t, splinterParent.transform);
 
                 t[0] = (y + 1) * (partsX + 1) + x;
                 t[1] = y * (partsX + 1) + x + 1;
                 t[2] = (y + 1) * (partsX + 1) + x + 1;
 
-                generateSingleSplinter(t, splinterParent.transform);
+                GenerateSingleSplinter(t, splinterParent.transform);
             }
         }
     }
@@ -193,7 +195,7 @@ public class BreakableWindow : MonoBehaviour
     /// Breaks the window and returns an array of all splinter gameobjects.
     /// </summary>
     /// <returns>Returns an array of all splinter gameobjects.</returns>
-    public GameObject[] breakWindow()
+    private GameObject[] BreakWindow()
     {
         if (isBroken == false)
         {
@@ -215,8 +217,8 @@ public class BreakableWindow : MonoBehaviour
             }
             else
             {
-                bakeVertices();
-                bakeSplinters();
+                BakeVertices();
+                BakeSplinters();
             }
 
             Physics.IgnoreLayerCollision(LayerMask.NameToLayer(layer), LayerMask.NameToLayer(layer), true);
@@ -244,13 +246,11 @@ public class BreakableWindow : MonoBehaviour
             if (health > 0)
             {
                 health -= col.impulse.magnitude;
-                if (health < 0)
-                {
-                    health = 0;
-                    breakWindow();
-                }
+                if (!(health < 0)) return;
+                health = 0;
+                BreakWindow();
             }
-            else breakWindow();
+            else BreakWindow();
         }
     }
 }

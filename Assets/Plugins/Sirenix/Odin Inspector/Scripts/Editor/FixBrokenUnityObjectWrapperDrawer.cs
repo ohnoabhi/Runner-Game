@@ -36,7 +36,8 @@ namespace Sirenix.OdinInspector.Editor.Drawers
 
         protected override void DrawPropertyLayout(GUIContent label)
         {
-            if (!(this.ValueEntry.ValueState == PropertyValueState.NullReference || this.ValueEntry.ValueState == PropertyValueState.ReferenceValueConflict))
+            if (!(this.ValueEntry.ValueState == PropertyValueState.NullReference ||
+                  this.ValueEntry.ValueState == PropertyValueState.ReferenceValueConflict))
             {
                 this.CallNextDrawer(label);
                 return;
@@ -126,7 +127,7 @@ namespace Sirenix.OdinInspector.Editor.Drawers
         private static bool ComponentIsBroken(T component, ref T realInstance)
         {
             var uObj = component;
-            var oObj = (object)uObj;
+            var oObj = (object) uObj;
 
             if (oObj != null && uObj == null)
             {
@@ -134,7 +135,8 @@ namespace Sirenix.OdinInspector.Editor.Drawers
                 if (AssetDatabase.Contains(instanceId))
                 {
                     var path = AssetDatabase.GetAssetPath(instanceId);
-                    var realWrapper = AssetDatabase.LoadAllAssetsAtPath(path).FirstOrDefault(n => n.GetInstanceID() == instanceId) as T;
+                    var realWrapper = AssetDatabase.LoadAllAssetsAtPath(path)
+                        .FirstOrDefault(n => n.GetInstanceID() == instanceId) as T;
                     if (realWrapper)
                     {
                         realInstance = realWrapper;
@@ -150,15 +152,17 @@ namespace Sirenix.OdinInspector.Editor.Drawers
         {
             if (EditorPrefs.HasKey(AUTO_FIX_PREFS_KEY))
             {
-                genericMenu.AddItem(new GUIContent("Disable auto-fix of broken prefab instance references"), false, (x) =>
-                {
-                    EditorPrefs.DeleteKey(AUTO_FIX_PREFS_KEY);
-                    autoFix = false;
-                }, null);
+                genericMenu.AddItem(new GUIContent("Disable auto-fix of broken prefab instance references"), false,
+                    (x) =>
+                    {
+                        EditorPrefs.DeleteKey(AUTO_FIX_PREFS_KEY);
+                        autoFix = false;
+                    }, null);
             }
         }
 
-        [TypeInfoBox("This asset reference is temporarily broken until the next reload, because of an error in Unity where the C# wrapper object of a prefab asset is destroyed when changes are made to that prefab asset. This error has been reported to Unity.\n\nMeanwhile, Odin can fix this for you by getting a new, valid wrapper object from the asset database and replacing the broken wrapper instance with the new one.")]
+        [TypeInfoBox(
+            "This asset reference is temporarily broken until the next reload, because of an error in Unity where the C# wrapper object of a prefab asset is destroyed when changes are made to that prefab asset. This error has been reported to Unity.\n\nMeanwhile, Odin can fix this for you by getting a new, valid wrapper object from the asset database and replacing the broken wrapper instance with the new one.")]
         private class FixBrokenUnityObjectWrapperPopup
         {
             private IPropertyValueEntry<T> valueEntry;
@@ -179,12 +183,13 @@ namespace Sirenix.OdinInspector.Editor.Drawers
                     {
                         this.valueEntry.Property.Tree.DelayActionUntilRepaint(() =>
                         {
-                            (this.valueEntry as IValueEntryActualValueSetter<T>).SetActualValue(localI, fixedComponent);
+                            (this.valueEntry as IValueEntryActualValueSetter<T>).SetActualValue(localI,
+                                fixedComponent);
                         });
                     }
                 }
 
-                if (GUIHelper.CurrentWindow) 
+                if (GUIHelper.CurrentWindow)
                 {
                     EditorApplication.delayCall += GUIHelper.CurrentWindow.Close;
                 }
@@ -196,7 +201,7 @@ namespace Sirenix.OdinInspector.Editor.Drawers
                 EditorPrefs.SetBool(AUTO_FIX_PREFS_KEY, true);
                 autoFix = true;
 
-                if (GUIHelper.CurrentWindow) 
+                if (GUIHelper.CurrentWindow)
                 {
                     EditorApplication.delayCall += GUIHelper.CurrentWindow.Close;
                 }

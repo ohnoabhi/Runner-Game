@@ -26,12 +26,15 @@ namespace Sirenix.OdinInspector.Editor
         IPreprocessBuild
 #endif
     {
-
-        public int callbackOrder { get { return -1500; } }
+        public int callbackOrder
+        {
+            get { return -1500; }
+        }
 
         private static void ConfigureImportSettings()
         {
-            if (EditorOnlyModeConfig.Instance.IsEditorOnlyModeEnabled() || ImportSettingsConfig.Instance.AutomateBeforeBuild == false)
+            if (EditorOnlyModeConfig.Instance.IsEditorOnlyModeEnabled() ||
+                ImportSettingsConfig.Instance.AutomateBeforeBuild == false)
             {
                 return;
             }
@@ -39,7 +42,9 @@ namespace Sirenix.OdinInspector.Editor
             var assemblyDir = new DirectoryInfo(SirenixAssetPaths.SirenixAssembliesPath).FullName;
             var projectAssetsPath = Directory.GetCurrentDirectory().TrimEnd('\\', '/');
 
-            var isPackage = PathUtilities.HasSubDirectory(new DirectoryInfo(projectAssetsPath), new DirectoryInfo(assemblyDir)) == false;
+            var isPackage =
+                PathUtilities.HasSubDirectory(new DirectoryInfo(projectAssetsPath), new DirectoryInfo(assemblyDir)) ==
+                false;
 
             var aotDirPath = assemblyDir + "NoEmitAndNoEditor/";
             var jitDirPath = assemblyDir + "NoEditor/";
@@ -55,7 +60,8 @@ namespace Sirenix.OdinInspector.Editor
                 string path = file.FullName;
                 if (isPackage)
                 {
-                    path = SirenixAssetPaths.SirenixAssembliesPath.TrimEnd('\\', '/') + "/" + path.Substring(assemblyDir.Length);
+                    path = SirenixAssetPaths.SirenixAssembliesPath.TrimEnd('\\', '/') + "/" +
+                           path.Substring(assemblyDir.Length);
                 }
                 else
                 {
@@ -70,7 +76,8 @@ namespace Sirenix.OdinInspector.Editor
                 string path = file.FullName;
                 if (isPackage)
                 {
-                    path = SirenixAssetPaths.SirenixAssembliesPath.TrimEnd('\\', '/') + "/" + path.Substring(assemblyDir.Length);
+                    path = SirenixAssetPaths.SirenixAssembliesPath.TrimEnd('\\', '/') + "/" +
+                           path.Substring(assemblyDir.Length);
                 }
                 else
                 {
@@ -91,11 +98,13 @@ namespace Sirenix.OdinInspector.Editor
                     AssemblyImportSettingsUtilities.GetCurrentApiCompatibilityLevel()))
                 {
                     ApplyImportSettings(platform, aotAssemblies.ToArray(), OdinAssemblyImportSettings.ExcludeFromAll);
-                    ApplyImportSettings(platform, jitAssemblies.ToArray(), OdinAssemblyImportSettings.IncludeInBuildOnly);
+                    ApplyImportSettings(platform, jitAssemblies.ToArray(),
+                        OdinAssemblyImportSettings.IncludeInBuildOnly);
                 }
                 else
                 {
-                    ApplyImportSettings(platform, aotAssemblies.ToArray(), OdinAssemblyImportSettings.IncludeInBuildOnly);
+                    ApplyImportSettings(platform, aotAssemblies.ToArray(),
+                        OdinAssemblyImportSettings.IncludeInBuildOnly);
                     ApplyImportSettings(platform, jitAssemblies.ToArray(), OdinAssemblyImportSettings.ExcludeFromAll);
                 }
             }
@@ -105,7 +114,8 @@ namespace Sirenix.OdinInspector.Editor
             }
         }
 
-        private static void ApplyImportSettings(BuildTarget platform, string[] assemblyPaths, OdinAssemblyImportSettings importSettings)
+        private static void ApplyImportSettings(BuildTarget platform, string[] assemblyPaths,
+            OdinAssemblyImportSettings importSettings)
         {
             for (int i = 0; i < assemblyPaths.Length; i++)
             {
@@ -121,7 +131,6 @@ namespace Sirenix.OdinInspector.Editor
         }
 
 #else
-
         void IPreprocessBuild.OnPreprocessBuild(BuildTarget target, string path)
         {
             ConfigureImportSettings();

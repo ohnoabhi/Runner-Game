@@ -23,7 +23,8 @@ namespace Sirenix.OdinInspector
         [SerializeField, HideInInspector]
         private SerializationData serializationData;
 
-        SerializationData ISupportsPrefabSerialization.SerializationData { get { return this.serializationData; } set { this.serializationData = value; } }
+        SerializationData ISupportsPrefabSerialization.SerializationData { get { return this.serializationData; } set { this.serializationData
+ = value; } }
 
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {

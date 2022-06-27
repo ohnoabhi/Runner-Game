@@ -122,7 +122,7 @@ public class CreatureItem : MonoBehaviour
 
         cage.transform.DOMoveY(9, 1f);
 
-        creatureParent.GetComponentInChildren<Animator>().SetBool("Running", true);
+        creatureParent.GetComponentInChildren<Animator>().SetTrigger("Run");
 
         InitGuards();
         while (creatureParent.transform.position != finalPos.position)

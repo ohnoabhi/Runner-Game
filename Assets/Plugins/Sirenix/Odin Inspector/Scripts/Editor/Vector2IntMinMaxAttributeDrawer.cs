@@ -32,13 +32,16 @@ namespace Sirenix.OdinInspector.Editor.Drawers
         protected override void Initialize()
         {
             // Min member reference.
-            this.minGetter = ValueResolver.Get<float>(this.Property, this.Attribute.MinValueGetter, this.Attribute.MinValue);
-            this.maxGetter = ValueResolver.Get<float>(this.Property, this.Attribute.MaxValueGetter, this.Attribute.MaxValue);
+            this.minGetter =
+                ValueResolver.Get<float>(this.Property, this.Attribute.MinValueGetter, this.Attribute.MinValue);
+            this.maxGetter =
+                ValueResolver.Get<float>(this.Property, this.Attribute.MaxValueGetter, this.Attribute.MaxValue);
 
             // Min max member reference.
             if (this.Attribute.MinMaxValueGetter != null)
             {
-                this.vector2IntMinMaxGetter = ValueResolver.Get<Vector2Int>(this.Property, this.Attribute.MinMaxValueGetter);
+                this.vector2IntMinMaxGetter =
+                    ValueResolver.Get<Vector2Int>(this.Property, this.Attribute.MinMaxValueGetter);
             }
         }
 
@@ -53,7 +56,7 @@ namespace Sirenix.OdinInspector.Editor.Drawers
             Vector2 range;
             if (this.vector2IntMinMaxGetter != null && !this.vector2IntMinMaxGetter.HasError)
             {
-                range = (Vector2)this.vector2IntMinMaxGetter.GetValue();
+                range = (Vector2) this.vector2IntMinMaxGetter.GetValue();
             }
             else
             {
@@ -62,10 +65,11 @@ namespace Sirenix.OdinInspector.Editor.Drawers
             }
 
             EditorGUI.BeginChangeCheck();
-            Vector2 value = SirenixEditorFields.MinMaxSlider(label, (Vector2)this.ValueEntry.SmartValue, range, this.Attribute.ShowFields);
+            Vector2 value = SirenixEditorFields.MinMaxSlider(label, (Vector2) this.ValueEntry.SmartValue, range,
+                this.Attribute.ShowFields);
             if (EditorGUI.EndChangeCheck())
             {
-                this.ValueEntry.SmartValue = new Vector2Int((int)value.x, (int)value.y);
+                this.ValueEntry.SmartValue = new Vector2Int((int) value.x, (int) value.y);
             }
         }
     }

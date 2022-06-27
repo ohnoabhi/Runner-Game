@@ -8,8 +8,5 @@ public class SleepPhysics : MonoBehaviour
     {
         //GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Rigidbody>().Sleep();
-        
     }
-
-    
 }

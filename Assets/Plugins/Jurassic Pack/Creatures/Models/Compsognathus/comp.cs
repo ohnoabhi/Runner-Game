@@ -292,3 +292,4 @@
 // 		else { anm.SetBool("Attack", false); anm.SetInteger ("Move", 0); anm.SetInteger ("Idle", -1); }
 // 	}
 // }
+

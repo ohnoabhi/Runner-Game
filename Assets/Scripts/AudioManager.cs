@@ -4,8 +4,8 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private List<AudioSource> audioSources = new List<AudioSource>();
-    [SerializeField] private List<AudioSource> audio3DSources = new List<AudioSource>();
+    private List<AudioSource> audioSources = new List<AudioSource>();
+    private List<AudioSource> audio3DSources = new List<AudioSource>();
     private GameObject targetGameObject;
 
     private static AudioManager instance;
@@ -43,6 +43,7 @@ public class AudioManager : MonoBehaviour
     }
 
     [SerializeField] Sounds[] sounds;
+    [SerializeField] private AudioClip buttonSound;
 
     public static void Play(string name)
     {
@@ -101,7 +102,7 @@ public class AudioManager : MonoBehaviour
 
     public static void OnButtonClick()
     {
-        Play("OnButtonClick");
+        Play(instance.buttonSound);
     }
 
     private AudioSource GetAudioSource()

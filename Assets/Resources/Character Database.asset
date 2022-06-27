@@ -12,28 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e94bfb9d6213b14e973fef2485ff4e8, type: 3}
   m_Name: Character Database
   m_EditorClassIdentifier: 
-  CharacterLists:
-  - Name: Test
-    Characters:
-    - Icon: {fileID: 0}
-      Character: {fileID: 7764122927554396502, guid: 596ffeaa1234356408211540c384a5ac, type: 3}
-    - Icon: {fileID: 0}
-      Character: {fileID: 9153523111007831265, guid: 548ae27ec0713304a854394f3cb4152c, type: 3}
-    - Icon: {fileID: 0}
-      Character: {fileID: -8147160346477364663, guid: b7eafc9fca1bdc64e82373af949fd2a8, type: 3}
-    - Icon: {fileID: 0}
-      Character: {fileID: -6195413227718037442, guid: d074ad181010a1c4985b62af925f8e0e, type: 3}
-    - Icon: {fileID: 0}
-      Character: {fileID: -6909485939637547397, guid: f9ddb3bd0e860d84283676e549fd2f7a, type: 3}
-    - Icon: {fileID: 0}
-      Character: {fileID: -6160494464034875189, guid: 2a0bc3ffe0964654fa4a549dd06e3f72, type: 3}
-    - Icon: {fileID: 0}
-      Character: {fileID: -8969628837893418488, guid: 8a75813450c71394892b6a6bf3e17ea8, type: 3}
-    - Icon: {fileID: 0}
-      Character: {fileID: -3233086773223074149, guid: b1b5df3d0c6144f41bf6f70c5a163649, type: 3}
-    - Icon: {fileID: 0}
-      Character: {fileID: 7405851216908657497, guid: f5739218d4050e44abc5894fd0930960, type: 3}
-  - Name: Test2
-    Characters:
-    - Icon: {fileID: 0}
-      Character: {fileID: 0}
+  Items:
+  - Icon: {fileID: 21300000, guid: d037bbc13b8fb1140a1d2881cece28c5, type: 3}
+    Character: {fileID: 4044979275726771732, guid: b13e2dbe18f5e85449fab48f4a82f8c1, type: 3}
+  - Icon: {fileID: 21300000, guid: 4f6475d8a8672054e85e48589cb991f0, type: 3}
+    Character: {fileID: 1217438430648819512, guid: 8257ae4c28b23d94bbc514551af3d7ca, type: 3}
+  - Icon: {fileID: 21300000, guid: 49606b3600c3c204db9b805072b43653, type: 3}
+    Character: {fileID: 6517655840512273517, guid: f80da910c09fc814187fbb78bedcee8d, type: 3}
+  - Icon: {fileID: 21300000, guid: b2792ba230653714fae7777c7b6fd8cc, type: 3}
+    Character: {fileID: 3006316724399725955, guid: 67742ad46a87d3f4cad90f489ffd99f6, type: 3}
+  - Icon: {fileID: 21300000, guid: d2f55f50196928c4f95dac6305418b40, type: 3}
+    Character: {fileID: -6195413227718037442, guid: d074ad181010a1c4985b62af925f8e0e, type: 3}
+  - Icon: {fileID: 21300000, guid: f7d10c32dd50f9f4ba08122a7a07eb9e, type: 3}
+    Character: {fileID: 8552764547921937763, guid: c2ffc783d47df7441803c22d0b951e93, type: 3}
+  - Icon: {fileID: 21300000, guid: a36d87b1c5e395a4195a2261df5fb8c1, type: 3}
+    Character: {fileID: 1033473056576436237, guid: 7623c26b7e09e1843be9bfedd9c451da, type: 3}
+  - Icon: {fileID: 21300000, guid: 267a0222e8270fe4ca4d9df43a280b02, type: 3}
+    Character: {fileID: 7764122927554396502, guid: 596ffeaa1234356408211540c384a5ac, type: 3}
+  - Icon: {fileID: 21300000, guid: bb2b76f96cd7172429769ac893f56a26, type: 3}
+    Character: {fileID: 8010088261884007000, guid: dea0c437b9498dd4797c4caab8db7d36, type: 3}
