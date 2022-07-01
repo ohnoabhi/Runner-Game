@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2255989088621932770
 Transform:
   m_ObjectHideFlags: 0
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3234727675012878547}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.3125, y: 0, z: 5}
-  m_LocalScale: {x: 2.625, y: 10, z: 0.019999998}
+  m_LocalPosition: {x: 1.73, y: 0, z: 5}
+  m_LocalScale: {x: 2.625, y: 9, z: 0.019999998}
   m_Children: []
   m_Father: {fileID: 6897765845296624504}
   m_RootOrder: 4
@@ -411,7 +411,6 @@ MonoBehaviour:
   Layout: 0
   End: {fileID: 6897765845900458417}
   ShowDamage: 0
-  Damage: 0
   Obstacle: {fileID: 0}
   shouldClear: 0
   resetEvents:
@@ -514,9 +513,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3332434878153700275, guid: 0b17e8f5a6c1276478759e79944939b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976518710004958862, guid: 0b17e8f5a6c1276478759e79944939b0, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4976518710004958862, guid: 0b17e8f5a6c1276478759e79944939b0, type: 3}
       propertyPath: m_Size.y
-      value: 2
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976518710004958862, guid: 0b17e8f5a6c1276478759e79944939b0, type: 3}
+      propertyPath: m_Size.z
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4976518710004958862, guid: 0b17e8f5a6c1276478759e79944939b0, type: 3}
       propertyPath: m_Center.y
@@ -586,7 +597,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlassObstacle
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9210499242185204706, guid: 0b17e8f5a6c1276478759e79944939b0, type: 3}
+      propertyPath: m_TagString
+      value: Pitfall
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6753236866175292694, guid: 0b17e8f5a6c1276478759e79944939b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b17e8f5a6c1276478759e79944939b0, type: 3}
 --- !u!4 &2746197629675288201 stripped
 Transform:

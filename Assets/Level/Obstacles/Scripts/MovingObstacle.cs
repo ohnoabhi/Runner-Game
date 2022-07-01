@@ -10,11 +10,19 @@ public class MovingObstacle : Obstacle
     private bool isMoving;
     private new Transform transform;
 
-    private void Start()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         isMoving = true;
         transform = gameObject.transform;
+        transform.localPosition = new Vector3(0, 0.15f, 0);
         Move(Limit);
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        isMoving = false;
     }
 
     private async void Move(float x)
@@ -22,6 +30,10 @@ public class MovingObstacle : Obstacle
         while (true)
         {
             if (transform == null) return;
+            if (!isMoving)
+            {
+                break;
+            }
 
             var target = new Vector3(x, transform.position.y, transform.position.z);
 

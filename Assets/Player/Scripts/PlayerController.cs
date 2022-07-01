@@ -123,8 +123,8 @@ public class PlayerController : MonoBehaviour
 
         visual.DOScale(requiredSize, 0.2f);
         uiTransfrorm.DOScale(requiredUIScale * (1 / requiredSize.x), 0.2f);
-        GameManager.Instance.UpdateCameraHeight((requiredForIncrement *
-                                                 GameManager.Instance.HealthIncrementPercentage));
+        // GameManager.Instance.UpdateCameraHeight((requiredForIncrement *
+        //                                          GameManager.Instance.HealthIncrementPercentage));
     }
 
     public async void Init()

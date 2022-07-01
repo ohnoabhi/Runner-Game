@@ -12,6 +12,7 @@ public class WallRunFinisher : GameFinisher
     [SerializeField] private Transform wallParent;
     [SerializeField] private Wall wallPrefab;
     [SerializeField] private float ofssetZ = 8;
+    [SerializeField] private int damage = 10;
 
     [SerializeField] private int unlockIntervel = 2;
     private int unlockedWalls;
@@ -56,7 +57,7 @@ public class WallRunFinisher : GameFinisher
         for (var i = 0; i < wallParent.childCount; i++)
         {
             var wall = wallParent.GetChild(i).GetComponent<Wall>();
-            wall.Init(i >= unlockedWalls, i + 1, i * unlockIntervel);
+            wall.Init(i >= unlockedWalls, i + 1, i * unlockIntervel, damage);
         }
     }
 
@@ -80,7 +81,7 @@ public class WallRunFinisher : GameFinisher
             }
 
             wallReached++;
-            if (PlayerController.Health < 20) break;
+            if (PlayerController.Health < damage) break;
         }
 
         PlayerController.Animator.SetTrigger("Idle");

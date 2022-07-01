@@ -12,7 +12,7 @@ public class Obstacle : MonoBehaviour, IObstacle
         collided = false;
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         collided = false;
     }

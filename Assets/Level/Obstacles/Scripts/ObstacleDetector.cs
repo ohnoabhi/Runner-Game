@@ -15,21 +15,22 @@ public class ObstacleDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var obstacle = other.GetComponent<IObstacle>();
+        if (other.CompareTag("Pitfall"))
+        {
+            _playerController.Fall();
+        }
 
+        var obstacle = other.GetComponent<IObstacle>();
         if (obstacle != null)
         {
             hitEffect.transform.position = other.ClosestPoint(_playerController.transform.position);
             hitEffect.Play();
             obstacle.Collide(_playerController);
         }
-        else if (other.CompareTag("FinishLine"))
+
+        if (other.CompareTag("FinishLine"))
         {
             GameManager.Instance.OnFinish(true);
-        }
-        else if (other.CompareTag("Pitfall"))
-        {
-            _playerController.Fall();
         }
     }
 }

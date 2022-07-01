@@ -999,7 +999,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19852780, guid: dff0fd5524b08754e9e2b68478c827b3, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.5882353
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19852780, guid: dff0fd5524b08754e9e2b68478c827b3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19852780, guid: dff0fd5524b08754e9e2b68478c827b3, type: 3}
       propertyPath: startDelay.maxCurve.m_Curve.Array.data[0].value
@@ -1117,8 +1121,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19852780, guid: dff0fd5524b08754e9e2b68478c827b3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19852780, guid: dff0fd5524b08754e9e2b68478c827b3, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19852780, guid: dff0fd5524b08754e9e2b68478c827b3, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r

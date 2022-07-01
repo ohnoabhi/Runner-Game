@@ -224,7 +224,7 @@ MonoBehaviour:
   tankPrefab: {fileID: 8507393897610449178, guid: 5ae957b1c434a3f42afc09817238760f, type: 3}
   offsetZ: 16
   unlockIntervel: 2
-  damage: 20
+  damage: 10
 --- !u!1 &6897765845900458418
 GameObject:
   m_ObjectHideFlags: 0

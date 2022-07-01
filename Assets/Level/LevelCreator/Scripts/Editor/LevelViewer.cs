@@ -1,39 +1,33 @@
+﻿using System.Collections;
 using System.Collections.Generic;
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
 using UnityEngine;
 
-public class LevelEditorManager : MonoBehaviour
+public class LevelViewer
 {
-    public class SelectionInfo
-    {
-        public bool HasSelection => SelectedLevel >= 0;
-        public int SelectedLevel = -1;
-    }
-
-    public List<LevelObject> LevelObjects = new List<LevelObject>();
-
     private Transform parent;
-    private LevelObjectDatabase database;
-    public LevelDatabase LevelDatabase { get; private set; }
+    private List<LevelObject> LevelObjects;
+    private LevelEditorUpdated levelEditor;
 
-    public SelectionInfo Selection { get; private set; }
-
+    public LevelViewer(LevelEditorUpdated levelEditor)
+    {
+        this.levelEditor = levelEditor;
+        parent = new GameObject("Level").transform;
+        LevelObjects = new List<LevelObject>();
+    }
 
     public void ClearLevel()
     {
         if (parent)
-            DestroyImmediate(parent.gameObject);
+            Object.DestroyImmediate(parent.gameObject);
         LevelObjects.Clear();
     }
-
 
     public void CreateScene()
     {
         ClearLevel();
 
-        foreach (var levelItem in LevelDatabase.Levels[Selection.SelectedLevel].LevelItems)
+        foreach (var levelItem in levelEditor.LevelDatabase.Levels[levelEditor.Selection.SelectedLevel].LevelItems)
         {
             AddObject(levelItem, false);
         }
@@ -44,10 +38,9 @@ public class LevelEditorManager : MonoBehaviour
         if (!parent)
             parent = new GameObject("Level").transform;
 
-        // var itemPrefab = database.Get(levelItemData.ReferenceID);
         var itemPrefab = levelItemData.Item;
         if (!itemPrefab) return;
-        var levelObject = Instantiate(itemPrefab, levelItemData.Position, Quaternion.identity, parent);
+        var levelObject = GameObject.Instantiate(itemPrefab, levelItemData.Position, Quaternion.identity, parent);
         if (checkPlatform && levelObject.IsPlatform)
         {
             var hasPlatform = false;
@@ -65,7 +58,7 @@ public class LevelEditorManager : MonoBehaviour
             }
 
             var levelData =
-                LevelDatabase.Levels[Selection.SelectedLevel];
+                levelEditor.LevelDatabase.Levels[levelEditor.Selection.SelectedLevel];
             levelData.LevelItems[levelData.LevelItems.Count - 1] = levelItemData;
 #if UNITY_EDITOR
             {
@@ -91,12 +84,12 @@ public class LevelEditorManager : MonoBehaviour
             var levelItemData = levelObject.GetData();
             levelItemData.Position = position;
 
-            LevelDatabase.Levels[Selection.SelectedLevel].LevelItems[i] = levelItemData;
+            levelEditor.LevelDatabase.Levels[levelEditor.Selection.SelectedLevel].LevelItems[i] = levelItemData;
 
             levelObject.SetData(levelItemData);
 #if UNITY_EDITOR
             {
-                EditorUtility.SetDirty(LevelDatabase);
+                EditorUtility.SetDirty(levelEditor.LevelDatabase);
             }
 #endif
 
@@ -104,20 +97,37 @@ public class LevelEditorManager : MonoBehaviour
         }
     }
 
-    public void Init()
-    {
-        database = LevelObjectDatabase.Get();
-        LevelDatabase = LevelDatabase.Get();
-        Selection = new SelectionInfo();
-    }
-
     public void Remove(int i)
     {
         if (LevelObjects.Count <= i) return;
         var isPlatform = LevelObjects[i].IsPlatform;
-        DestroyImmediate(LevelObjects[i].gameObject);
+        Object.DestroyImmediate(LevelObjects[i].gameObject);
         LevelObjects.RemoveAt(i);
 
         if (isPlatform) ReorganizePlatforms();
+    }
+
+    public void OnDestroy()
+    {
+    }
+
+    public void SetPosition(int i, LevelObject levelObject, Vector3 position)
+    {
+        var levelItemData = levelObject.GetData();
+        levelItemData.Position = position;
+
+        levelEditor.LevelDatabase.Levels[levelEditor.Selection.SelectedLevel].LevelItems[i] = levelItemData;
+
+        levelObject.SetData(levelItemData);
+#if UNITY_EDITOR
+        {
+            EditorUtility.SetDirty(levelEditor.LevelDatabase);
+        }
+#endif
+    }
+
+    public List<LevelObject> GetLevelObjects()
+    {
+        return LevelObjects;
     }
 }

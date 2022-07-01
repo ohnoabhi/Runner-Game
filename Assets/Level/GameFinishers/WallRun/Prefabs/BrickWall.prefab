@@ -9925,6 +9925,7 @@ MonoBehaviour:
   lockIcon: {fileID: 2337783370739446387}
   lockText: {fileID: 1951491691581077238}
   text: {fileID: 2466420848696643337}
+  obstacle: {fileID: 4223232918082304669}
   particles:
   - {fileID: 248832827268956692}
   - {fileID: 8200367367526275207}
@@ -11808,6 +11809,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6460398889111210090, guid: d9c8f07a76bd9934c9e390798770dcc9, type: 3}
   m_PrefabInstance: {fileID: 809660266847893975}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4223232918082304669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3577989299322176330, guid: d9c8f07a76bd9934c9e390798770dcc9, type: 3}
+  m_PrefabInstance: {fileID: 809660266847893975}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58caef9d3ae4561ae702f590102240f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8200367367511158197
 PrefabInstance:
   m_ObjectHideFlags: 0
