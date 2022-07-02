@@ -1,11 +1,14 @@
 using System.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 
 public class MovingObstacle : Obstacle
 {
     [SerializeField] private float Limit = 4;
-    [SerializeField] private float Speed = 5;
-    [SerializeField] private float Delay = 5;
+    [SerializeField] private float Duration = 2;
+    [SerializeField] private float Delay = 1;
+
+    private Sequence moveSequence;
 
     private bool isMoving;
     private new Transform transform;
@@ -15,14 +18,19 @@ public class MovingObstacle : Obstacle
         base.OnEnable();
         isMoving = true;
         transform = gameObject.transform;
-        transform.localPosition = new Vector3(0, 0.15f, 0);
-        Move(Limit);
+        transform.localPosition = new Vector3(-Limit, 0.15f, 0);
+        moveSequence = DOTween.Sequence();
+        moveSequence.Append(transform.DOLocalMoveX(Limit, Duration).SetDelay(Delay));
+        moveSequence.Append(transform.DOLocalMoveX(-Limit, Duration).SetDelay(Delay));
+        moveSequence.SetLoops(-1, LoopType.Restart);
+        moveSequence.Play();
+        // Move(Limit);
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
-        isMoving = false;
+        moveSequence?.Complete();
     }
 
     private async void Move(float x)
@@ -42,7 +50,7 @@ public class MovingObstacle : Obstacle
                 if (!transform) isMoving = false;
                 if (!isMoving) break;
 
-                transform.position = Vector3.MoveTowards(transform.position, target, Speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, target, Duration * Time.deltaTime);
                 // transform.rotation = Quaternion.LookRotation(target - transform.position);
                 await Task.Yield();
             }
