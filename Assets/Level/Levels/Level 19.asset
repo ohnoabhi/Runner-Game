@@ -242,8 +242,8 @@ MonoBehaviour:
     Position: {x: 0, y: 0, z: 22.615704}
     Damage: 0
     MultiplierValue:
-      LeftValue: 30
-      RightValue: 30
+      LeftValue: 40
+      RightValue: 40
     CharacterId: 0
   - Item: {fileID: 8044958139425952411, guid: 5015061aea6a70f44930d4721a4b877e, type: 3}
     Position: {x: -2, y: 0, z: 69.382195}

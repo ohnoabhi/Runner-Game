@@ -284,7 +284,7 @@ MonoBehaviour:
     Position: {x: 0, y: 0, z: 80.512054}
     Damage: 0
     MultiplierValue:
-      LeftValue: -30
+      LeftValue: 30
       RightValue: -35
     CharacterId: 0
   - Item: {fileID: 1222415751959205298, guid: e62ac768a65c971468058c0ab3f2e2b5, type: 3}
@@ -311,13 +311,6 @@ MonoBehaviour:
   - Item: {fileID: 8323975453753860563, guid: d9c8f07a76bd9934c9e390798770dcc9, type: 3}
     Position: {x: -2, y: 0, z: 65.792694}
     Damage: 20
-    MultiplierValue:
-      LeftValue: 0
-      RightValue: 0
-    CharacterId: 0
-  - Item: {fileID: 6753236866175292694, guid: 0b17e8f5a6c1276478759e79944939b0, type: 3}
-    Position: {x: 2, y: 0, z: 65.82041}
-    Damage: 0
     MultiplierValue:
       LeftValue: 0
       RightValue: 0

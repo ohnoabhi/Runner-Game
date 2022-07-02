@@ -250,7 +250,7 @@ MonoBehaviour:
     Damage: 0
     MultiplierValue:
       LeftValue: 40
-      RightValue: 35
+      RightValue: 50
     CharacterId: 0
   - Item: {fileID: 1222415751959205298, guid: e62ac768a65c971468058c0ab3f2e2b5, type: 3}
     Position: {x: 0, y: 0, z: 75.73507}
@@ -271,7 +271,7 @@ MonoBehaviour:
     Damage: 0
     MultiplierValue:
       LeftValue: -45
-      RightValue: -30
+      RightValue: 20
     CharacterId: 0
   - Item: {fileID: 3713403333683543587, guid: 1a0a13470815b6e4da65cdff5e72b4b3, type: 3}
     Position: {x: -2, y: 0, z: 44.966972}
