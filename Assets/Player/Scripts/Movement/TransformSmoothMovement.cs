@@ -3,52 +3,34 @@
 public class TransformSmoothMovement : PlayerMovement
 {
     private Transform transform;
+    private float screeX;
 
-    public TransformSmoothMovement(PlayerController playerController, float speed, float slideSpeed,
-        float slideSmoothness, float xClamp) :
-        base(playerController, speed, slideSpeed, slideSmoothness, xClamp)
+    public TransformSmoothMovement(PlayerController playerController, float speed, float slideSpeed, float xClamp) :
+        base(playerController, speed, slideSpeed, 0, xClamp)
     {
         transform = playerController.transform;
+
+        screeX = 1f / (Screen.height / (float) Screen.width);
     }
 
     public override void MoveForward()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
+        var deltaX = Input.GetMouseButton(0) ? Input.GetAxis("Mouse X") : 0 * screeX;
+
+        var newPosition = transform.position;
+
+        {
+            newPosition.z += speed * Time.deltaTime;
+        }
+
+        newPosition.x += deltaX * slideSpeed * Time.deltaTime;
+        newPosition.x = Mathf.Clamp(newPosition.x, -xClamp, xClamp);
+        transform.position = newPosition;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation,
+            Quaternion.Euler(0, deltaX > 0 ? 20 : deltaX < 0 ? -20 : 0, 0), 50 * Time.deltaTime);
     }
 
     public override void MoveSideways()
     {
-        float deltaX;
-        if (Input.GetMouseButtonDown(0))
-        {
-            deltaX = 0;
-        }
-        else if (Input.GetMouseButton(0))
-        {
-            deltaX = Input.GetAxis("Mouse X") / Screen.width * 100;
-        }
-        else
-        {
-            deltaX = 0;
-        }
-
-        var position = transform.position;
-        var movement = position;
-        movement.z += speed * Time.deltaTime;
-
-        position = movement;
-        transform.position = position;
-        movement.x += deltaX * slideSpeed;
-        // movement.x = Mathf.Clamp(movement.x, -XMovementClamp, XMovementClamp);
-        position = Vector3.MoveTowards(position, movement, slideSmoothness * Time.deltaTime);
-        // position = movement;
-        transform.position = position;
-        var quaternion = Quaternion.Euler(0, deltaX == 0
-            ? 0
-            : (deltaX < 0
-                ? -10
-                : 10), 0);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation,
-            quaternion, 60 * Time.deltaTime);
     }
 }

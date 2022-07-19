@@ -8,7 +8,7 @@ public class Tree : Obstacle
     [SerializeField] private Transform parent;
     [SerializeField] private Forest forest;
 
-    protected override void OnCollide(PlayerController playerController)
+    protected override void OnCollide(PlayerController playerController, Vector3 collisionPoint)
     {
         forest.PlaySound();
         var transformPosition = transform.position;

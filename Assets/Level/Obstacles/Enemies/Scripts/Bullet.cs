@@ -7,9 +7,8 @@ namespace Soldiers
     public class Bullet : MonoBehaviour
     {
         [SerializeField] private float speed = 300;
-        [SerializeField] private int damage = 1;
 
-        public async void Trigger(PlayerController player)
+        public async void Trigger(PlayerController player, int damage)
         {
             var target = player.transform.position;
             target.y = transform.position.y;

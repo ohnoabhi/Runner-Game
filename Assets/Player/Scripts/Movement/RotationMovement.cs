@@ -6,15 +6,20 @@ public class RotationMovement : PlayerMovement
     private Transform rotationTransform;
     private float screeX;
 
-
     public override void MoveForward()
     {
-        movementTransform.Translate(rotationTransform.forward * speed * Time.deltaTime, Space.World);
-        if (Mathf.Abs(movementTransform.position.x) > 2.5f)
+        if (onHit)
         {
-            var position = movementTransform.position;
-            position = new Vector3(Mathf.Clamp(position.x, -2.5f, 2.5f), position.y, position.z);
-            movementTransform.position = position;
+            if (movementTransform.position.z > hitPosition.z - 2)
+            {
+                movementTransform.Translate(rotationTransform.forward * -(speed * 0.5f) * Time.deltaTime, Space.World);
+            }
+
+            if (movementTransform.position.z <= hitPosition.z - 2) onHit = false;
+        }
+        else
+        {
+            movementTransform.Translate(rotationTransform.forward * speed * Time.deltaTime, Space.World);
         }
     }
 
@@ -37,7 +42,6 @@ public class RotationMovement : PlayerMovement
         if (deltaX != 0)
         {
             deltaX = deltaX * 500 * screeX;
-            // if (Mathf.Abs(deltaX) < 0.1f) deltaX = 0;
         }
 
         var quaternion = Quaternion.Euler(0, deltaX == 0
@@ -46,17 +50,17 @@ public class RotationMovement : PlayerMovement
                 ? -10
                 : 10), 0);
         rotationTransform.rotation = Quaternion.RotateTowards(rotationTransform.rotation,
-            quaternion, slideSpeed * 10 * Time.deltaTime);
+            quaternion, slideSpeed * Time.deltaTime);
 
-        movementTransform.Translate(Vector3.right * deltaX * speed * Time.deltaTime, Space.World);
+        movementTransform.Translate(Vector3.right * deltaX * slideMoveSpeed * speed * Time.deltaTime, Space.World);
         if (!(Mathf.Abs(movementTransform.position.x) > 2.5f)) return;
         var position = movementTransform.position;
         position = new Vector3(Mathf.Clamp(position.x, -2.5f, 2.5f), position.y, position.z);
         movementTransform.position = position;
     }
 
-    public RotationMovement(PlayerController playerController, float speed, float slideSpeed, float slideSmoothness,
-        float xClamp, Transform rotationTransform) : base(playerController, speed, slideSpeed, slideSmoothness, xClamp)
+    public RotationMovement(PlayerController playerController, float speed, float slideSpeed, float slideMoveSpeed,
+        float xClamp, Transform rotationTransform) : base(playerController, speed, slideSpeed, slideMoveSpeed, xClamp)
     {
         movementTransform = playerController.transform;
         this.rotationTransform = rotationTransform;

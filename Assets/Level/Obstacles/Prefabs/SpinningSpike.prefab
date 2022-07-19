@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 438641354230441906}
+  - component: {fileID: 1580955378453200498}
   - component: {fileID: 438641354230441907}
   - component: {fileID: 438641354230441904}
   - component: {fileID: 8247996468263515205}
   - component: {fileID: 438641354230441918}
-  - component: {fileID: 8280360826418089759}
   m_Layer: 0
   m_Name: SpinningSpike
   m_TagString: Untagged
@@ -35,6 +35,23 @@ Transform:
   m_Father: {fileID: 7816998031332815644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1580955378453200498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438641354230441905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93896b9b0bb1dc04f8535d7bbd4a7f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  shouldVibrate: 1
+  dieOnTouch: 1
+  speed: 60
+  direction: {x: 0, y: -1, z: 0}
 --- !u!33 &438641354230441907
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94,7 +111,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438641354230441905}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c51733118e5d58f4f812d04eafb43259, type: 2}
   m_CullingMode: 0
@@ -116,21 +133,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22953984, y: 0.17540565, z: 0.72490877}
-  m_Center: {x: 0.0000006079674, y: -0.10142582, z: 0.50525945}
---- !u!114 &8280360826418089759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 438641354230441905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaa2ebfdc811ab84e9f6d8739b0a7c21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 3
+  m_Size: {x: 0.15, y: 0.15, z: 0.63}
+  m_Center: {x: -0.01, y: -0.095, z: 0.56}
 --- !u!1 &7816998031332815646
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +183,6 @@ MonoBehaviour:
   Layout: 0
   End: {fileID: 0}
   ShowDamage: 0
-  Damage: 0
   Obstacle: {fileID: 0}
   shouldClear: 0
   resetEvents:

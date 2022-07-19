@@ -7,7 +7,7 @@ public class Tank : Obstacle
     [SerializeField] private float findPlayerIntervel = 1;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Animator animator;
-    private float findPlayerTime = 0;
+    private float findPlayerTime;
 
 
     [Range(0.1f, 1)] [SerializeField] private float fireRate;
@@ -40,7 +40,7 @@ public class Tank : Obstacle
         }
     }
 
-    protected override void OnCollide(PlayerController playerController)
+    protected override void OnCollide(PlayerController playerController, Vector3 collisionPoint)
     {
         AudioManager.Play("TankDie");
         Die();
@@ -90,7 +90,7 @@ public class Tank : Obstacle
         {
             var instance = Instantiate(shell, muzzle.position, Quaternion.identity);
             instance.transform.forward = muzzle.forward;
-            instance.Trigger(_playerController);
+            instance.Trigger(_playerController, damage);
             shootTime = 0;
             return true;
         }

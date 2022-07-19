@@ -1,68 +1,80 @@
-using System.Threading.Tasks;
-using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 
 public class MovingObstacle : Obstacle
 {
     [SerializeField] private float Limit = 4;
-    [SerializeField] private float Duration = 2;
-    [SerializeField] private float Delay = 1;
-
-    private Sequence moveSequence;
-
-    private bool isMoving;
+    [SerializeField] private float Speed = 1;
     private new Transform transform;
+    private bool shouldMove;
+    private bool moveRight;
+    private Coroutine moveCoroutine;
 
     protected override void OnEnable()
     {
         base.OnEnable();
-        isMoving = true;
+        ResetMove();
+    }
+
+    public void ResetMove()
+    {
+        StopMove();
         transform = gameObject.transform;
-        transform.localPosition = new Vector3(-Limit, 0.15f, 0);
-        moveSequence = DOTween.Sequence();
-        moveSequence.Append(transform.DOLocalMoveX(Limit, Duration).SetDelay(Delay));
-        moveSequence.Append(transform.DOLocalMoveX(-Limit, Duration).SetDelay(Delay));
-        moveSequence.SetLoops(-1, LoopType.Restart);
-        moveSequence.Play();
-        // Move(Limit);
+        shouldMove = true;
+        moveRight = true;
+        var position = transform.localPosition;
+        position.x = -Limit;
+        transform.localPosition = position;
+
+        moveCoroutine = StartCoroutine(Move());
+    }
+
+    
+    public void StopMove()
+    {
+        shouldMove = false;
+        if (moveCoroutine != null) StopCoroutine(moveCoroutine);
+    }
+
+
+    private IEnumerator Move()
+    {
+        var position = transform.localPosition;
+        if (moveRight)
+        {
+            position.x += Speed * Time.deltaTime;
+        }
+        else
+        {
+            position.x -= Speed * Time.deltaTime;
+        }
+
+        transform.localPosition = position;
+
+        if (position.x >= Limit)
+        {
+            moveRight = false;
+        }
+        else if (position.x <= -Limit)
+        {
+            moveRight = true;
+        }
+
+        yield return null;
+        if (shouldMove)
+        {
+            moveCoroutine = StartCoroutine(Move());
+        }
     }
 
     protected override void OnDisable()
     {
+        StopMove();
         base.OnDisable();
-        moveSequence?.Complete();
     }
 
-    private async void Move(float x)
+    protected override void OnCollide(PlayerController playerController, Vector3 collisionPoint)
     {
-        while (true)
-        {
-            if (transform == null) return;
-            if (!isMoving)
-            {
-                break;
-            }
-
-            var target = new Vector3(x, transform.position.y, transform.position.z);
-
-            while (transform != null && transform.position != target)
-            {
-                if (!transform) isMoving = false;
-                if (!isMoving) break;
-
-                transform.position = Vector3.MoveTowards(transform.position, target, Duration * Time.deltaTime);
-                // transform.rotation = Quaternion.LookRotation(target - transform.position);
-                await Task.Yield();
-            }
-
-            await Task.Delay((int) (Delay * 1000));
-            if (isMoving)
-            {
-                x = x * -1;
-                continue;
-            }
-
-            break;
-        }
+        shouldMove = false;
     }
 }

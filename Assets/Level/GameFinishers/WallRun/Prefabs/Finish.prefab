@@ -102,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 6797041785918295529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 200}
-  m_LocalScale: {x: 7, y: 1, z: 400}
+  m_LocalScale: {x: 20, y: 1, z: 400}
   m_Children: []
   m_Father: {fileID: 6897765845296624504}
   m_RootOrder: 0
@@ -223,6 +223,7 @@ MonoBehaviour:
   wallParent: {fileID: 2245191515484915066}
   wallPrefab: {fileID: 8666778302075986471, guid: 37e78b6e90056c24b9ae3c6718403a19, type: 3}
   ofssetZ: 16
+  damage: 10
   unlockIntervel: 2
 --- !u!1 &6897765845900458418
 GameObject:

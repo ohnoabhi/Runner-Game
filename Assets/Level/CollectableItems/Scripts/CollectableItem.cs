@@ -34,7 +34,8 @@ public class CollectableItem : MonoBehaviour
             case CollectableItemType.Cash:
                 if (playAudio)
                     AudioManager.Play("CashPickup");
-                CollectablesManager.Add(CollectableType.Cash, 1);
+                // CollectablesManager.Add(CollectableType.Cash, 1);
+                playerController.CollectCash(amount);
                 break;
         }
         Hide();

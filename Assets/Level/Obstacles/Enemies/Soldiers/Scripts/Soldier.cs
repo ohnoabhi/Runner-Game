@@ -37,7 +37,7 @@ namespace Soldiers
             }
         }
 
-        protected override void OnCollide(PlayerController playerController)
+        protected override void OnCollide(PlayerController playerController, Vector3 collisionPoint)
         {
             AudioManager.Play("SoldierDie");
             Die();

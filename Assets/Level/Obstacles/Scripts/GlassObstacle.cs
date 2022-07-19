@@ -25,10 +25,11 @@ public class GlassObstacle : Obstacle
         }
     }
 
-    protected override void OnCollide(PlayerController playerController)
+    protected override void OnCollide(PlayerController playerController, Vector3 collisionPoint)
     {
         AudioManager.Play("GlassBreak");
-        CollectablesManager.Add(CollectableType.Cash, 1);
+        playerController.CollectCash(1);
+        // CollectablesManager.Add(CollectableType.Cash, 1);
         ChallengeManager.Instance.UpdateChallenge(ChallengeType.DestroyGlass);
         unBroken.SetActive(false);
         broken.SetActive(true);

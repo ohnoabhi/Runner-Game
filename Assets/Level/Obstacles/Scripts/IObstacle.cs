@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IObstacle
 {
-    public void Collide(PlayerController playerController);
+    public void Collide(PlayerController playerController, Vector3 collisionpoint);
 }

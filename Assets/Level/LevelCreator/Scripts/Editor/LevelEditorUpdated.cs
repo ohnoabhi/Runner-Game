@@ -43,18 +43,18 @@ public class LevelEditorUpdated : EditorWindow
     [MenuItem("Level/Level Editor", priority = 0)]
     public static void Open()
     {
-        if (!SceneManager.GetSceneByName("LevelCreator").isLoaded)
-        {
-            if (EditorUtility.DisplayDialog("Level Scene Not Loaded!",
-                "Level editor requires level scene to be loaded!", "Load Scene", "cancel"))
-            {
-                EditorSceneManager.OpenScene(LevelScenePath);
-            }
-            else
-            {
-                return;
-            }
-        }
+        // if (!SceneManager.GetSceneByName("LevelCreator").isLoaded)
+        // {
+        //     if (EditorUtility.DisplayDialog("Level Scene Not Loaded!",
+        //         "Level editor requires level scene to be loaded!", "Load Scene", "cancel"))
+        //     {
+        //         EditorSceneManager.OpenScene(LevelScenePath);
+        //     }
+        //     else
+        //     {
+        //         return;
+        //     }
+        // }
 
         if (!_window)
             _window = GetWindow<LevelEditorUpdated>("Level Editor");

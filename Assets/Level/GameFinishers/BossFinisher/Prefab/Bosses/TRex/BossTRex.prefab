@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &448622005446887839
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306334417756341360}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.32, y: 5, z: 2.29}
-  m_Center: {x: 0, y: 2.5, z: 2.75}
 --- !u!1001 &252927266799953137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32,6 +19,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 3133973503862585179, guid: 08f397e8fedc45d4295beff68c083b3b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 5a699b4bfc6f5c2429456c4fccc2b5c8, type: 2}
     - target: {fileID: 3133973503869573251, guid: 08f397e8fedc45d4295beff68c083b3b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -95,3 +86,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 559226482984542337, guid: 08f397e8fedc45d4295beff68c083b3b, type: 3}
   m_PrefabInstance: {fileID: 252927266799953137}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &448622005446887839
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306334417756341360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.32, y: 5, z: 2.29}
+  m_Center: {x: 0, y: 2.5, z: 2.75}

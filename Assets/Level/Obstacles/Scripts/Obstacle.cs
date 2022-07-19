@@ -17,7 +17,7 @@ public class Obstacle : MonoBehaviour, IObstacle
         collided = false;
     }
 
-    public void Collide(PlayerController playerController)
+    public void Collide(PlayerController playerController, Vector3 collisionPoint)
     {
         if (collided) return;
 
@@ -31,11 +31,12 @@ public class Obstacle : MonoBehaviour, IObstacle
         else
         {
             playerController.TakeDamage(damage);
-            OnCollide(playerController);
+            playerController.SetHit(transform.position);
+            OnCollide(playerController, collisionPoint);
         }
     }
 
-    protected virtual void OnCollide(PlayerController playerController)
+    protected virtual void OnCollide(PlayerController playerController, Vector3 collisionPoint)
     {
     }
 }

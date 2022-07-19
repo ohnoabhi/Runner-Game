@@ -1,9 +1,11 @@
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 
 public class GameScreen : BaseScreen
 {
     [SerializeField] private GameObject tutorial;
+    [SerializeField] private TextMeshProUGUI cashText;
 
     protected override async void OnShow(params object[] args)
     {
@@ -17,5 +19,10 @@ public class GameScreen : BaseScreen
         {
             tutorial.SetActive(false);
         }
+    }
+
+    public void UpdateCash(int amount)
+    {
+        cashText.text = amount.ToString();
     }
 }

@@ -1,47 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &2677025456022721367
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513837616320511429}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0219519, y: 1.0219427, z: 0.1889307}
-  m_Center: {x: -0.00000062584877, y: 0.00000029802322, z: 0}
---- !u!114 &2677025456022721364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513837616320511429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaa2ebfdc811ab84e9f6d8739b0a7c21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
-  shouldVibrate: 1
-  dieOnTouch: 0
---- !u!114 &5271820678016830636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513837616320511429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad643e9253707c47a7525da09207937, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Axis: {x: 0, y: 0, z: 1}
-  Speed: 360
 --- !u!1 &2677025456231762428
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,3 +132,45 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3469055060793812513, guid: 676bc6549f774f649ba544bd975f11bc, type: 3}
   m_PrefabInstance: {fileID: 2677025456888912868}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &2677025456022721367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513837616320511429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0219519, y: 1.0219427, z: 0.1889307}
+  m_Center: {x: -0.00000062584877, y: 0.00000029802322, z: 0}
+--- !u!114 &2677025456022721364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513837616320511429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa2ebfdc811ab84e9f6d8739b0a7c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  shouldVibrate: 1
+  dieOnTouch: 1
+--- !u!114 &5271820678016830636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513837616320511429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad643e9253707c47a7525da09207937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Axis: {x: 0, y: 0, z: 1}
+  Speed: 360

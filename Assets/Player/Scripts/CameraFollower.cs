@@ -19,7 +19,7 @@ public class CameraFollower : MonoBehaviour
     {
         if (!follow || !Target) return;
         var target = Target.transform.position;
-        target.x = 0;
+        // target.x = 0;
         target += offset;
         var movement = target;
         transform.position = movement;

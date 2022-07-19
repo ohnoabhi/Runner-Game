@@ -10,6 +10,7 @@ public class WallObstacle : Obstacle
     private Vector3[] positions;
     private Quaternion[] rotations;
     [SerializeField] private bool showText = true;
+    [SerializeField] private ParticleSystem hitEffect;
 
     private void Awake()
     {
@@ -46,11 +47,16 @@ public class WallObstacle : Obstacle
         }
     }
 
-    protected override void OnCollide(PlayerController playerController)
+    protected override void OnCollide(PlayerController playerController, Vector3 collisionPoint)
     {
         AudioManager.Play("WallBreak");
-        CollectablesManager.Add(CollectableType.Cash, 1);
+        // CollectablesManager.Add(CollectableType.Cash, 1);
+        playerController.CollectCash(1);
         ChallengeManager.Instance.UpdateChallenge(ChallengeType.DestroyWalls);
+        var position = hitEffect.transform.position;
+        position.x = collisionPoint.x;
+        hitEffect.transform.position = position;
+        hitEffect.Play();
         text.SetActive(false);
         onCollideEvents?.Invoke();
     }

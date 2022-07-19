@@ -110,6 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
+  shouldVibrate: 1
+  dieOnTouch: 1
 --- !u!1 &4156356770047469112
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +262,6 @@ MonoBehaviour:
   Layout: 1
   End: {fileID: 0}
   ShowDamage: 0
-  Damage: 0
   Obstacle: {fileID: 0}
   shouldClear: 0
   resetEvents:

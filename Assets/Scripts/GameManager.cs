@@ -4,8 +4,8 @@ using Challenges;
 using Sirenix.OdinInspector;
 using Stats;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -28,14 +28,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Vector3 cameraRotation = new Vector3(10, 0, 0);
     [SerializeField] private Price winBasePrice;
     [SerializeField] private float winIncrementPercentage;
+    [SerializeField] private GameScreen gameScreen;
+    [SerializeField] private bool randomEndType;
 
     [BoxGroup("Health")] [SerializeField] public int HealthRequiredForIncrement = 20;
     [BoxGroup("Health")] [SerializeField] public float HealthIncrementPercentage = 0.2f;
-    [BoxGroup("Character Size")]
-    public float PlayerStartSize;
+    [BoxGroup("Character Size")] public float PlayerStartSize;
 
-    [BoxGroup("Character Size")]
-    public float PlayerMaxSize;
+    [BoxGroup("Character Size")] public float PlayerMaxSize;
 
     public static Action ResetObstacleEvent;
 
@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     public static int Level
     {
+        // get => 1;
         get => PlayerPrefs.GetInt("Level", 1);
         set => PlayerPrefs.SetInt("Level", value);
     }
@@ -108,7 +109,10 @@ public class GameManager : MonoBehaviour
             // await Task.Yield();
         }
 
-        var gameFinisherPrefab = objectDatabase.GetFinisher(levelData.EndType);
+        var values = Enum.GetValues(typeof(LevelEndType));
+        var gameFinisherPrefab = objectDatabase.GetFinisher(randomEndType
+            ? (LevelEndType) values.GetValue(Random.Range(0, values.Length))
+            : levelData.EndType);
         if (gameFinisherPrefab)
         {
             finisher = Instantiate(gameFinisherPrefab, lastEnd, Quaternion.identity, levelParent);
@@ -137,6 +141,7 @@ public class GameManager : MonoBehaviour
         PlayerController.State = PlayerController.PlayerState.Running;
         // var playerCharacterManager = player.GetComponent<PlayerCharacterManager>();
         PlayerController.UI.SetCamera(cameraFollower.transform);
+        OnPlayerCashCollected(0);
         cameraFollower.transform.position = PlayerController.transform.position + cameraOffset;
         cameraFollower.transform.rotation = Quaternion.Euler(cameraRotation);
         cameraFollower.Target = PlayerController.transform;
@@ -202,7 +207,6 @@ public class GameManager : MonoBehaviour
     public void GameOver(bool win, float delay = 0, int multiplier = 1, bool isChest = false)
     {
         TinySauce.OnGameFinished(win, 0);
-        ClearLevel();
         if (win)
         {
             Level++;
@@ -212,6 +216,7 @@ public class GameManager : MonoBehaviour
         CurrentState = win ? GameStates.Win : GameStates.Lose;
         ScreenController.instance.SetFinisherUI();
         ScreenController.instance.Show(win ? "Win" : "Lose", delay, GetWinAmount(), multiplier, isChest);
+        ClearLevel();
     }
 
     public Price GetWinAmount()
@@ -219,9 +224,14 @@ public class GameManager : MonoBehaviour
         return new Price()
         {
             Type = winBasePrice.Type,
-            Amount = Mathf.RoundToInt(winBasePrice.Amount + (winBasePrice.Amount *
-                                                             ((StatsManager.Get(StatType.RewardMultiplier) - 1) *
-                                                              winIncrementPercentage)))
+            Amount = Mathf.RoundToInt(PlayerController.CashCollected + winBasePrice.Amount + (winBasePrice.Amount *
+                ((StatsManager.Get(StatType.RewardMultiplier) - 1) *
+                 winIncrementPercentage)))
         };
+    }
+
+    public void OnPlayerCashCollected(int amount)
+    {
+        gameScreen.UpdateCash(amount);
     }
 }

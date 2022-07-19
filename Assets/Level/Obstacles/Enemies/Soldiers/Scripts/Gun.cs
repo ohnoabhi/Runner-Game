@@ -8,6 +8,7 @@ namespace Soldiers
         [Range(0.1f, 1)] [SerializeField] private float fireRate;
         [SerializeField] private Bullet shell;
         [SerializeField] private Transform muzzle;
+        [SerializeField] private int damage = 1;
 
         private float shootTime = 0;
         private float timeToShoot = 0;
@@ -28,7 +29,7 @@ namespace Soldiers
             {
                 var instance = Instantiate(shell, muzzle.position, Quaternion.identity);
                 instance.transform.forward = muzzle.forward;
-                instance.Trigger(player);
+                instance.Trigger(player, damage);
                 shootTime = 0;
                 return true;
             }

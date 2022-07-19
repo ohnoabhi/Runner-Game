@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     [BoxGroup("Movement")] [SerializeField]
     private float Speed;
 
+    public int CashCollected { get; private set; }
+
     public static int PlayerSpeed
     {
         get => PlayerPrefs.GetInt("PlayerSpeed", 12);
@@ -31,6 +33,12 @@ public class PlayerController : MonoBehaviour
     {
         get => PlayerPrefs.GetInt("PlayerSlideSpeed", 15);
         set => PlayerPrefs.SetInt("PlayerSlideSpeed", value);
+    }
+
+    public static float PlayerSlideMoveSpeed
+    {
+        get => PlayerPrefs.GetFloat("PlayerSlideMoveSpeed", 0);
+        set => PlayerPrefs.SetFloat("PlayerSlideMoveSpeed", value);
     }
 
     [BoxGroup("Movement")] [SerializeField]
@@ -78,7 +86,9 @@ public class PlayerController : MonoBehaviour
     {
         transform = gameObject.transform;
         GameManager.OnPlayerHealthChange += OnHealthChange;
-        movement = new RotationMovement(this, PlayerSpeed, PlayerSlideSpeed, 0, XMovementClamp, RotationTransform);
+        // movement = new RotationMovement(this, PlayerSpeed, PlayerSlideSpeed, PlayerSlideMoveSpeed, XMovementClamp,
+        //     RotationTransform);
+        movement = new TransformSmoothMovement(this, PlayerSpeed, PlayerSlideSpeed, XMovementClamp);
     }
 
     private void InitCharacter()
@@ -199,7 +209,7 @@ public class PlayerController : MonoBehaviour
     {
         if (State == PlayerState.Dead) return;
         State = PlayerState.Dead;
-        
+
         AudioManager.Play("PlayerDeath");
         Animator.SetTrigger("Dead");
 
@@ -219,5 +229,16 @@ public class PlayerController : MonoBehaviour
     public Vector3 GetSize()
     {
         return visual.localScale;
+    }
+
+    public void CollectCash(int amount)
+    {
+        CashCollected += amount;
+        GameManager.Instance.OnPlayerCashCollected(CashCollected);
+    }
+
+    public void SetHit(Vector3 position)
+    {
+        movement.Hit(position);
     }
 }

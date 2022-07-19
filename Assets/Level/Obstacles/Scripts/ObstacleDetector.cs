@@ -23,9 +23,10 @@ public class ObstacleDetector : MonoBehaviour
         var obstacle = other.GetComponent<IObstacle>();
         if (obstacle != null)
         {
-            hitEffect.transform.position = other.ClosestPoint(_playerController.transform.position);
+            var closestPoint = other.ClosestPoint(_playerController.transform.position);
+            hitEffect.transform.position = closestPoint;
             hitEffect.Play();
-            obstacle.Collide(_playerController);
+            obstacle.Collide(_playerController, closestPoint);
         }
 
         if (other.CompareTag("FinishLine"))

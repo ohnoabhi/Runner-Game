@@ -45,7 +45,7 @@ public class Multiplier : MonoBehaviour, IObstacle
 
     private bool collided = false;
 
-    public void Collide(PlayerController playerController)
+    public void Collide(PlayerController playerController, Vector3 collisionPoint)
     {
         if (collided) return;
         collided = true;

@@ -30,6 +30,7 @@ public class BossFinisher : GameFinisher
 
 
         boss = Instantiate(bosses[Random.Range(0, bosses.Length)], bossParent);
+        // boss = Instantiate(bosses[5], bossParent);
         boss.transform.localRotation = Quaternion.Euler(0, 0, 0);
         var bossTask = boss.StartAttack(bossPosition.position);
         while (PlayerController.transform.position != playerPosition.position)

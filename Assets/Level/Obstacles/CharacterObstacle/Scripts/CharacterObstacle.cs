@@ -35,7 +35,7 @@ public class CharacterObstacle : Obstacle
         character.Animator.SetFloat("Speed", 1f);
     }
 
-    protected override async void OnCollide(PlayerController playerController)
+    protected override async void OnCollide(PlayerController playerController, Vector3 collisionPoint)
     {
         AudioManager.Play("CharacterObstacle");
         if (playerController.State != PlayerController.PlayerState.Dead)

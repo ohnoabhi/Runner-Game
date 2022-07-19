@@ -16,8 +16,10 @@ public class MainMenu : BaseScreen
     [SerializeField] private GameObject challengeNotify;
     public Slider speedSlider;
     public Slider smoothnessSlider;
+    public Slider slideSpeedSlider;
     public TextMeshProUGUI speedText;
     public TextMeshProUGUI smoothnessText;
+    public TextMeshProUGUI slideSpeedText;
 
     private void OnEnable()
     {
@@ -70,7 +72,8 @@ public class MainMenu : BaseScreen
         chestLevelProgress.gameObject.SetActive(hasChest);
 
         speedSlider.value = PlayerController.PlayerSpeed;
-        smoothnessSlider.value = PlayerController.PlayerSlideSpeed;
+        smoothnessSlider.value = PlayerController.PlayerSlideSpeed / 2;
+        slideSpeedSlider.value = PlayerController.PlayerSlideMoveSpeed;
     }
 
     public void OnClickPlay()
@@ -92,7 +95,13 @@ public class MainMenu : BaseScreen
 
     public void OnPlayerSmoothnessChange(float value)
     {
-        PlayerController.PlayerSlideSpeed = (int) value;
+        PlayerController.PlayerSlideSpeed = (int) (value * 2);
         smoothnessText.text = value.ToString();
+    }
+
+    public void OnPlayerSlideSpeedChange(float value)
+    {
+        PlayerController.PlayerSlideMoveSpeed = value;
+        slideSpeedText.text = String.Format("{0:0}", value * 100    );
     }
 }
