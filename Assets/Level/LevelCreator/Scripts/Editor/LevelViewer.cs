@@ -130,4 +130,9 @@ public class LevelViewer
     {
         return LevelObjects;
     }
+
+    public void Reset(int i)
+    {
+        LevelObjects[i].SetData(levelEditor.LevelDatabase.Levels[levelEditor.Selection.SelectedLevel].LevelItems[i]);
+    }
 }

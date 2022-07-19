@@ -38,7 +38,18 @@ public class LevelEditorSceneView
             Handles.EndGUI();
         }
 
-        DrawButtons();
+        try
+        {
+            DrawButtons();
+        }
+        catch (Exception e)
+        {
+            if (!(e is ArgumentOutOfRangeException))
+            {
+                Debug.LogWarning(e);
+            }
+        }
+
         DrawPlayer();
     }
 
@@ -61,12 +72,12 @@ public class LevelEditorSceneView
             }
 
             var buttonPosition = levelObject.transform.position;
+            Handles.color = Color.yellow;
             switch (levelObject.Layout)
             {
                 case LevelObject.HorizontalLayout.Single:
                     break;
                 case LevelObject.HorizontalLayout.Double:
-                    Handles.color = Color.red;
                     if (levelObject.transform.position.x < 0)
                     {
                         buttonPosition.x = xPosition;
@@ -89,7 +100,6 @@ public class LevelEditorSceneView
 
                     break;
                 case LevelObject.HorizontalLayout.Triple:
-                    Handles.color = Color.red;
                     if (levelObject.transform.position.x <= 0)
                     {
                         buttonPosition.x = xPosition;
@@ -123,6 +133,41 @@ public class LevelEditorSceneView
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
+            }
+
+            if (!levelObject.IsPlatform)
+            {
+                Handles.color = Color.red;
+                if (Handles.Button(levelObject.transform.position, Quaternion.identity,
+                    buttonSize, buttonSize,
+                    Handles.SphereHandleCap))
+                {
+                    levelEditor.RemoveLevelObject(i);
+                }
+            }
+
+            if (levelObject.ShowDamage)
+            {
+                Handles.color = Color.red;
+                var levelData = levelEditor.LevelDatabase.Levels[levelEditor.Selection.SelectedLevel];
+                var item = levelData.LevelItems[i];
+                Handles.Label(levelObject.transform.position + new Vector3(0, 1.5f, 0), item.Damage + "");
+                Handles.color = Color.grey;
+                if (Handles.Button(levelObject.transform.position + new Vector3(0, 1, 0), Quaternion.identity,
+                    buttonSize, buttonSize,
+                    Handles.SphereHandleCap))
+                {
+                    var tempIndex = i;
+                    LevelObjectEditorWindow.Show(item.Damage,
+                        (value) =>
+                        {
+                            item.Damage = value;
+                            levelData.LevelItems[tempIndex] = item;
+                            levelEditor.ResetItem(tempIndex);
+                            EditorUtility.SetDirty(levelData);
+                            EditorUtility.SetDirty(levelEditor.LevelDatabase);
+                        });
+                }
             }
 
             i++;

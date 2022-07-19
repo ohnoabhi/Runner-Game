@@ -26,8 +26,10 @@ public class LevelEditorLevelsList
 
         EditorGUILayout.EndScrollView();
         EditorGUILayout.Space();
-        var style = new GUIStyle(GUI.skin.button);
-        style.fixedWidth = 120;
+        var style = new GUIStyle(GUI.skin.button)
+        {
+            fixedWidth = 120
+        };
         if (GUILayout.Button("Add new", style))
         {
             AddLevel();
@@ -38,7 +40,7 @@ public class LevelEditorLevelsList
 
     private void AddLevel()
     {
-        int maxNumber = 0;
+        var maxNumber = 0;
         string name;
 
         for (var i = 0; i < levelEditor.LevelsSerializedProperty.arraySize; i++)
@@ -74,8 +76,17 @@ public class LevelEditorLevelsList
 
     private void DrawLevel(int index, LevelData level)
     {
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("#" + index + " [" + level.name + "]");
+        GUILayout.BeginHorizontal(GUI.skin.box);
+        GUILayout.Label(index + ". " + level.name);
+
+        var endType = EditorGUILayout.EnumPopup(level.EndType, GUILayout.Width(150));
+        if ((LevelEndType) endType != level.EndType)
+        {
+            level.EndType = (LevelEndType) endType;
+            EditorUtility.SetDirty(level);
+            EditorUtility.SetDirty(levelEditor.LevelDatabase);
+            return;
+        }
 
         var style = new GUIStyle(GUI.skin.button);
         style.fixedWidth = 80;

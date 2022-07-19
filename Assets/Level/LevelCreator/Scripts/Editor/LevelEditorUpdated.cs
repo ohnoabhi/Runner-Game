@@ -118,6 +118,21 @@ public class LevelEditorUpdated : EditorWindow
         AssetDatabase.Refresh();
     }
 
+    public void RemoveLevelObject(int i)
+    {
+        var levelData = LevelDatabase.Levels[Selection.SelectedLevel];
+        if (!EditorUtility.DisplayDialog("Are you sure?", "Remove " + levelData.LevelItems[i].Item.name + "?", "Yes",
+            "Cancel")) return;
+        levelViewer.Remove(i);
+        levelData.LevelItems.RemoveAt(i);
+        EditorUtility.SetDirty(levelData);
+        SelectedLevelSerializedObject.ApplyModifiedProperties();
+    }
 
     public LevelObjectDatabase LevelObjectDatabase;
+
+    public void ResetItem(int i)
+    {
+        levelViewer.Reset(i);
+    }
 }

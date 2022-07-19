@@ -48,10 +48,12 @@ public class LevelEditorLevelObjectsList
         {
             for (var i = 0; i < levelItems.Count; i++)
             {
-                GUILayout.BeginHorizontal();
+                if (!levelItems[i].Item.IsPlatform) continue;
+
+                GUILayout.BeginHorizontal(GUI.skin.box);
                 // var levelObject = _levelObjectDatabase.Get(levelItems[i].ReferenceID);
                 var levelObject = levelItems[i].Item;
-                GUILayout.Label((i + 1) + ". " + levelObject.ObjectType + "[" + levelObject.name + "]");
+                GUILayout.Label((i + 1) + ". " + levelObject.name);
 
                 if (levelObject.ShowDamage)
                 {
@@ -62,6 +64,7 @@ public class LevelEditorLevelObjectsList
                         item.Damage = damage;
                         levelData.LevelItems[i] = item;
                         EditorUtility.SetDirty(levelData);
+                        EditorUtility.SetDirty(levelEditor.LevelDatabase);
                     }
                 }
 
@@ -115,7 +118,7 @@ public class LevelEditorLevelObjectsList
                     }
                 }))
                 {
-                    Remove(i);
+                    levelEditor.RemoveLevelObject(i);
                 }
 
                 GUILayout.EndHorizontal();
@@ -130,15 +133,5 @@ public class LevelEditorLevelObjectsList
 
         GUILayout.Space(10);
         EditorGUILayout.EndVertical();
-    }
-
-    private void Remove(int i)
-    {
-        var levelData = levelEditor.LevelDatabase.Levels[levelEditor.Selection.SelectedLevel];
-
-        levelEditor.levelViewer.Remove(i);
-        levelData.LevelItems.RemoveAt(i);
-        EditorUtility.SetDirty(levelData);
-        levelEditor.SelectedLevelSerializedObject.ApplyModifiedProperties();
     }
 }
