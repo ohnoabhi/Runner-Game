@@ -170,6 +170,44 @@ public class LevelEditorSceneView
                 }
             }
 
+            if (levelObject.IsMultiplier)
+            {
+                var levelData = levelEditor.LevelDatabase.Levels[levelEditor.Selection.SelectedLevel];
+                var item = levelData.LevelItems[i];
+                Handles.color = Color.grey;
+                if (Handles.Button(levelObject.transform.position + new Vector3(-2, 1, 0), Quaternion.identity,
+                    buttonSize, buttonSize,
+                    Handles.SphereHandleCap))
+                {
+                    var tempIndex = i;
+                    LevelObjectEditorWindow.Show(item.MultiplierValue.LeftValue,
+                        (value) =>
+                        {
+                            item.MultiplierValue.LeftValue = value;
+                            levelData.LevelItems[tempIndex] = item;
+                            levelEditor.ResetItem(tempIndex);
+                            EditorUtility.SetDirty(levelData);
+                            EditorUtility.SetDirty(levelEditor.LevelDatabase);
+                        });
+                }
+
+                if (Handles.Button(levelObject.transform.position + new Vector3(2, 1, 0), Quaternion.identity,
+                    buttonSize, buttonSize,
+                    Handles.SphereHandleCap))
+                {
+                    var tempIndex = i;
+                    LevelObjectEditorWindow.Show(item.MultiplierValue.RightValue,
+                        (value) =>
+                        {
+                            item.MultiplierValue.RightValue = value;
+                            levelData.LevelItems[tempIndex] = item;
+                            levelEditor.ResetItem(tempIndex);
+                            EditorUtility.SetDirty(levelData);
+                            EditorUtility.SetDirty(levelEditor.LevelDatabase);
+                        });
+                }
+            }
+
             i++;
         }
     }
