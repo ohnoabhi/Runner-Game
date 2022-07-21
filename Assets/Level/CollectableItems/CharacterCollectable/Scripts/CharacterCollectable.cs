@@ -33,7 +33,8 @@ public class CharacterCollectable : CollectableItem
 
         visual.localScale = requiredSize;
         character.UITransform.localScale = Vector3.one * (1 / requiredSize.x);
-        character.transform.rotation = Quaternion.Euler(0, 180, 0);
+        character.UITransform.localScale *= 1 / character.transform.localScale.x;
+        character.transform.rotation = Quaternion.Euler(0, 0, 0);
         character.UITransform.rotation = Quaternion.Euler(0, 0, 0);
         Show();
     }

@@ -30,7 +30,7 @@ public class LevelEditorUpdated : EditorWindow
     private LevelEditorLevelObjectsList levelObjectsList;
     private LevelEditorSceneView levelEditorSceneView;
 
-    public string[] Characters;
+    // public string[] Characters;
 
     [MenuItem("Level/Edit Items", priority = 1)]
     public static void EditLevelItems()
@@ -80,7 +80,7 @@ public class LevelEditorUpdated : EditorWindow
         LevelDatabaseSerializedObject = new SerializedObject(LevelDatabase);
         LevelsSerializedProperty = LevelDatabaseSerializedObject.FindProperty("Levels");
 
-        Characters = CharacterDatabase.Get().Items.Select(shopItem => shopItem.Key).ToArray();
+        // Characters = CharacterDatabase.Get().Items.Select(shopItem => shopItem.Key).ToArray();
         SceneView.duringSceneGui += levelEditorSceneView.OnScene;
     }
 

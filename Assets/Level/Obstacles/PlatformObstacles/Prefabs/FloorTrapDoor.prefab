@@ -755,18 +755,6 @@ MonoBehaviour:
   resetEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5864330798205358088}
-        m_TargetAssemblyTypeName: ButtonObstacle, Assembly-CSharp
-        m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9023093191138333449}
         m_TargetAssemblyTypeName: TriggerButton, Assembly-CSharp
         m_MethodName: ResetButton
@@ -794,6 +782,18 @@ MonoBehaviour:
       - m_Target: {fileID: 9023093190814809218}
         m_TargetAssemblyTypeName: TriggerButton, Assembly-CSharp
         m_MethodName: ResetButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5864330798205358088}
+        m_TargetAssemblyTypeName: ButtonObstacle, Assembly-CSharp
+        m_MethodName: Init
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

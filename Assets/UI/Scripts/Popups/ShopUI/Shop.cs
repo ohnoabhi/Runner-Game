@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    private static Shop instance;
+    public static Shop instance;
 
     public static ShopItem[] ShopItems => instance.database.Items;
+    public Character ObstacleCharacter;
 
     private CharacterDatabase database;
 

@@ -208,6 +208,28 @@ public class LevelEditorSceneView
                 }
             }
 
+            // if (levelObject.IsCharacter)
+            // {
+            //     var levelData = levelEditor.LevelDatabase.Levels[levelEditor.Selection.SelectedLevel];
+            //     var item = levelData.LevelItems[i];
+            //     Handles.color = Color.grey;
+            //     if (Handles.Button(levelObject.transform.position + new Vector3(0, 1.3f, 0), Quaternion.identity,
+            //         buttonSize, buttonSize,
+            //         Handles.SphereHandleCap))
+            //     {
+            //         var tempIndex = i;
+            //         LevelCharacterObstacleEditorWindow.Show(item.MultiplierValue.LeftValue,
+            //             (value) =>
+            //             {
+            //                 item.CharacterId = value;
+            //                 levelData.LevelItems[tempIndex] = item;
+            //                 levelEditor.ResetItem(tempIndex);
+            //                 EditorUtility.SetDirty(levelData);
+            //                 EditorUtility.SetDirty(levelEditor.LevelDatabase);
+            //             });
+            //     }
+            // }
+
             i++;
         }
     }

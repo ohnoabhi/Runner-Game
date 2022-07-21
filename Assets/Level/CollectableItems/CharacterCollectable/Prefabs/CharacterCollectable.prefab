@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectType: 4
-  Layout: 0
+  Layout: 2
   End: {fileID: 0}
   ShowDamage: 0
   Obstacle: {fileID: 0}

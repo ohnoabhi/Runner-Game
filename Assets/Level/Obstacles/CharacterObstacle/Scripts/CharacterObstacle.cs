@@ -7,16 +7,16 @@ public class CharacterObstacle : Obstacle
     private Character character;
 
 
-    public void Init(int id)
+    public void Init()
     {
-        if(!Application.isPlaying) return;
-        
+        if (!Application.isPlaying) return;
+
         foreach (Transform child in visual)
         {
             Destroy(child.gameObject);
         }
 
-        character = Instantiate(Shop.GetCharacter(id), visual);
+        character = Instantiate(Shop.instance.ObstacleCharacter, visual);
         character.Animator.SetTrigger("Idle");
         character.UI.SetPlayerHealth(damage);
 
@@ -29,7 +29,8 @@ public class CharacterObstacle : Obstacle
             requiredSize = Vector3.one * GameManager.Instance.PlayerMaxSize;
         visual.localScale = requiredSize;
         character.UI.SetTextColor(Color.red);
-        character.UITransform.localScale = Vector3.one * (1 / (requiredSize.x * 0.5f));
+        character.UITransform.localScale = Vector3.one * (1 / requiredSize.x);
+        character.UITransform.localScale *= 1 / character.transform.localScale.x;
         character.transform.rotation = Quaternion.Euler(0, 180, 0);
         character.UITransform.rotation = Quaternion.Euler(0, 0, 0);
         character.Animator.SetFloat("Speed", 1f);

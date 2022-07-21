@@ -16,7 +16,6 @@ public struct LevelItemData
     public Vector3 Position;
     public int Damage;
     public Multiplier.MultiplierValue MultiplierValue;
-    public int CharacterId;
 }
 
 public enum LevelEndType

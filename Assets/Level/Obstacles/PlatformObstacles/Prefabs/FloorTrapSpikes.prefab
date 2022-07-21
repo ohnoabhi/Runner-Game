@@ -399,7 +399,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 77452285223658733}
         m_TargetAssemblyTypeName: ButtonObstacle, Assembly-CSharp
-        m_MethodName: Close
+        m_MethodName: Init
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

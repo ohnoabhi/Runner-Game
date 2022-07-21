@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
     [BoxGroup("Health")] [SerializeField] public int StartHealth = 20;
 
     [BoxGroup("UI")] public PlayerUIController UI;
+    [BoxGroup("UI")] [SerializeField] private PlayerCashUpdateUI PlayerCashUpdateUI;
+    [BoxGroup("UI")] [SerializeField] private Transform PlayerCashUpdateUITransform;
 
     [BoxGroup("Character Size")] [SerializeField]
     private Transform visual;
@@ -67,6 +69,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 lastPosition;
 
     private PlayerMovement movement;
+
 
     public int Health { get; private set; }
 
@@ -234,6 +237,7 @@ public class PlayerController : MonoBehaviour
     public void CollectCash(int amount)
     {
         CashCollected += amount;
+        PlayerCashUpdateUI.Show(PlayerCashUpdateUITransform, GetSize().x + 1);
         GameManager.Instance.OnPlayerCashCollected(CashCollected);
     }
 

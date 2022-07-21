@@ -89,17 +89,17 @@ public class LevelEditorLevelObjectsList
                     }
                 }
 
-                if (levelObject.IsCharacter)
-                {
-                    var index = EditorGUILayout.Popup(levelItems[i].CharacterId, levelEditor.Characters);
-                    if (index != levelItems[i].CharacterId)
-                    {
-                        var item = levelData.LevelItems[i];
-                        item.CharacterId = index;
-                        levelData.LevelItems[i] = item;
-                        EditorUtility.SetDirty(levelData);
-                    }
-                }
+                // if (levelObject.IsCharacter)
+                // {
+                //     var index = EditorGUILayout.Popup(levelItems[i].CharacterId, levelEditor.Characters);
+                //     if (index != levelItems[i].CharacterId)
+                //     {
+                //         var item = levelData.LevelItems[i];
+                //         item.CharacterId = index;
+                //         levelData.LevelItems[i] = item;
+                //         EditorUtility.SetDirty(levelData);
+                //     }
+                // }
 
                 if (GUILayout.Button("X", new GUIStyle(GUI.skin.button)
                 {

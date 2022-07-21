@@ -12,8 +12,9 @@ public class ButtonObstacle : MonoBehaviour
     [ShowIf("isMultiColored")] [SerializeField]
     private Renderer[] renderers;
 
-    private void Start()
+    public void Init()
     {
+        Close();
         if (buttons.Length == 0) return;
         if (isMultiColored)
         {
@@ -33,7 +34,7 @@ public class ButtonObstacle : MonoBehaviour
         }
         else
         {
-            var active = 1;
+            const int active = 1;
             var i = 0;
             foreach (var button in buttons)
             {

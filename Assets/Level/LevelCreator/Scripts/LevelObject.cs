@@ -76,7 +76,7 @@ public class LevelObject : MonoBehaviour
         }
         if (IsCharacter)
         {
-            GetComponent<CharacterObstacle>().Init(_levelItemData.CharacterId);
+            GetComponent<CharacterObstacle>().Init();
         }
     }
 
