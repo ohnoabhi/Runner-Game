@@ -29,8 +29,7 @@ public class CharacterObstacle : Obstacle
             requiredSize = Vector3.one * GameManager.Instance.PlayerMaxSize;
         visual.localScale = requiredSize;
         character.UI.SetTextColor(Color.red);
-        character.UITransform.localScale = Vector3.one * (1 / requiredSize.x);
-        character.UITransform.localScale *= 1 / character.transform.localScale.x;
+        character.UITransform.localScale = Vector3.one * (1 / requiredSize.x) * 30;
         character.transform.rotation = Quaternion.Euler(0, 180, 0);
         character.UITransform.rotation = Quaternion.Euler(0, 0, 0);
         character.Animator.SetFloat("Speed", 1f);
