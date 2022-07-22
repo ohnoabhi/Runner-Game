@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9985932ef8b9427986e0d47bef1d0d00, type: 3}
   m_Name: Level 4
   m_EditorClassIdentifier: 
-  EndType: 2
+  EndType: 3
   LevelItems:
   - Item: {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
     Position: {x: 0, y: 0, z: 0}
@@ -20,39 +20,153 @@ MonoBehaviour:
     MultiplierValue:
       LeftValue: 0
       RightValue: 0
-    CharacterId: 0
   - Item: {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
     Position: {x: 0, y: 0, z: 10}
     Damage: 0
     MultiplierValue:
       LeftValue: 0
       RightValue: 0
-    CharacterId: 0
   - Item: {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
     Position: {x: 0, y: 0, z: 20}
     Damage: 0
     MultiplierValue:
       LeftValue: 0
       RightValue: 0
-    CharacterId: 0
   - Item: {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
     Position: {x: 0, y: 0, z: 30}
     Damage: 0
     MultiplierValue:
       LeftValue: 0
       RightValue: 0
-    CharacterId: 0
   - Item: {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
     Position: {x: 0, y: 0, z: 40}
     Damage: 0
     MultiplierValue:
       LeftValue: 0
       RightValue: 0
-    CharacterId: 0
   - Item: {fileID: 1222415751959205298, guid: e62ac768a65c971468058c0ab3f2e2b5, type: 3}
-    Position: {x: 0, y: 0, z: 33.173428}
+    Position: {x: 0, y: 0, z: 15.669973}
     Damage: 0
     MultiplierValue:
-      LeftValue: 100
-      RightValue: 100
-    CharacterId: 0
+      LeftValue: 40
+      RightValue: -20
+  - Item: {fileID: 1222415751959205298, guid: e62ac768a65c971468058c0ab3f2e2b5, type: 3}
+    Position: {x: 0, y: 0, z: 26.625366}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: -10
+      RightValue: 30
+  - Item: {fileID: 5457343878115620140, guid: 4752b5e30da67e942827fda62a0c5974, type: 3}
+    Position: {x: 0, y: 0, z: 83.641785}
+    Damage: 2
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 2768703245319665712, guid: cdcc4a9fac9e5ab4d9559ed5d7d677f2, type: 3}
+    Position: {x: 0, y: 0, z: 29.769865}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 6897765845296624503, guid: e3e775596118996419070c644b7e60ae, type: 3}
+    Position: {x: 0, y: 0, z: 50}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
+    Position: {x: 0, y: 0, z: 54}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 7816998031332815645, guid: 3e36cca5d139c3d41ade30b75406f730, type: 3}
+    Position: {x: 0, y: 0, z: 40.901882}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 2768703245319665712, guid: cdcc4a9fac9e5ab4d9559ed5d7d677f2, type: 3}
+    Position: {x: -2, y: 0, z: 46.692757}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 2768703245319665712, guid: cdcc4a9fac9e5ab4d9559ed5d7d677f2, type: 3}
+    Position: {x: -2, y: 0, z: 50.990208}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 2768703245319665712, guid: cdcc4a9fac9e5ab4d9559ed5d7d677f2, type: 3}
+    Position: {x: -2, y: 0, z: 55.53961}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
+    Position: {x: 0, y: 0, z: 64}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 2235799038432185909, guid: a19c21f52bdbefd4a9faca2774040916, type: 3}
+    Position: {x: 0, y: 0, z: 60.8}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 2235799038432185909, guid: a19c21f52bdbefd4a9faca2774040916, type: 3}
+    Position: {x: 0, y: 0, z: 65.95}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
+    Position: {x: 0, y: 0, z: 74}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 2235799038432185909, guid: a19c21f52bdbefd4a9faca2774040916, type: 3}
+    Position: {x: 0, y: 0, z: 70.8}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
+    Position: {x: 0, y: 0, z: 84}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 6897765845296624503, guid: 3b7e5deb5fca6fd49a6c81afe43060ee, type: 3}
+    Position: {x: 0, y: 0, z: 94}
+    Damage: 0
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 5457343878115620140, guid: 4752b5e30da67e942827fda62a0c5974, type: 3}
+    Position: {x: 0, y: 0, z: 92.73013}
+    Damage: 6
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 5457343878115620140, guid: 4752b5e30da67e942827fda62a0c5974, type: 3}
+    Position: {x: 0, y: 0, z: 88.104485}
+    Damage: 4
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 5457343878115620140, guid: 4752b5e30da67e942827fda62a0c5974, type: 3}
+    Position: {x: 0, y: 0, z: 34.2}
+    Damage: 30
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
+  - Item: {fileID: 5457343878115620140, guid: 4752b5e30da67e942827fda62a0c5974, type: 3}
+    Position: {x: 0, y: 0, z: 98.55}
+    Damage: 8
+    MultiplierValue:
+      LeftValue: 0
+      RightValue: 0
