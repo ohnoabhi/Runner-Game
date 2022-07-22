@@ -48,16 +48,14 @@ public class WallRunFinisher : GameFinisher
 
     private void Start()
     {
-        unlockedWalls = StatsManager.Get(StatType.PlayerStat) <= 0
-            ? 0
-            : StatsManager.Get(StatType.PlayerStat) / unlockIntervel;
-
-        unlockedWalls = Mathf.Max(unlockedWalls, 2);
+        var stat = StatsManager.Get(StatType.PlayerStat);
+        unlockedWalls = stat - 3 <= 0 ? 2 : 1 + (stat / unlockIntervel);
 
         for (var i = 0; i < wallParent.childCount; i++)
         {
             var wall = wallParent.GetChild(i).GetComponent<Wall>();
-            wall.Init(i >= unlockedWalls, i + 1, i * unlockIntervel, damage);
+            var unlockLevel = i * unlockIntervel;
+            wall.Init(i >= unlockedWalls, i + 1, unlockLevel, damage);
         }
     }
 

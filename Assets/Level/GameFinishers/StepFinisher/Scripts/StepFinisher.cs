@@ -14,7 +14,7 @@ public class StepFinisher : GameFinisher
     {
         base.Finish();
 
-        var steps = stepCreator.Steps;
+        var steps = stepCreator.CreateSteps((PlayerController.Health / stepDamage) + 5);
 
         var stepsReached = 0;
         for (var i = 0; i < steps.Length; i++)
@@ -60,6 +60,6 @@ public class StepFinisher : GameFinisher
         PlayerController.Animator.SetTrigger("Idle");
         await Task.Delay(1500);
 
-        GameManager.Instance.GameOver(true, 0,stepsReached);
+        GameManager.Instance.GameOver(true, 0, stepsReached);
     }
 }

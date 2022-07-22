@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectType: 1
-  Layout: 2
+  Layout: 0
   End: {fileID: 0}
   ShowDamage: 1
   Obstacle: {fileID: 5119216200558267068}

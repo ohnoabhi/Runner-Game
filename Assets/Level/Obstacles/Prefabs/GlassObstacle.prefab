@@ -4247,7 +4247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1701869910730510798
 Transform:
   m_ObjectHideFlags: 0
@@ -11746,7 +11746,6 @@ MonoBehaviour:
   Layout: 1
   End: {fileID: 0}
   ShowDamage: 0
-  Damage: 0
   Obstacle: {fileID: 0}
   shouldClear: 0
   resetEvents:
@@ -11790,5 +11789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  shouldVibrate: 1
+  dieOnTouch: 0
   unBroken: {fileID: 7680360208772401583}
   broken: {fileID: 3332434878153700275}

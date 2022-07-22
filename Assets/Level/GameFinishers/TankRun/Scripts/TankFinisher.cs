@@ -9,6 +9,7 @@ public class TankFinisher : GameFinisher
     [SerializeField] private int playerSpeed = 10;
     [SerializeField] private Transform tankParent;
     [SerializeField] private TankFinisherItem tankPrefab;
+    [SerializeField] private GameObject tankLockedPrefab;
     [SerializeField] private float offsetZ = 16;
     [SerializeField] private int unlockIntervel = 2;
     [SerializeField] private int damage = 20;
@@ -17,10 +18,8 @@ public class TankFinisher : GameFinisher
 
     private void Start()
     {
-        var count = StatsManager.Get(StatType.PlayerStat) <= 0
-            ? 0
-            : StatsManager.Get(StatType.PlayerStat) / unlockIntervel;
-        count = Mathf.Max(count, 2);
+        var stat = StatsManager.Get(StatType.PlayerStat);
+        var count = stat - 3 <= 0 ? 2 : 1 + (stat / unlockIntervel);
         CreateTanks(count);
     }
 
@@ -53,6 +52,11 @@ public class TankFinisher : GameFinisher
             tanks[i] = instance;
             await Task.Yield();
         }
+
+        var locked = Instantiate(tankLockedPrefab, new Vector3(0, 0, tankParent.position.z + (count * offsetZ)),
+            Quaternion.Euler(0, 180, 0),
+            tankParent);
+        locked.GetComponentInChildren<TextMeshPro>().text = "LVL " + (count * unlockIntervel);
     }
 
     protected override async void Finish()
@@ -88,6 +92,6 @@ public class TankFinisher : GameFinisher
         PlayerController.Animator.SetTrigger("Idle");
         await Task.Delay(1500);
 
-        GameManager.Instance.GameOver(true,0, tankReached);
+        GameManager.Instance.GameOver(true, 0, tankReached);
     }
 }

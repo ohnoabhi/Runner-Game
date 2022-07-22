@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     public static Action<int> OnPlayerHealthChange;
+    [BoxGroup("Level")] [SerializeField] private bool CustomLevel;
+
+    [BoxGroup("Level")] [ShowIf("CustomLevel")] [SerializeField]
+    private int LevelNumber;
+    [BoxGroup("Level")]
+    [SerializeField] private bool randomEndType;
 
     [SerializeField] private PlayerController PlayerControllerPrefab;
     [SerializeField] private CameraFollower cameraFollower;
@@ -29,7 +35,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Price winBasePrice;
     [SerializeField] private float winIncrementPercentage;
     [SerializeField] private GameScreen gameScreen;
-    [SerializeField] private bool randomEndType;
 
     [BoxGroup("Health")] [SerializeField] public int HealthRequiredForIncrement = 20;
     [BoxGroup("Health")] [SerializeField] public float HealthIncrementPercentage = 0.2f;
@@ -46,7 +51,9 @@ public class GameManager : MonoBehaviour
     public static int Level
     {
         // get => 1;
-        get => PlayerPrefs.GetInt("Level", 1);
+        get => Instance && Instance.CustomLevel && Instance.LevelNumber > 0
+            ? Instance.LevelNumber
+            : PlayerPrefs.GetInt("Level", 1);
         set => PlayerPrefs.SetInt("Level", value);
     }
 
@@ -98,6 +105,8 @@ public class GameManager : MonoBehaviour
 
             var tempData = levelItemData;
             tempData.Position += new Vector3(0, 0, -6);
+            if (instance.Layout == LevelObject.HorizontalLayout.Single)
+                tempData.Position.x = 0;
             instance.transform.position = tempData.Position;
             instance.transform.rotation = Quaternion.identity;
             instance.transform.SetParent(levelParent);

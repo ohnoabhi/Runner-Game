@@ -46,7 +46,7 @@ public class LevelObject : MonoBehaviour
         return transform.position + Vector3.forward * 0.5f;
     }
 
-    public Vector3 GetVerticalHandlePos()
+    public Vector3 GetPositionX()
     {
         return transform.position;
     }

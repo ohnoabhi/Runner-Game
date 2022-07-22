@@ -1,3 +1,4 @@
+using System;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -12,11 +13,10 @@ public class StepCreator : MonoBehaviour
 
     private void Start()
     {
-        CreateSteps();
+        CreateSteps(10);
     }
 
-    [Button]
-    private void CreateSteps()
+    public Step[] CreateSteps(int stepCount)
     {
         foreach (Transform child in transform)
         {
@@ -41,5 +41,7 @@ public class StepCreator : MonoBehaviour
 
             offset += stepOffset;
         }
+
+        return Steps;
     }
 }

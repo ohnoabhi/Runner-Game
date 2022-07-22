@@ -222,6 +222,7 @@ MonoBehaviour:
   playerSpeed: 20
   tankParent: {fileID: 2245191515484915066}
   tankPrefab: {fileID: 8507393897610449178, guid: 5ae957b1c434a3f42afc09817238760f, type: 3}
+  tankLockedPrefab: {fileID: 879807912013245051, guid: 7016bd800ec9ea24eac05a26dafa2025, type: 3}
   offsetZ: 16
   unlockIntervel: 2
   damage: 10

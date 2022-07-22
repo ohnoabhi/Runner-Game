@@ -75965,6 +75965,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0e33976c1bde543b5ba175703a32c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CustomLevel: 0
+  LevelNumber: 1
+  randomEndType: 0
   PlayerControllerPrefab: {fileID: 5748143371340414035, guid: 377ae0d73920f134590208eaced8ff99, type: 3}
   cameraFollower: {fileID: 963194229}
   cameraOffset: {x: 0, y: 8.7, z: -14}
@@ -75974,7 +75977,6 @@ MonoBehaviour:
     Amount: 10
   winIncrementPercentage: 0.2
   gameScreen: {fileID: 239850178}
-  randomEndType: 1
   HealthRequiredForIncrement: 15
   HealthIncrementPercentage: 0.2
   PlayerStartSize: 0.8
@@ -77000,11 +77002,11 @@ MonoBehaviour:
   - Icon: {fileID: 21300000, guid: 3012e2d232a219a45998a5b7afb82e35, type: 3}
     Audio: CashClaim
     Type: 0
-    Default: 0
+    Default: 20000
   - Icon: {fileID: 21300000, guid: 3fb23bf6552b44aafb168ed0584e1641, type: 3}
     Audio: CoinClaim
     Type: 1
-    Default: 0
+    Default: 20000
   - Icon: {fileID: 21300000, guid: 9f8ec0d58522f429d938ada2e1aa5296, type: 3}
     Audio: KeyClaim
     Type: 2
