@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
         PlayerController.State = PlayerController.PlayerState.Running;
         // var playerCharacterManager = player.GetComponent<PlayerCharacterManager>();
         PlayerController.UI.SetCamera(cameraFollower.transform);
-        OnPlayerCashCollected(0);
+        OnPlayerCoinCollected(0);
         cameraFollower.transform.position = PlayerController.transform.position + cameraOffset;
         cameraFollower.transform.rotation = Quaternion.Euler(cameraRotation);
         cameraFollower.Target = PlayerController.transform;
@@ -233,14 +233,14 @@ public class GameManager : MonoBehaviour
         return new Price()
         {
             Type = winBasePrice.Type,
-            Amount = Mathf.RoundToInt(PlayerController.CashCollected + winBasePrice.Amount + (winBasePrice.Amount *
+            Amount = Mathf.RoundToInt(PlayerController.CoinCollected + winBasePrice.Amount + (winBasePrice.Amount *
                 ((StatsManager.Get(StatType.RewardMultiplier) - 1) *
                  winIncrementPercentage)))
         };
     }
 
-    public void OnPlayerCashCollected(int amount)
+    public void OnPlayerCoinCollected(int amount)
     {
-        gameScreen.UpdateCash(amount);
+        gameScreen.UpdateCoin(amount);
     }
 }

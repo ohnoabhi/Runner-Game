@@ -39,8 +39,9 @@ public class WinScreen : BaseScreen
 
         continueText.text = "Claim";
         adIndicator.SetActive(true);
-        noThanksButton.gameObject.SetActive(true);
+        noThanksButton.gameObject.SetActive(false);
         noThanksButton.DOAnchorPosY(-638, 0);
+        noThanksButton.gameObject.SetActive(true);
         noThanksButton.DOAnchorPosY(-838, 1).SetDelay(2);
 
         rewardIcon.sprite = CollectablesManager.GetIcon(winPrice.Type);

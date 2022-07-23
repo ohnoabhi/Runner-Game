@@ -6,14 +6,16 @@ public class LevelObjectEditorWindow : EditorWindow
 {
     private Action<int> callback;
     private static LevelObjectEditorWindow window;
+    private string title;
 
-    public static void Show(int value, Action<int> callback)
+    public static void Show(int value, Action<int> callback, string title = "Damage")
     {
         if (!window)
             window = CreateInstance<LevelObjectEditorWindow>();
         window.position = new Rect(Screen.width / 2, Screen.height / 2, 250, 100);
         window.value = value;
         window.callback = callback;
+        window.title = title;
         window.ShowPopup();
     }
 
@@ -23,7 +25,7 @@ public class LevelObjectEditorWindow : EditorWindow
     {
         EditorGUILayout.BeginVertical();
         GUILayout.Space(20);
-        value = EditorGUILayout.IntField("Damage", value);
+        value = EditorGUILayout.IntField(title, value);
 
         GUILayout.Space(10);
         if (GUILayout.Button("Apply"))

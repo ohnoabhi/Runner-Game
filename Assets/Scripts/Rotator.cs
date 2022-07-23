@@ -10,4 +10,9 @@ public class Rotator : MonoBehaviour
     {
         transform.rotation *= Quaternion.Euler(Speed * Time.deltaTime * Axis);
     }
+
+    public void ResetRotation()
+    {
+        transform.rotation = Quaternion.Euler(Vector3.zero);
+    }
 }

@@ -6,13 +6,10 @@ public class CharacterCollectable : CollectableItem
     [SerializeField] private Transform visual;
     private Character character;
 
-    private void Start()
+    public void Init(int value)
     {
-        Init();
-    }
-
-    public void Init()
-    {
+        if (!Application.isPlaying) return;
+        amount = value;
         foreach (Transform child in visual)
         {
             Destroy(child.gameObject);

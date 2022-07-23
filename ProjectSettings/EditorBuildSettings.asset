@@ -5,18 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/MiniGame/Scenes/MiniGame.unity
-    guid: ab116ff7f0a95134b8461181f73cbbd6
-  - enabled: 0
-    path: Assets/Level/LevelCreator/LevelCreator.unity
-    guid: e711b1f887bdd58418759b8c4718b652
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 6dde45654e68d734ca428aa2dfb091dd, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: b7e66c08a74778744a8faf55a8a18ab1, type: 2}

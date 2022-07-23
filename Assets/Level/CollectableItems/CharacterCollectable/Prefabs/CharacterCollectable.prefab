@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectType: 4
+  CustomAmount: 1
   Layout: 2
   End: {fileID: 0}
   ShowDamage: 0

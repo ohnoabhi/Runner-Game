@@ -51,7 +51,7 @@ public class WallObstacle : Obstacle
     {
         AudioManager.Play("WallBreak");
         // CollectablesManager.Add(CollectableType.Cash, 1);
-        playerController.CollectCash(1);
+        playerController.CollectCoin(1);
         ChallengeManager.Instance.UpdateChallenge(ChallengeType.DestroyWalls);
         var position = hitEffect.transform.position;
         position.x = collisionPoint.x;

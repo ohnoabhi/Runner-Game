@@ -21,7 +21,7 @@ public class GameScreen : BaseScreen
         }
     }
 
-    public void UpdateCash(int amount)
+    public void UpdateCoin(int amount)
     {
         cashText.text = amount.ToString();
     }

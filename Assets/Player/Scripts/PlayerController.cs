@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [BoxGroup("Movement")] [SerializeField]
     private float Speed;
 
-    public int CashCollected { get; private set; }
+    public int CoinCollected { get; private set; }
 
     public static int PlayerSpeed
     {
@@ -234,11 +234,11 @@ public class PlayerController : MonoBehaviour
         return visual.localScale;
     }
 
-    public void CollectCash(int amount)
+    public void CollectCoin(int amount)
     {
-        CashCollected += amount;
+        CoinCollected += amount;
         PlayerCashUpdateUI.Show(PlayerCashUpdateUITransform, GetSize().x + 1);
-        GameManager.Instance.OnPlayerCashCollected(CashCollected);
+        GameManager.Instance.OnPlayerCoinCollected(CoinCollected);
     }
 
     public void SetHit(Vector3 position)

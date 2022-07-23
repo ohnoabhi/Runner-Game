@@ -24,13 +24,19 @@ public class LevelObject : MonoBehaviour
     }
 
     public LevelObjectType ObjectType;
+
+    public bool IsCollectable => ObjectType == LevelObjectType.Collectable;
+    [ShowIf("IsCollectable")] public bool CustomAmount;
     [HideIf("IsPlatform")] public HorizontalLayout Layout;
     public bool IsPlatform => ObjectType == LevelObjectType.Platform;
 
 
     [ShowIf("IsPlatform")] public Transform End;
     private LevelItemData _levelItemData;
-    private bool isObstacleOrEnemy => ObjectType == LevelObjectType.Obstacle || ObjectType == LevelObjectType.Enemy || ObjectType == LevelObjectType.Character;
+
+    private bool isObstacleOrEnemy => ObjectType == LevelObjectType.Obstacle || ObjectType == LevelObjectType.Enemy ||
+                                      ObjectType == LevelObjectType.Character;
+
     public bool IsMultiplier => ObjectType == LevelObjectType.Multiplier;
     private bool showObstacle => isObstacleOrEnemy && ShowDamage;
     [ShowIf("isObstacleOrEnemy")] public bool ShowDamage;
@@ -74,9 +80,16 @@ public class LevelObject : MonoBehaviour
         {
             GetComponent<Multiplier>().Init(_levelItemData.MultiplierValue);
         }
+
         if (IsCharacter)
         {
             GetComponent<CharacterObstacle>().Init();
+        }
+
+        var characterCollectable = GetComponent<CharacterCollectable>();
+        if (characterCollectable)
+        {
+            characterCollectable.Init(_levelItemData.Damage);
         }
     }
 

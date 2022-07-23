@@ -9,7 +9,8 @@ public class CollectableItem : MonoBehaviour
     public enum CollectableItemType
     {
         Health,
-        Cash
+        Cash,
+        Coin
     }
 
     public void Hide()
@@ -35,7 +36,13 @@ public class CollectableItem : MonoBehaviour
                 if (playAudio)
                     AudioManager.Play("CashPickup");
                 // CollectablesManager.Add(CollectableType.Cash, 1);
-                playerController.CollectCash(amount);
+                playerController.CollectCoin(amount);
+                break;
+            case CollectableItemType.Coin:
+                if (playAudio)
+                    AudioManager.Play("CoinClaim");
+                // CollectablesManager.Add(CollectableType.Cash, 1);
+                playerController.CollectCoin(amount);
                 break;
         }
         Hide();
